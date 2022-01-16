@@ -1,14 +1,12 @@
 import React from "react";
-import Login from "../components/Login";
+import { Box } from "@chakra-ui/react";
+import { ChakraImage } from "../config/config";
 
 const index = () => {
   return (
-    <div>
-      Hello World
-      {/* Spotify Logo */}
-      <Login />
-      {/* Login with spotify button */}
-    </div>
+      <Box mt='32' h='300px'>
+        <ChakraImage src={"/img/homepage-image.png"} layout="fill" />
+      </Box>
   );
 };
 
