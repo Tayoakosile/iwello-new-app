@@ -1,11 +1,13 @@
-import React from 'react'
+import Headroom from "react-headroom";
+import React from "react";
+import MobileNav from "./MobileNav";
 
 const NavBar = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <Headroom>
+      <MobileNav />
+    </Headroom>
+  );
+};
 
-export default NavBar
+export default NavBar;

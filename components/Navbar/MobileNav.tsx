@@ -28,6 +28,7 @@ export default function MobileNav() {
       <HStack
         as="header"
         justify="space-between"
+        bg="#fff"
         alignItems={"center"}
         h="70px"
         w="full"
@@ -36,7 +37,6 @@ export default function MobileNav() {
       >
         {/* <Icon/> */}
         <Image src="/img/logo/logo-mobile-1.svg" layout="fill" />
-
         <HStack as="span" spacing="25px">
           <Button size="md" rounded="sm">
             {" "}
