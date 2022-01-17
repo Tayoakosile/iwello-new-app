@@ -28,7 +28,6 @@ export default function MobileNav() {
   return (
     <>
       <HStack
-        d={{ base: "flex", lg: "none" }}
         as="header"
         justify="space-between"
         bg="#fff"
@@ -96,6 +95,7 @@ export default function MobileNav() {
                 <Link href="/signup">Sign Up</Link>
               </Button>
             </VStack>
+
           </DrawerBody>
         </DrawerContent>
       </Drawer>
