@@ -18,8 +18,8 @@ import {
 
 const Footer = () => {
   return (
-    <Box as="footer" pt="91px" px="43px">
-      <HStack justify="space-between" align="flex-start">
+    <Box as="footer" pt="91px" >
+      <HStack justify="space-between" w='8  0%' mx='auto' align="flex-start">
         <VStack
           as="nav"
           color="brand.500"

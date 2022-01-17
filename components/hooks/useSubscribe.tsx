@@ -9,8 +9,8 @@ const useSubscribe = () => {
   } = useForm();
   //   User,s email address
   console.log(errors);
-  const subscribedUser = (userEmailAddress: { userEmailAddress: string }) => {
-    console.log(userEmailAddress);
+  const subscribedUser = (data: { data: object }) => {
+    console.log(data);
   };
   return { register, handleSubmit, subscribedUser, errors };
 };

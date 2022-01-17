@@ -18,6 +18,7 @@ const Suscribe = () => {
     subscribedUser: subscribedUser,
     handleSubmit,
   } = useSubscribe();
+  console.log(errors, "errors");
   return (
     <VStack px="23px " as="section" align="flex-start" spacing="14px" py="60px">
       <Heading fontSize="16px">Subscribe to our newsletter</Heading>
@@ -47,12 +48,13 @@ const Suscribe = () => {
             borderRadius="0px"
             _placeholder={{ fontSize: "14px", color: "#4E4C4C80" }}
           />
-          <FormErrorMessage>
-            {errors && errors.subscribedEmail.message}
+          <FormErrorMessage whiteSpace="nowrap">
+            {errors.subscribedEmail && errors.subscribedEmail.message}
           </FormErrorMessage>
         </FormControl>
         <Button
           variant="outline"
+          mt={errors.subscribedEmail ? "-21px" : "0px"}
           type="submit"
           h="50px"
           flex="0.3"
