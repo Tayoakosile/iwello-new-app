@@ -3,15 +3,15 @@ import React from "react";
 import { Box, Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import { Testimonials, TestimonialsArray } from "../../config/config";
 
-/* 
-*Individual Testimony Components
-*/
+/*
+ *Individual Testimony Components
+ */
 const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
   return (
     <VStack
       as="section"
       alignItems="flex-start"
-      py="43px"
+      py="33px"
       px="16px"
       h="270px"
       w="full"
@@ -20,12 +20,12 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.15)"
       borderRadius="5px"
     >
-      <Avatar src="" name={avatar} bg="brand.100" color="brand.500" />
+      <Avatar alt="User name" name={avatar} bg="gray.100" color="brand.800" />
       <Heading fontSize="16px">{heading}</Heading>
-      <Text fontSize="14px" lineHeight="16.41px">
+      <Text color="gray.500" fontSize="14px" lineHeight="16.41px">
         {text}
       </Text>
-      <Text pt="24px    " alignSelf="flex-end" color="brand.500">
+      <Text pt="24px" alignSelf="flex-end" color="brand.500">
         {name}
       </Text>
     </VStack>
@@ -37,8 +37,7 @@ const Testimonials = () => {
       <Heading
         fontSize="48px"
         lineHeight="56.25px"
-        color="#6D40E5"
-        opacity="0.05"
+        color="rgb(62 36 130 / 54%)"
         fontWeight="bolder"
       >
         Testimonials

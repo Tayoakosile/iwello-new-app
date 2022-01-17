@@ -21,9 +21,9 @@ const HeaderText = () => {
         <Heading>
           Talk To a
           <Text as="span" color="brand.500">
-            Doctor
+            {""} Doctor
           </Text>
-          Today For Less Than a
+          {""}Today For Less Than a {""}
           <Text as="span" color="brand.500">
             Dollar
           </Text>

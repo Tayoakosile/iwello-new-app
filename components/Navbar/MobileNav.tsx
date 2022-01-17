@@ -1,19 +1,18 @@
+import React from "react";
+import Image from "next/image";
 import {
+  Box,
+  Button,
   Drawer,
   DrawerBody,
-  Image,
-  Box,
-  HStack,
   DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
+  HStack,
   Icon,
   useDisclosure,
-  Button,
 } from "@chakra-ui/react";
-import React from "react";
 import { IoMenuOutline } from "react-icons/io5";
-import { ChakraImage } from "../../config/config";
 
 /**
  *IwelloNG Nav-bar (Mobile)
@@ -36,7 +35,12 @@ export default function MobileNav() {
         py="22px"
       >
         {/* <Icon/> */}
-        <Image src="/img/logo/logo-mobile-1.svg" layout="fill" />
+        <Image
+          src="/img/logo/logo-mobile-1.svg"
+          alt="Company's logo"
+          width={70}
+          height={23}
+        />
         <HStack as="span" spacing="25px">
           <Button size="md" rounded="sm">
             {" "}
