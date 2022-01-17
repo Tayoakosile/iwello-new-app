@@ -22,7 +22,7 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
     >
       <Avatar alt="User name" name={avatar} bg="gray.100" color="brand.800" />
       <Heading fontSize="16px">{heading}</Heading>
-      <Text color="gray.500" fontSize="14px" lineHeight="16.41px">
+      <Text color="gray.500" fontSize="14px" lineHeight="20px">
         {text}
       </Text>
       <Text pt="24px" alignSelf="flex-end" color="brand.500">
@@ -33,7 +33,14 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
 };
 const Testimonials = () => {
   return (
-    <Box bg="#F8F5F5" as="section" pt="52px" px="22px" pb="86px">
+    <Box
+      bg="#F8F5F5"
+      id="testimonials"
+      as="section"
+      pt="52px"
+      px="22px"
+      pb="86px"
+    >
       <Heading
         fontSize="48px"
         lineHeight="56.25px"

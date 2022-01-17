@@ -9,10 +9,13 @@ import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
 import ContactUs from "../components/Home/ContactUs";
 import Footer from "../components/Home/Footer";
+import { ToastContainer } from "react-toastify";
 
 const index = () => {
   return (
     <Box as="main">
+      <ToastContainer />
+
       <Head key="home">
         <title>Talk To a Doctor Today For Less Than a Dollar ~ IWELLO</title>
         <meta

@@ -1,23 +1,19 @@
-import React from "react";
 import {
-  Input,
   Button,
-  HStack,
-  Heading,
-  Text,
-  FormErrorMessage,
-  VStack,
   FormControl,
+  FormErrorMessage,
+  Heading,
+  HStack,
+  Input,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
+import React from "react";
 import useSubscribe from "../hooks/useSubscribe";
 
 const Suscribe = () => {
-  const {
-    register,
-    errors,
-    subscribedUser: subscribedUser,
-    handleSubmit,
-  } = useSubscribe();
+  const { register, errors, subscribedUser, mockisLoadingState, handleSubmit } =
+    useSubscribe();
   console.log(errors, "errors");
   return (
     <VStack px="23px " as="section" align="flex-start" spacing="14px" py="60px">
@@ -54,7 +50,13 @@ const Suscribe = () => {
         </FormControl>
         <Button
           variant="outline"
-          mt={errors.subscribedEmail ? "-21px" : "0px"}
+          isLoading={mockisLoadingState}
+          loadingText="Subscribing"
+          mt={
+            errors.subscribedEmail && errors.subscribedEmail.message
+              ? "-22px !important"
+              : "0px"
+          }
           type="submit"
           h="50px"
           flex="0.3"
@@ -63,6 +65,7 @@ const Suscribe = () => {
           Suscribe
         </Button>
       </HStack>
+      {/* Shows toast */}
     </VStack>
   );
 };

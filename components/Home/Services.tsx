@@ -57,7 +57,7 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
 
 const Services = () => {
   return (
-    <Box pt="21px"  as="section">
+    <Box id='services' pt="21px"  as="section">
       <Heading pb="13px" fontSize="18px" px="20px" color="brand.500">
         Our Services
       </Heading>

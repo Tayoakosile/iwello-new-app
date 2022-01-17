@@ -1,5 +1,3 @@
-import React from "react";
-import Image from "next/image";
 import {
   Box,
   Button,
@@ -8,10 +6,15 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerOverlay,
+  Heading,
   HStack,
   Icon,
   useDisclosure,
+  VStack,
 } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import { IoMenuOutline } from "react-icons/io5";
 
 /**
@@ -25,6 +28,7 @@ export default function MobileNav() {
   return (
     <>
       <HStack
+        d={{ base: "flex", lg: "none" }}
         as="header"
         justify="space-between"
         bg="#fff"
@@ -51,6 +55,7 @@ export default function MobileNav() {
           </Box>
         </HStack>
       </HStack>
+      {/* Menu starts here */}
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -60,10 +65,41 @@ export default function MobileNav() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-
-          <DrawerBody></DrawerBody>
+          <DrawerBody pt="118px">
+            <VStack
+              textTransform="uppercase"
+              color="#FFFFFF"
+              alignItems="flex-start"
+              spacing="40px"
+            >
+              {[
+                { link: "home", no: "01" },
+                { link: "testimonials", no: "02" },
+                { link: "services", no: "03" },
+                { link: "team", no: "03" },
+              ].map(({ link, no }) => (
+                <Heading
+                  as="span"
+                  onClick={onClose}
+                  size="sm"
+                  color="brand.500"
+                  key={no}
+                  fontWeight="300"
+                >
+                  {/* If user clicks on home link then navigate to home or just navigate in between divs */}
+                  <Link href={`${link === "home" ? "/" : "#" + link}`}>
+                    {link}
+                  </Link>
+                </Heading>
+              ))}
+              <Button w="100%" size="lg" h="14" mx="auto">
+                <Link href="/signup">Sign Up</Link>
+              </Button>
+            </VStack>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
+      {/* Menu starts here */}
     </>
   );
 }

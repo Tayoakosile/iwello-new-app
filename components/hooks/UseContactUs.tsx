@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useToast } from "@chakra-ui/react";
 
 // TO validate user input in contact us form
 const UseContactUs = () => {
+  const toast = useToast();
   // Set a mock loading state
   const [mockisLoadingState, setMockisLoadingState] = useState<boolean>(false);
 
@@ -23,6 +25,14 @@ const UseContactUs = () => {
     setTimeout(() => {
       setMockisLoadingState(false);
       reset({});
+      toast({
+        title: "Message Sent",
+        description: "You would receive a reply via your email address",
+        status: "success",
+        position: "top-right",
+        duration: 5000,
+        isClosable: true,
+      });
       console.log("here");
     }, 3000);
     // setTimeout((),[2000])
