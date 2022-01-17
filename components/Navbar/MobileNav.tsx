@@ -21,7 +21,7 @@ import { ChakraImage } from "../../config/config";
 
 export default function MobileNav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = React.useRef<any>();
 
   return (
     <>
