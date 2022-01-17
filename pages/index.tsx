@@ -1,13 +1,14 @@
-import { Box, VStack, Heading, Button, Text } from "@chakra-ui/react";
-import React from "react";
-import Link from "next/link";
-import HeaderText from "../components/Home/HeaderText";
-import AboutUs from "../components/Home/AboutUs";
-import Services from "../components/Home/Services";
-import Testimonials from "../components/Home/Testimonials";
-import FreeTrial from "../components/Home/FreeTrial";
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
-import Suscribe from '../components/Home/Suscribe';
+import React from "react";
+import AboutUs from "../components/Home/AboutUs";
+import FreeTrial from "../components/Home/FreeTrial";
+import HeaderText from "../components/Home/HeaderText";
+import Services from "../components/Home/Services";
+import Suscribe from "../components/Home/Suscribe";
+import Testimonials from "../components/Home/Testimonials";
+import ContactUs from "../components/Home/ContactUs";
+import Footer from "../components/Home/Footer";
 
 const index = () => {
   return (
@@ -55,13 +56,14 @@ as lighting for less than a dollar! "
         />
         <meta property="twitter:image" content="" />
       </Head>
-
       <HeaderText />
       <AboutUs />
       <Services />
       <Testimonials />
       <FreeTrial />
       <Suscribe />
+      <ContactUs />
+      <Footer />
     </Box>
   );
 };

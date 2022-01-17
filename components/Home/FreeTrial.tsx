@@ -5,13 +5,14 @@ import { Box, Button, VStack, Heading, Text } from "@chakra-ui/react";
 const FreeTrial = () => {
   return (
     <VStack
+      as="section"
       bgImage="url('/img/trial.png')"
       bgRepeat="no-repeat"
       bgSize="cover"
       color="#fff"
       h="320px"
       align="center"
-      pt='56px'
+      pt="56px"
       textAlign="center"
       spacing="25px"
     >
@@ -30,7 +31,7 @@ const FreeTrial = () => {
         </Heading>
       </VStack>
       <Link href="/signup">
-        <Button px='20px' mx="auto" size="lg" >
+        <Button px="20px" mx="auto" size="lg">
           Sign Up
         </Button>
       </Link>

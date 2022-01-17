@@ -3,10 +3,13 @@ import React from "react";
 import { Box, Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import { Testimonials, TestimonialsArray } from "../../config/config";
 
-/* Individual Testimony Components*/
+/* 
+*Individual Testimony Components
+*/
 const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
   return (
     <VStack
+      as="section"
       alignItems="flex-start"
       py="43px"
       px="16px"
@@ -30,7 +33,7 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
 };
 const Testimonials = () => {
   return (
-    <Box bg="#F8F5F5" as="section" pt="52px" px="22px" pb='86px'>
+    <Box bg="#F8F5F5" as="section" pt="52px" px="22px" pb="86px">
       <Heading
         fontSize="48px"
         lineHeight="56.25px"
@@ -43,6 +46,7 @@ const Testimonials = () => {
       <VStack alignItems="flex-start" spacing="54px">
         {TestimonialsArray.map(({ name, heading, text, avatar }) => (
           <Testimonial
+            key={name}
             name={name}
             heading={heading}
             text={text}

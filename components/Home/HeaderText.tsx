@@ -1,6 +1,6 @@
-import React from "react";
+import { Button, Heading, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import { Box, VStack, Heading, Button, Text } from "@chakra-ui/react";
+import React from "react";
 
 const HeaderText = () => {
   return (
@@ -15,15 +15,15 @@ const HeaderText = () => {
         textAlign={"center"}
         py="30px"
         px="20px"
+        as="section"
         color="white"
       >
         <Heading>
-          Talk To a{" "}
+          Talk To a
           <Text as="span" color="brand.500">
             Doctor
-          </Text>{" "}
+          </Text>
           Today For Less Than a
-          {" "}
           <Text as="span" color="brand.500">
             Dollar
           </Text>
