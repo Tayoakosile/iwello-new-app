@@ -7,11 +7,11 @@ const HeaderText = () => {
     <>
       <VStack
         h="320px"
-        bgRepeat="no-repeat"
         spacing="20px"
+        bgRepeat="no-repeat"
         bgSize="cover"
-        w="100%"
         bgImage={"url('/img/homepage-image.png')"}
+        w="100%"
         textAlign={"center"}
         py="30px"
         px="20px"

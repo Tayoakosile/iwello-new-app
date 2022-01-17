@@ -7,11 +7,12 @@ import Services from "../components/Home/Services";
 import Testimonials from "../components/Home/Testimonials";
 import FreeTrial from "../components/Home/FreeTrial";
 import Head from "next/head";
+import Suscribe from '../components/Home/Suscribe';
 
 const index = () => {
   return (
     <Box as="main">
-      <Head>
+      <Head key="home">
         <title>Talk To a Doctor Today For Less Than a Dollar ~ IWELLO</title>
         <meta
           name="title"
@@ -60,6 +61,7 @@ as lighting for less than a dollar! "
       <Services />
       <Testimonials />
       <FreeTrial />
+      <Suscribe />
     </Box>
   );
 };
