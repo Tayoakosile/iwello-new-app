@@ -11,8 +11,11 @@ import Services from "../components/Home/Services";
 import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
 import DesktopAboutUs from "../components/Home/DesktopAboutUs";
+import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
+import HeaderText from "../components/Home/HeaderText";
 
 const index = () => {
+  const { toggleNavbar } = UseMeasureMediaQuery();
   return (
     <Box as="main">
       <Head key="home">
@@ -58,10 +61,8 @@ as lighting for less than a dollar! "
         />
         <meta property="twitter:image" content="" />
       </Head>
-      {/* <HeaderText /> */}
-      <DesktopHeaderText />
-      <DesktopAboutUs />
-      {/* <AboutUs /> */}
+      {toggleNavbar ? <DesktopHeaderText /> : <HeaderText />}
+      {toggleNavbar ? <DesktopAboutUs /> : <AboutUs />}
       <Services />
       <Testimonials />
       <FreeTrial />

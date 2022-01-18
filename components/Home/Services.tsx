@@ -1,6 +1,13 @@
-import { Box, Button, Heading, Stack, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
-import Link from "next/link";
+import {
+  Box,
+  Image,
+  Button,
+  Heading,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import Link from "next/Link";
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import {
@@ -11,10 +18,9 @@ import {
 import UseMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
 
 const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
-  console.log(imageSrc);
   return (
     <VStack
-      alignItems="flex-start"
+      alignItems={{ base: "flex-start", lg: "center" }}
       p="21px"
       shadow="sm"
       _hover={{
@@ -26,12 +32,12 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
         shadow: "xl",
       }}
     >
-      <Box height="10px" width="13px" >
-        <ChakraImage
-          objectFit="contain"
+      <Box as="span">
+        <Image
           alt="A doctor attending to a patient"
-          w="10px"
-          layout="fill"
+          objectFit={"contain"}
+          height="300px"
+          width="100%"
           src={imageSrc}
         />
       </Box>
@@ -76,8 +82,10 @@ const Services = () => {
         direction={{ base: "column", lg: "row" }}
         mx={{ base: "10px", lg: "auto" }}
         w={{ base: "100%", lg: "90%" }}
-        align="flex-start"
-        spacing={{ base: "32px", lg: "63px" }}
+        align="center"
+        justify="center"
+        bg="green"
+        spacing={{ base: "32px", lg: "13px" }}
       >
         {ServiceArrayProp.map(({ text, heading, imageSrc, linkText }) => (
           <Service

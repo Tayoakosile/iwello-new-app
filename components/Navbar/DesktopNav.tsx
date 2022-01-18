@@ -1,7 +1,7 @@
 import { HStack, Box, Heading, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
+import Link from "next/Link";
 
 const DesktopNav = () => {
   return (
@@ -34,8 +34,8 @@ const DesktopNav = () => {
             { link: "home", no: "01" },
             { link: "testimonials", no: "02" },
             { link: "services", no: "03" },
-            { link: "about us", no: "03" },
-            { link: "team", no: "04" },
+            { link: "about us", no: "04" },
+            { link: "team", no: "05" },
           ].map(({ link, no }) => (
             <Heading
               as="li"

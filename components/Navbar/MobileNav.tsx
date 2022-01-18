@@ -13,7 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/Link";
 import React from "react";
 import { IoMenuOutline } from "react-icons/io5";
 

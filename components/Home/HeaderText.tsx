@@ -1,5 +1,5 @@
 import { Button, Heading, Text, VStack } from "@chakra-ui/react";
-import Link from "next/link";
+import Link from "next/Link";
 import React from "react";
 
 const HeaderText = () => {

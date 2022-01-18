@@ -7,7 +7,7 @@ import {
   Link as ChakraLink,
   VStack,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import Link from "next/Link";
 import React from "react";
 import {
   FaFacebook,
@@ -18,8 +18,8 @@ import {
 
 const Footer = () => {
   return (
-    <Box as="footer" pt="91px"  pb='97px'>
-      <HStack justify="space-between" w='80%' mx='auto' align="flex-start">
+    <Box as="footer" pt="91px" pb="97px">
+      <HStack justify="space-between" w="80%" mx="auto" align="flex-start">
         <VStack
           as="nav"
           color="brand.500"

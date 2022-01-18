@@ -1,6 +1,6 @@
-import React from "react";
+import { Button, Heading, Text, VStack } from "@chakra-ui/react";
 import Link from "next/Link";
-import { Box, Button, VStack, Heading, Text } from "@chakra-ui/react";
+import React from "react";
 
 const FreeTrial = () => {
   return (
