@@ -1,22 +1,20 @@
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import AboutUs from "../components/Home/AboutUs";
+import ContactUs from "../components/Home/ContactUs";
+import DesktopHeaderText from "../components/Home/DesktopHeaderText";
+import Footer from "../components/Home/Footer";
 import FreeTrial from "../components/Home/FreeTrial";
-import HeaderText from "../components/Home/HeaderText";
 import Services from "../components/Home/Services";
 import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
-import ContactUs from "../components/Home/ContactUs";
-import Footer from "../components/Home/Footer";
-import { ToastContainer } from "react-toastify";
-import DesktopHeaderText from "../components/Home/DesktopHeaderText";
+import DesktopAboutUs from "../components/Home/DesktopAboutUs";
 
 const index = () => {
   return (
     <Box as="main">
-      <ToastContainer />
-
       <Head key="home">
         <title>Talk To a Doctor Today For Less Than a Dollar ~ IWELLO</title>
         <meta
@@ -62,7 +60,8 @@ as lighting for less than a dollar! "
       </Head>
       {/* <HeaderText /> */}
       <DesktopHeaderText />
-      <AboutUs />
+      <DesktopAboutUs />
+      {/* <AboutUs /> */}
       <Services />
       <Testimonials />
       <FreeTrial />

@@ -1,5 +1,6 @@
 import { extendTheme, chakra, withDefaultColorScheme } from "@chakra-ui/react";
 import Image from "next/image";
+import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 
 /**
  * Iwello Styling App Configuration,
@@ -69,7 +70,7 @@ export const ServiceArrayProp: Array<ServicePropsArray> = [
             through however you’re feeling`,
     heading: "Consultations",
     linkText: "Talk To a Doctor",
-    imageSrc: "/img/services/service-1.png",
+    imageSrc: "/img/services/service-1",
   },
 
   {
@@ -78,7 +79,7 @@ original or fake, we got you, find out
 with the fake drug checker`,
     heading: "Fake Drug Checker",
     linkText: "Check Drug",
-    imageSrc: "/img/services/service-2.png",
+    imageSrc: "/img/services/service-2",
   },
 
   {
@@ -88,7 +89,7 @@ join our emergency surgery funding,
 No need for a line with us.`,
     heading: "Emergency Surgery Funding",
     linkText: "Find Out More",
-    imageSrc: "/img/services/service-3.png",
+    imageSrc: "/img/services/service-3",
   },
 ];
 

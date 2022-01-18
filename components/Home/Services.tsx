@@ -1,15 +1,17 @@
-import React from "react";
-import Link from "next/link";
-import { Box, Button, Heading, Icon, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import {
-  ChakraImage,
   ServiceArrayProp,
   ServiceProps,
+  ChakraImage,
 } from "../../config/config";
+import UseMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
 
 const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
+  console.log(imageSrc);
   return (
     <VStack
       alignItems="flex-start"
@@ -24,11 +26,12 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
         shadow: "xl",
       }}
     >
-      <Box as="span">
-        <Image
+      <Box height="10px" width="13px" >
+        <ChakraImage
+          objectFit="contain"
           alt="A doctor attending to a patient"
-          height="300px"
-          width="500px"
+          w="10px"
+          layout="fill"
           src={imageSrc}
         />
       </Box>
@@ -56,23 +59,38 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
 };
 
 const Services = () => {
+  const { toggleNavbar } = UseMeasureMediaQuery();
+
   return (
-    <Box id='services' pt="21px"  as="section">
-      <Heading pb="13px" fontSize="18px" px="20px" color="brand.500">
+    <Box id="services" pt={{ base: "21px", md: "100px" }} as="section">
+      <Heading
+        pb={{ base: "13px", md: "46px" }}
+        fontSize={{ base: "18px", md: "36px" }}
+        px={{ base: "20px", lg: "80px" }}
+        color="brand.500"
+      >
         Our Services
       </Heading>
 
-      <VStack mx="10px" align="flex-start" spacing="32px">
+      <Stack
+        direction={{ base: "column", lg: "row" }}
+        mx={{ base: "10px", lg: "auto" }}
+        w={{ base: "100%", lg: "90%" }}
+        align="flex-start"
+        spacing={{ base: "32px", lg: "63px" }}
+      >
         {ServiceArrayProp.map(({ text, heading, imageSrc, linkText }) => (
           <Service
             key={heading}
             text={text}
-            imageSrc={imageSrc}
+            imageSrc={
+              toggleNavbar ? imageSrc + "-desktop.png" : imageSrc + ".png"
+            }
             heading={heading}
             linkText={linkText}
           />
         ))}
-      </VStack>
+      </Stack>
     </Box>
   );
 };
