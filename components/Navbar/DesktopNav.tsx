@@ -42,7 +42,7 @@ const DesktopNav = () => {
               listStyleType="none"
               color="#4E4C4C"
               key={no}
-              fontWeight="500"
+              fontWeight="bold"
               fontSize="18px"
             >
               {/* If user clicks on home link then navigate to home or just navigate in between divs */}
@@ -56,14 +56,14 @@ const DesktopNav = () => {
         <Box
           as="span"
           listStyleType="none"
-          fontWeight="300"
+          fontWeight="bold"
           fontSize="18px"
           whiteSpace="nowrap"
           textTransform="capitalize"
         >
           <Link href="#contact">Contact us</Link>
         </Box>
-        <Button borderRadius="4px" w="80%">
+        <Button borderRadius="4px" w="150px" h="45px">
           <Link href="/signup">Get Started</Link>
         </Button>
       </HStack>

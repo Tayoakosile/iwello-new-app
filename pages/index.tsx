@@ -10,6 +10,7 @@ import Testimonials from "../components/Home/Testimonials";
 import ContactUs from "../components/Home/ContactUs";
 import Footer from "../components/Home/Footer";
 import { ToastContainer } from "react-toastify";
+import DesktopHeaderText from "../components/Home/DesktopHeaderText";
 
 const index = () => {
   return (
@@ -54,12 +55,13 @@ For Less Than a Dollar ~ IWELLO"
         />
         <meta
           property="twitter:description"
-          content="Find trustedmedical personnel close to your location as fast 
+          content="Find trusted medical personnel close to your location as fast 
 as lighting for less than a dollar! "
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <HeaderText />
+      {/* <HeaderText /> */}
+      <DesktopHeaderText />
       <AboutUs />
       <Services />
       <Testimonials />

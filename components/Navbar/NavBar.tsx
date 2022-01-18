@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Headroom from "react-headroom";
-import { useMediaQuery } from "@chakra-ui/react";
-import MobileNav from "./MobileNav";
+import UseMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
 import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+
 
 const NavBar = () => {
-  // Show Different nav-bars based on device width
-  const [toggleNavbar, setNavBarsBasedOnDeviceWidth] = useState<boolean>(false);
-  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
-
-  // make sure it is immeidately reflected
-  useEffect(() => {
-    isLargerThan768
-      ? setNavBarsBasedOnDeviceWidth(true)
-      : setNavBarsBasedOnDeviceWidth(false);
-  }, [isLargerThan768]);
-
+  const { toggleNavbar } = UseMeasureMediaQuery();
   return <Headroom>{toggleNavbar ? <DesktopNav /> : <MobileNav />}</Headroom>;
 };
 
