@@ -79,13 +79,11 @@ const Services = () => {
 
       <Stack
         direction={{ base: "column", lg: "row" }}
-        mx={{ base: "0px", lg: "auto" }}
-        w={{ base: "100%", lg: "90%" }}
+        mx={{ base: "auto", lg: "auto" }}
+        w={{ base: "95%", lg: "90%" }}
         align="center"
         justify="center"
         spacing={{ base: "32px", lg: "13px" }}
-        w="95%"
-        mx="auto"
       >
         {ServiceArrayProp.map(({ text, heading, imageSrc, linkText }) => (
           <Service

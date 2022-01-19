@@ -13,9 +13,13 @@ import Testimonials from "../components/Home/Testimonials";
 import DesktopAboutUs from "../components/Home/DesktopAboutUs";
 import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 import HeaderText from "../components/Home/HeaderText";
+import usePageFullyLoaded from "../components/hooks/usePageFullyLoaded";
+import Loader from "../components/Loader";
 
 const index = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
+  const { pageFullyLoaded } = usePageFullyLoaded();
+  console.log(pageFullyLoaded, "is page fully loaded");
   return (
     <>
       <Head key="home">
@@ -61,14 +65,7 @@ as lighting for less than a dollar! "
         />
         <meta property="twitter:image" content="" />
       </Head>
-      {toggleNavbar ? <DesktopHeaderText /> : <HeaderText />}
-      {toggleNavbar ? <DesktopAboutUs /> : <AboutUs />}
-      <Services />
-      <Testimonials />
-      <FreeTrial />
-      <Suscribe />
-      <ContactUs />
-      <Footer />
+      <Loader />
     </>
   );
 };

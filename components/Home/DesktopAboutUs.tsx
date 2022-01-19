@@ -6,6 +6,7 @@ const DesktopAboutUs = () => {
     <VStack
       as="section"
       bg="linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('/img/aboutUs-Desktop.png')"
+      
       align="flex-start"
       w="100%"
       h="532px"
