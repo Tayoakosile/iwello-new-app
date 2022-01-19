@@ -17,7 +17,7 @@ import HeaderText from "../components/Home/HeaderText";
 const index = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
   return (
-    <Box as="main">
+    <>
       <Head key="home">
         <title>Talk To a Doctor Today For Less Than a Dollar ~ IWELLO</title>
         <meta
@@ -69,7 +69,7 @@ as lighting for less than a dollar! "
       <Suscribe />
       <ContactUs />
       <Footer />
-    </Box>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ const useSubscribe = () => {
 
   const {
     register,
+    setValue,
     reset,
     handleSubmit,
     formState: { errors },
@@ -18,6 +19,7 @@ const useSubscribe = () => {
     setMockisLoadingState(true);
     setTimeout(() => {
       setMockisLoadingState(false);
+      setValue("subscribedEmail", "");
       toast({
         title: "Suscribed Successfully",
         description: "You have been subscribed",
@@ -26,11 +28,10 @@ const useSubscribe = () => {
         duration: 5000,
         isClosable: true,
       });
-      reset({})
     }, 2000);
     console.log(data);
   };
-  return { register, handleSubmit, subscribedUser, errors ,mockisLoadingState};
+  return { register, handleSubmit, subscribedUser, errors, mockisLoadingState };
 };
 
 export default useSubscribe;

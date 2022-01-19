@@ -1,19 +1,20 @@
 import { Button, Heading, Text, VStack } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 import React from "react";
 
 const HeaderText = () => {
   return (
     <>
       <VStack
-        h="320px"
+        h="350px"
         spacing="20px"
         bgRepeat="no-repeat"
         bgSize="cover"
         bgImage={"url('/img/homepage-image.png')"}
         w="100%"
         textAlign={"center"}
-        py="30px"
+        pt="61px"
+        pb="30px"
         px="20px"
         as="section"
         color="white"
@@ -23,7 +24,7 @@ const HeaderText = () => {
           <Text as="span" color="brand.500">
             {""} Doctor
           </Text>
-          {""}Today For Less Than a {""}
+          {""} Today For Less Than a {""}
           <Text as="span" color="brand.500">
             Dollar
           </Text>

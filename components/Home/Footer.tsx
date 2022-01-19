@@ -7,7 +7,7 @@ import {
   Link as ChakraLink,
   VStack,
 } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebook,

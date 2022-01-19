@@ -1,14 +1,13 @@
 import { HStack, Box, Heading, Button } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 const DesktopNav = () => {
   return (
     <HStack
       align="center"
       bg="white"
-      as="header"
       px="60px"
       justify="space-between"
       h="100px"

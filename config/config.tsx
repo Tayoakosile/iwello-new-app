@@ -63,14 +63,14 @@ interface ServicePropsArray {
   linkText: string;
 }
 
-/* Array to show the services Iwello Renders */
+/* Array to show the Services Iwello Renders */
 export const ServiceArrayProp: Array<ServicePropsArray> = [
   {
     text: `We have a list of experienced doctors that you can trust to walk you
             through however you’re feeling`,
     heading: "Consultations",
     linkText: "Talk To a Doctor",
-    imageSrc: "/img/services/service-1",
+    imageSrc: "/img/Services/service-1",
   },
 
   {
@@ -79,7 +79,7 @@ original or fake, we got you, find out
 with the fake drug checker`,
     heading: "Fake Drug Checker",
     linkText: "Check Drug",
-    imageSrc: "/img/services/service-2",
+    imageSrc: "/img/Services/service-2",
   },
 
   {
@@ -89,7 +89,7 @@ join our emergency surgery funding,
 No need for a line with us.`,
     heading: "Emergency Surgery Funding",
     linkText: "Find Out More",
-    imageSrc: "/img/services/service-3",
+    imageSrc: "/img/Services/service-3",
   },
 ];
 

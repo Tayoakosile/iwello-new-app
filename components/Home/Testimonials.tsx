@@ -13,7 +13,7 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
       alignItems="flex-start"
       py="33px"
       px="16px"
-      h="270px"
+      h="fit"
       w="full"
       bg="white"
       spacing="8px"
@@ -22,7 +22,7 @@ const Testimonial = ({ name, heading, text, avatar }: Testimonials) => {
     >
       <Avatar alt="User name" name={avatar} bg="gray.100" color="brand.800" />
       <Heading fontSize="16px">{heading}</Heading>
-      <Text color="gray.500" fontSize="14px" lineHeight="20px">
+      <Text color="black" fontSize="14px" lineHeight="20px">
         {text}
       </Text>
       <Text pt="24px" alignSelf="flex-end" color="brand.500">
@@ -44,8 +44,10 @@ const Testimonials = () => {
       <Heading
         fontSize="48px"
         lineHeight="56.25px"
-        color="rgb(62 36 130 / 54%)"
-        fontWeight="bolder"
+        color="rgba(109, 64, 229, 1)"
+        opacity="0.05"
+        fontWeight="900"
+        mb="-10px"
       >
         Testimonials
       </Heading>

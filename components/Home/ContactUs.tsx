@@ -16,7 +16,7 @@ const ContactUs = () => {
     UseContactUs();
   console.log(errors);
   return (
-    <Box as="section" id ='contact' px="23px" bg="#F8F5F5" pt="55px" pb="64px">
+    <Box as="section" id="contact" px="23px" bg="#F8F5F5" pt="55px" pb="64px">
       <Heading fontSize="16px" pb="25px">
         Contact Us
       </Heading>
@@ -96,8 +96,8 @@ const ContactUs = () => {
           loadingText="Submitting..."
           borderRadius="4px"
           variant="outline"
-          w="136px"
-          h="40px"
+          w="50%"
+          h="50px"
           alignSelf="flex-end"
           mt="14px"
         >

@@ -16,7 +16,7 @@ const Suscribe = () => {
     useSubscribe();
   console.log(errors, "errors");
   return (
-    <VStack px="23px " as="section" align="flex-start" spacing="14px" py="60px">
+    <VStack px="23px" as="section" align="flex-start" spacing="14px" py="60px">
       <Heading fontSize="16px">Subscribe to our newsletter</Heading>
       <Text fontSize="14px">
         Enter your email adress below to subscribe to our weekly newsletter to
@@ -49,12 +49,13 @@ const Suscribe = () => {
           </FormErrorMessage>
         </FormControl>
         <Button
+          fontSize={mockisLoadingState ? "14px" : "16px"}
           variant="outline"
           isLoading={mockisLoadingState}
           loadingText="Subscribing"
           mt={
             errors.subscribedEmail && errors.subscribedEmail.message
-              ? "-22px !important"
+              ? "-26px !important"
               : "0px"
           }
           type="submit"

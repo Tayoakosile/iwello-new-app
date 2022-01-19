@@ -1,12 +1,12 @@
 import { Button, Heading, Text, VStack } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 import React from "react";
 
 const FreeTrial = () => {
   return (
     <VStack
       as="section"
-      bgImage="url('/img/trial.png')"
+      bgImage="linear-gradient(251.38deg, rgba(0, 0, 0, 0.5) 20.16%, rgba(0, 0, 0, 0.5) 44.35%, rgba(0, 0, 0, 0) 93.06%),url('/img/trial.png')"
       bgRepeat="no-repeat"
       bgSize="cover"
       color="#fff"
@@ -31,7 +31,7 @@ const FreeTrial = () => {
         </Heading>
       </VStack>
       <Link href="/signup">
-        <Button px="20px" mx="auto" size="lg">
+        <Button fontSize="14px" w="60%" h='14' px="20px" mx="auto" size="lg">
           Sign Up
         </Button>
       </Link>

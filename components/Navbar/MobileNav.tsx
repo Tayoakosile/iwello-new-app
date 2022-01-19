@@ -13,7 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import Link from "next/Link";
+import Link from "next/link";
 import React from "react";
 import { IoMenuOutline } from "react-icons/io5";
 
@@ -28,7 +28,6 @@ export default function MobileNav() {
   return (
     <>
       <HStack
-        as="header"
         justify="space-between"
         bg="#fff"
         alignItems={"center"}
@@ -45,9 +44,9 @@ export default function MobileNav() {
           height={23}
         />
         <HStack as="span" spacing="25px">
-          <Button size="md" rounded="sm">
+          <Button fontSize="14px" size="md" rounded="md">
             {" "}
-            Get started
+            Get Started
           </Button>
           <Box as="span" ref={btnRef} onClick={onOpen}>
             <Icon as={IoMenuOutline} w="35px" h="35px" />
@@ -95,7 +94,6 @@ export default function MobileNav() {
                 <Link href="/signup">Sign Up</Link>
               </Button>
             </VStack>
-
           </DrawerBody>
         </DrawerContent>
       </Drawer>

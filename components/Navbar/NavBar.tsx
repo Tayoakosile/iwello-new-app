@@ -4,7 +4,6 @@ import UseMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-
 const NavBar = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
   return <Headroom>{toggleNavbar ? <DesktopNav /> : <MobileNav />}</Headroom>;
