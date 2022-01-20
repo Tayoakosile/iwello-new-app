@@ -21,9 +21,10 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
       px="21px"
       py="20px"
       shadow="sm"
-      spacing="9px"
+      spacing={{ base: "9px", lg: "15px" }}
       cursor="pointer"
       transition="0.3s all ease-in"
+      flex="0.33"
       _hover={{
         shadow: "xl",
       }}
@@ -49,10 +50,11 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
       </Box>
       <Link href="/signup">
         <Button
-          alignSelf={"flex-end"}
+          alignSelf={{ base: "flex-end", lg: "flex-start" }}
           rightIcon={<BsArrowRight />}
+          alignItems="center"
           colorScheme="brand"
-          fontWeight="400"
+          fontWeight="800"
           fontSize={"14px"}
           variant="link"
         >
@@ -69,7 +71,7 @@ const Services = () => {
   return (
     <Box id="services" pt={{ base: "21px", md: "100px" }} as="section">
       <Heading
-        pb={{ base: "13px", md: "46px" }}
+        pb={{ base: "0px", md: "10px" }}
         fontSize={{ base: "18px", md: "36px" }}
         px={{ base: "20px", lg: "80px" }}
         color="brand.500"

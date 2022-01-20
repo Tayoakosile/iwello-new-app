@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import UseMeasureMediaQuery from "./UseMeasureMediaQuery";
 
 const useSubscribe = () => {
   const [mockisLoadingState, setMockisLoadingState] = useState<boolean>(false);
   const toast = useToast();
-
+  const { toggleNavbar } = UseMeasureMediaQuery();
   const {
     register,
     setValue,
@@ -24,7 +25,7 @@ const useSubscribe = () => {
         title: "Suscribed Successfully",
         description: "You have been subscribed",
         status: "success",
-        position: "top-right",
+        position: toggleNavbar ? "bottom-end" : "top-right",
         duration: 5000,
         isClosable: true,
       });

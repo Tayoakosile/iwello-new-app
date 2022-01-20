@@ -1,22 +1,22 @@
 import {
-  Box,
-  Button,
-  Heading,
-  HStack,
-  Icon,
-  Link as ChakraLink,
-  VStack,
+    Box,
+    Button,
+    Heading,
+    HStack,
+    Icon,
+    Link as ChakraLink,
+    VStack
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
+    FaWhatsapp
 } from "react-icons/fa";
 
-const Footer = () => {
+const MobileFooter = () => {
   return (
     <Box as="footer" pt="91px" pb="97px">
       <HStack justify="space-between" w="80%" mx="auto" align="flex-start">
@@ -26,42 +26,45 @@ const Footer = () => {
           spacing="9px"
           alignItems={"flex-start"}
         >
-          <Button
-            variant="link"
-            textDecoration={"none"}
-            _focus={{
-              textDecor: "underline",
-              transition: "0.3s all ease-in",
-            }}
-            fontWeight="400"
-            transition="0.3s all"
-          >
-            <Link href="/">Home</Link>
-          </Button>
-          <Button
-            variant="link"
-            textDecoration={"none"}
-            _activeLink={{
-              textDecor: "underline",
-              transition: "0.3s all ease-in",
-            }}
-            fontWeight="400"
-            transition="0.3s all"
-          >
-            <Link href="/">About us</Link>
-          </Button>
-          <Button
-            variant="link"
-            textDecoration={"none"}
-            _activeLink={{
-              textDecor: "underline",
-              transition: "0.3s all ease-in",
-            }}
-            fontWeight="400"
-            transition="0.3s all"
-          >
-            <Link href="/">Testimonials</Link>
-          </Button>
+            {/* Home Link */}
+            <Button
+              variant="link"
+              textDecoration={"none"}
+              _focus={{
+                textDecor: "underline",
+                transition: "0.3s all ease-in",
+              }}
+              fontWeight="400"
+              transition="0.3s all"
+            >
+              <Link href="/">Home</Link>
+            </Button>
+            {/* About us Link */}
+
+            <Button
+              variant="link"
+              textDecoration={"none"}
+              _activeLink={{
+                textDecor: "underline",
+                transition: "0.3s all ease-in",
+              }}
+              fontWeight="400"
+              transition="0.3s all"
+            >
+              <Link href="/">About us</Link>
+            </Button>
+            <Button
+              variant="link"
+              textDecoration={"none"}
+              _activeLink={{
+                textDecor: "underline",
+                transition: "0.3s all ease-in",
+              }}
+              fontWeight="400"
+              transition="0.3s all"
+            >
+              <Link href="/">Testimonials</Link>
+            </Button>
           <Button
             variant="link"
             textDecoration={"none"}
@@ -87,6 +90,8 @@ const Footer = () => {
             <Link href="/">The Team</Link>
           </Button>
         </VStack>
+
+        {/* Contact us via email address */}
         <VStack align="flex-start" spacing="7px">
           <Box as="span">
             <Heading size="md">Contact us</Heading>
@@ -123,9 +128,10 @@ const Footer = () => {
             </ChakraLink>
           </HStack>
         </VStack>
+        
       </HStack>
     </Box>
   );
 };
 
-export default Footer;
+export default MobileFooter;

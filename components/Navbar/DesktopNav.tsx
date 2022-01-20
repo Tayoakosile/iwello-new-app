@@ -16,6 +16,7 @@ const DesktopNav = () => {
         <Link href="/">
           <Box as="span" cursor="pointer">
             <Image
+              alt="Company's logo"
               src="/img/logo/iwello-desktop.svg"
               width={108}
               height={100}

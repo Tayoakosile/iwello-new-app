@@ -1,25 +1,19 @@
-import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
-import { ToastContainer } from "react-toastify";
 import AboutUs from "../components/Home/AboutUs";
 import ContactUs from "../components/Home/ContactUs";
+import DesktopAboutUs from "../components/Home/DesktopAboutUs";
 import DesktopHeaderText from "../components/Home/DesktopHeaderText";
-import Footer from "../components/Home/Footer";
+import Footer from "../components/Home/Footer/Footer";
 import FreeTrial from "../components/Home/FreeTrial";
+import HeaderText from "../components/Home/HeaderText";
 import Services from "../components/Home/Services";
 import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
-import DesktopAboutUs from "../components/Home/DesktopAboutUs";
 import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
-import HeaderText from "../components/Home/HeaderText";
-import usePageFullyLoaded from "../components/hooks/usePageFullyLoaded";
-import Loader from "../components/Loader";
 
 const index = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
-  const { pageFullyLoaded } = usePageFullyLoaded();
-  console.log(pageFullyLoaded, "is page fully loaded");
   return (
     <>
       <Head key="home">
@@ -65,7 +59,14 @@ as lighting for less than a dollar! "
         />
         <meta property="twitter:image" content="" />
       </Head>
-      <Loader />
+      {toggleNavbar ? <DesktopHeaderText /> : <HeaderText />}
+      {toggleNavbar ? <DesktopAboutUs /> : <AboutUs />}
+      <Services />
+      <Testimonials />
+      <FreeTrial />
+      <Suscribe />
+      <ContactUs />
+      <Footer />
     </>
   );
 };

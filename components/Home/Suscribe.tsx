@@ -16,19 +16,38 @@ const Suscribe = () => {
     useSubscribe();
   console.log(errors, "errors");
   return (
-    <VStack px="23px" as="section" align="flex-start" spacing="14px" py="60px">
-      <Heading fontSize="16px">Subscribe to our newsletter</Heading>
-      <Text fontSize="14px">
+    <VStack
+      px={{ base: "23px", lg: "170px" }}
+      as="section"
+      align="flex-start"
+      spacing="14px"
+      py={{ base: "60px", lg: "50px" }}
+    >
+      <Heading fontSize={{ base: "16px", lg: "36px" }}>
+        Subscribe to our newsletter
+      </Heading>
+      <Text
+        fontSize={{ base: "14px", lg: "18px" }}
+        w={{ base: "100%", lg: "75%" }}
+      >
         Enter your email adress below to subscribe to our weekly newsletter to
         get the latest news about our services and other medical advances, you
         can unsubscribe at any time if you choose to.
       </Text>
       {/* Suscribe Input and button */}
-      <HStack spacing="0" as="form" onSubmit={handleSubmit(subscribedUser)}>
+
+      <HStack
+        spacing="0"
+        w="full"
+        as="form"
+        pt={{ base: "", lg: "32px" }}
+        onSubmit={handleSubmit(subscribedUser)}
+      >
         <FormControl flex="0.7" isInvalid={errors.subscribedEmail}>
           <Input
             size="lg"
-            h="50px"
+            h={{ base: "50px", lg: "70px" }}
+            shadow="md"
             {...register("subscribedEmail", {
               required: "Your Email Address is required",
               pattern: {
@@ -42,24 +61,31 @@ const Suscribe = () => {
             })}
             placeholder="Enter your email address"
             borderRadius="0px"
-            _placeholder={{ fontSize: "14px", color: "#4E4C4C80" }}
+            _placeholder={{
+              fontSize: { base: "14px", lg: "18px" },
+              color: "#4E4C4C80",
+            }}
           />
-          <FormErrorMessage whiteSpace="nowrap">
+          <FormErrorMessage
+            whiteSpace="nowrap"
+            fontSize={{ base: "16px", lg: "18px" }}
+          >
             {errors.subscribedEmail && errors.subscribedEmail.message}
           </FormErrorMessage>
         </FormControl>
         <Button
+          shadow="md"
           fontSize={mockisLoadingState ? "14px" : "16px"}
           variant="outline"
           isLoading={mockisLoadingState}
           loadingText="Subscribing"
           mt={
             errors.subscribedEmail && errors.subscribedEmail.message
-              ? "-26px !important"
+              ? { base: "-28px !important", lg: "-30px !important" }
               : "0px"
           }
           type="submit"
-          h="50px"
+          h={{ base: "50px", lg: "70px" }}
           flex="0.3"
           borderRadius="0px"
         >

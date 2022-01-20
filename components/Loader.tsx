@@ -22,14 +22,14 @@ const AnimateTextVariant = {
 };
 const Loader = () => {
   return (
-    <Center h="80vh">
+    <Center h="100vh">
       <AnimatedHeader
         variants={AnimateHeaderVariant}
         initial="hidden"
         animate="show"
         color="brand.500"
         letterSpacing="-3px"
-        fontSize="60px !important"
+        fontSize="100px !important"
       >
         <AnimatedText
           variants={AnimateTextVariant}

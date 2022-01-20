@@ -9,27 +9,24 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import UseContactUs from "../hooks/UseContactUs";
+import UseDesktopContactUs from "../hooks/UseContactUs";
 
-const ContactUs = () => {
+const DesktopContactUs = () => {
   const { register, mockisLoadingState, handleSubmit, SubmitForm, errors } =
-    UseContactUs();
+    UseDesktopContactUs();
   console.log(errors);
   return (
-    <Box
-      as="section"
-      d={{ base: "block", lg: "none" }}
-      id="contact"
-      px="23px"
-      bg="#F8F5F5"
-      pt="55px"
-      pb="64px"
-    >
+    <Box as="section" flex="0.4" id="contact">
       <Heading fontSize="16px" pb="25px">
         Contact Us
       </Heading>
-      <VStack spacing="15px" onSubmit={handleSubmit(SubmitForm)} as="form">
-        {/* Name */}
+      <VStack
+        spacing="15px"
+        onSubmit={handleSubmit(SubmitForm)}
+        as="form"
+        id="form"
+      >
+        {/* User's name Input field */}
         <FormControl isInvalid={errors && errors.name}>
           <Input
             //   Validates the form
@@ -42,17 +39,18 @@ const ContactUs = () => {
             })}
             h="60px"
             colorScheme="brand"
-            bg="#fff"
             placeholder="Name"
             id="name"
             type="text"
-            border="0px"
+            border="1px solid #4E4C4C !important"
           />
           <FormErrorMessage>
             {errors.name && errors.name.message}
           </FormErrorMessage>
         </FormControl>
+        {/* User's name Input field */}
 
+        {/* Email Address */}
         <FormControl isInvalid={errors && errors.email}>
           <Input
             h="60px"
@@ -63,20 +61,22 @@ const ContactUs = () => {
                 message: "Name must be more than 2 characters",
               },
             })}
-            bg="#fff"
+            type="email"
             placeholder="Email Address"
-            border="0px"
             colorScheme="brand"
             id="email"
-            type="email"
+            border="1px solid #4E4C4C !important"
           />
           <FormErrorMessage>
             {errors.email && errors.email.message}
           </FormErrorMessage>
         </FormControl>
+        {/* Email Address */}
 
+        {/* Text Message Input */}
         <FormControl isInvalid={errors && errors.message}>
           <Textarea
+            h="117px"
             {...register("message", {
               required: "Message Required",
               minLength: {
@@ -85,18 +85,18 @@ const ContactUs = () => {
               },
             })}
             resize="none"
-            h="60px"
             colorScheme="brand"
-            bg="#fff"
             placeholder="Message"
-            border="0px"
+            border="1px solid #4E4C4C !important"
+            zIndex="100"
             id="Message"
-            type="text"
           />
           <FormErrorMessage>
             {errors.message && errors.message.message}
           </FormErrorMessage>
         </FormControl>
+        {/* Text Message Input */}
+
         {/* Submit Button */}
         <Button
           type="submit"
@@ -106,7 +106,7 @@ const ContactUs = () => {
           variant="outline"
           w="50%"
           h="50px"
-          alignSelf="flex-end"
+          alignSelf="flex-start"
           mt="14px"
         >
           Submit
@@ -116,4 +116,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default DesktopContactUs;

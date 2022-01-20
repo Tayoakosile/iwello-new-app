@@ -20,12 +20,12 @@ const DesktopHeaderText = () => {
       >
         <Heading w="100%" fontSize="64px">
           Talk To a{" "}
-          <Text as="span" color="brand.500" >
+          <Text as="span" color="brand.500">
             {" "}
             Doctor
           </Text>{" "}
           Today For Less Than a{" "}
-          <Text as="span" color="brand.500" >
+          <Text as="span" color="brand.500">
             {" "}
             Dollar
           </Text>
@@ -34,7 +34,7 @@ const DesktopHeaderText = () => {
           Let’s help get you care from a licensed medical practitioner with less
           than a dollar at your convienence.
         </Text>
-        <HStack w="full" as="span" spacing="12px" h='full'>
+        <HStack w="full" as="span" spacing="12px" h="full">
           <Button fontSize={"18px"} flex="0.3" h="60px">
             Get started
           </Button>
@@ -46,7 +46,12 @@ const DesktopHeaderText = () => {
       </VStack>
 
       <Box flex="0.4">
-        <Image src="/img/homepage-image-desktop.png" width={480} height={616} />
+        <Image
+          alt="landing Page Header"
+          src="/img/homepage-image-desktop.png"
+          width={480}
+          height={616}
+        />
       </Box>
     </HStack>
   );
