@@ -1,7 +1,9 @@
-import { HStack, Box, Heading, Button } from "@chakra-ui/react";
+import { HStack, Box, Heading, Button, chakra } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+
+const CustomizedNextLink = chakra(Link);
 
 const DesktopNav = () => {
   return (
@@ -11,8 +13,10 @@ const DesktopNav = () => {
       px="60px"
       justify="space-between"
       h="100px"
+      as="nav"
     >
-      <HStack as="nav" align="center" spacing="39px">
+      <HStack align="center" spacing="39px">
+        {/* Company's logo */}
         <Link href="/">
           <Box as="span" cursor="pointer">
             <Image
@@ -23,7 +27,9 @@ const DesktopNav = () => {
             />
           </Box>
         </Link>
+        {/* Company's logo */}
 
+        {/* Links */}
         <HStack
           textTransform="capitalize"
           alignItems="center"
@@ -44,20 +50,29 @@ const DesktopNav = () => {
               key={no}
               fontWeight="bold"
               fontSize="18px"
+              className="iwello_link"
             >
               {/* If user clicks on home link then navigate to home or just navigate in between divs */}
-              <Link href={`${link === "home" ? "/" : "#" + link}`}>{link}</Link>
+              <CustomizedNextLink
+                className="link"
+                href={`${link === "home" ? "/" : "#" + link}`}
+              >
+                {link}
+              </CustomizedNextLink>
             </Heading>
           ))}
         </HStack>
+        {/* Links */}
       </HStack>
-      {/* contact us and get started */}
+
+      {/* contact us and get started button */}
       <HStack spacing="28px" align="center">
         <Box
           as="span"
           listStyleType="none"
           fontWeight="bold"
           fontSize="18px"
+          className="iwello_link"
           whiteSpace="nowrap"
           textTransform="capitalize"
         >

@@ -6,7 +6,7 @@ const HeaderText = () => {
   return (
     <>
       <VStack
-        h="350px"
+        h={{ base: "350px", md: "400px" }}
         spacing="20px"
         bgRepeat="no-repeat"
         bgSize="cover"
@@ -19,7 +19,10 @@ const HeaderText = () => {
         as="section"
         color="white"
       >
-        <Heading>
+        <Heading
+          fontSize={{ base: "24px", md: "40px" }}
+          w={{ base: "100%", md: "70%", lg: "100%" }}
+        >
           Talk To a
           <Text as="span" color="brand.500">
             {""} Doctor
@@ -29,13 +32,23 @@ const HeaderText = () => {
             Dollar
           </Text>
         </Heading>
-        <Text>
+        <Text
+          w={{ base: "100%", md: "60%", lg: "100%" }}
+          fontSize={{ md: "18px" }}
+        >
           Let’s help get you care from a licensed medical practitioner with less
           than a dollar at your convienence.
         </Text>
 
-        <Button mt="20px" size="lg" w="80%" h="14" mx="auto" rounded="sm">
-          <Link href="/login">Get Started</Link>
+        <Button
+          mt="20px"
+          size="lg"
+          w={{ base: "80%", md: "50%" }}
+          h={{ base: "14", md: "16" }}
+          mx="auto"
+          rounded="sm"
+        >
+        <Link href="/signup">Get Started</Link>
         </Button>
       </VStack>
     </>

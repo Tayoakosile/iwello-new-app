@@ -17,7 +17,7 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
   return (
     <VStack
       // shadow="lg"
-      alignItems={{ base: "flex-start", lg: "center" }}
+      alignItems={{ base: "flex-start",  md: "center" }}
       px="21px"
       py="20px"
       shadow="sm"

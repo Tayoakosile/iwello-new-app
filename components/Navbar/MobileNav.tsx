@@ -43,11 +43,13 @@ export default function MobileNav() {
           width={70}
           height={23}
         />
-        <HStack as="span" spacing="25px">
+        <HStack  as="span" spacing="25px">
+          <Link href='/signup'>
           <Button fontSize="14px" size="md" rounded="md">
             {" "}
             Get Started
           </Button>
+          </Link>
           <Box as="span" ref={btnRef} onClick={onOpen}>
             <Icon as={IoMenuOutline} w="35px" h="35px" />
           </Box>

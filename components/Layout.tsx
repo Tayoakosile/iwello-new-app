@@ -9,7 +9,6 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
   return (
     <ChakraProvider theme={customTheme}>
       <ScaleFade key={router.route} initialScale={0.9} in={true}>
-        
         {!pageFullyLoaded ? (
           <React.Fragment>
             <>{children}</>
@@ -17,6 +16,8 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
         ) : (
           <Loader />
         )}
+        
+        {/* <>{children}</> */}
       </ScaleFade>
     </ChakraProvider>
   );
