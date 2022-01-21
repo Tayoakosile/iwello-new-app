@@ -16,7 +16,7 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
         ) : (
           <Loader />
         )}
-        
+
         {/* <>{children}</> */}
       </ScaleFade>
     </ChakraProvider>

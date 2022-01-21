@@ -13,7 +13,6 @@ const signup = () => {
           <Heading>Let’s Get You Started</Heading>
           <Text
             color="#4E4C4C"
-            fontWeight={"semibold"}
             fontSize={{ base: "18px" }}
           >
             Are you signing up as a:

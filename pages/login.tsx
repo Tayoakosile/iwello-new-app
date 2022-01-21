@@ -1,5 +1,7 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import LoginForm from "../components/Login/LoginForm";
+import IwelloLogo from "../reusables/IwelloLogo";
 
 const login = () => {
   return (
@@ -7,19 +9,16 @@ const login = () => {
       <VStack spacing={{ base: "22px" }}>
         <IwelloLogo />
         <Box as="span" textAlign="center">
-          <Heading>Let’s Get You Started</Heading>
+          <Heading>Welcome Back</Heading>
           <Text
             color="#4E4C4C"
-            fontWeight={"semibold"}
+            fontWeight={"400"}
             fontSize={{ base: "18px" }}
           >
-            Are you signing up as a:
+            Please login into your account
           </Text>
         </Box>
-        {/* Patient or Doctor dropdown */}
-        <Menu />
-        {/* Patient or Doctor dropdown */}
-        <SignUpForm />
+        <LoginForm />
       </VStack>
     </Box>
   );
