@@ -1,20 +1,14 @@
-import React, { useState } from "react";
 import {
-  Box,
-  Text,
-  chakra,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  VStack,
-  InputRightElement,
-  InputGroup,
+    Button, chakra,
+    FormControl,
+    FormLabel,
+    Heading,
+    Input, InputGroup, InputRightElement, Text, VStack
 } from "@chakra-ui/react";
-const CustomizedButton = chakra(GoogleLoginButton);
-import { GoogleLoginButton } from "react-social-login-buttons";
-import { Button } from "@chakra-ui/react";
 import Link from "next/link";
+import React, { useState } from "react";
+import { GoogleLoginButton } from "react-social-login-buttons";
+const CustomizedButton = chakra(GoogleLoginButton);
 
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -24,13 +18,14 @@ const SignUpForm = () => {
     <VStack w="full" spacing="45px">
       <CustomizedButton
         fontSize={"18px !important"}
-        w={{ base: "80% !important" }}
+        w={{ base: "85% !important" }}
         h={{ base: "55px !important" }}
         align="center"
         px="31px  !important"
+        fontWeight="500 !important"
         mx="auto"
-        color ='rgba(0, 0, 0, 0.54);'
-        whiteSpace={'nowrap'}
+        color="rgba(0, 0, 0, 0.54) !important"
+        whiteSpace={"nowrap"}
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         onClick={() => alert("Hello")}
       >
@@ -51,7 +46,6 @@ const SignUpForm = () => {
             borderRadius="5px"
             bg="#F7F7F7"
             size="lg"
-            h="60px"
             type="email"
             placeholder="example@gmail.com"
           />
@@ -62,9 +56,10 @@ const SignUpForm = () => {
         <FormControl>
           <FormLabel>Password</FormLabel>
 
-          {/* Show password */}
+          {/* Password password */}
           <InputGroup size="lg">
             <Input
+              
               borderRadius="5px"
               type={showPassword ? "text" : "password"}
               bg="#F7F7F7"
@@ -86,10 +81,10 @@ const SignUpForm = () => {
         </FormControl>
         {/* Password */}
 
-        {/* Password */}
+        {/* Confirm Password Input  */}
         <FormControl>
           <FormLabel>Confirm Password</FormLabel>
-          <InputGroup size="lg">
+          <InputGroup size="lg" >
             <Input
               borderRadius="5px"
               bg="#F7F7F7"
@@ -110,7 +105,8 @@ const SignUpForm = () => {
             </InputRightElement>
           </InputGroup>
         </FormControl>
-        {/* Password */}
+        {/* Confirm Password Input */}
+
         <Button
           type="submit"
           alignSelf={"center"}
