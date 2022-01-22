@@ -122,3 +122,10 @@ reaction`,
     avatar: "TOLUWANI OWOEYE",
   },
 ];
+
+//
+export interface SignUp {
+  text: string;
+  linkText: string;
+  link: string;
+}

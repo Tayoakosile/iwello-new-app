@@ -22,11 +22,11 @@ const Menu = () => {
         as={Button}
         aria-label="Options"
         color="brand.500"
-        w={{ base: "125px" }}
+        w={{ base: "50%" }}
         borderColor="#C4C4C4"
         size="md"
         fontSize={{ base: "18px" }}
-        h={{ base: "40px" }}
+        h={{ base: "55px" }}
         rightIcon={<AiOutlineCaretDown />}
       >
         {MenuOption}
