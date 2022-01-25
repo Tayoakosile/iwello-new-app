@@ -1,15 +1,31 @@
-import { Box, VStack, chakra } from "@chakra-ui/react";
 import React from "react";
-import useMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
+import { chakra, VStack } from "@chakra-ui/react";
+import { AiOutlineApple } from "react-icons/ai";
+// import AppleIcon from ".";
+
 import {
-  GoogleLoginButton,
+  createButton,
+  createSvgIcon,
   FacebookLoginButton,
-  AppleLoginButton,
+  GoogleLoginButton,
 } from "react-social-login-buttons";
+
+import useMeasureMediaQuery from "../hooks/UseMeasureMediaQuery";
+
+const config = {
+  icon: createSvgIcon(AiOutlineApple),
+  text: "Sign up with Apple",
+  style: { background: "#000" },
+  activeStyle: { background: "#293e69" },
+  iconSize: "32px",
+};
+const MyAppleLoginButton = createButton(config);
 
 const CustomizedFacebookButton = chakra(FacebookLoginButton);
 const CustomizedGoogleButton = chakra(GoogleLoginButton);
-const CustomizedAppleButton = chakra(AppleLoginButton);
+const CustomizedAppleButton = chakra(MyAppleLoginButton);
+
+// icon config
 
 const SocialMediaSignUp = () => {
   const { toggleNavbar } = useMeasureMediaQuery();
@@ -18,7 +34,7 @@ const SocialMediaSignUp = () => {
   return (
     <VStack w="full" my="24px !important" spacing="-10">
       <CustomizedGoogleButton
-        fontSize={"18px !important"}
+        fontSize={{ base: "18px !important", lg: "24px !important" }}
         w={{ base: "85% !important", lg: "100% !important" }}
         h={{ base: "55px !important" }}
         align="center"
@@ -35,7 +51,6 @@ const SocialMediaSignUp = () => {
 
       <CustomizedFacebookButton
         d={{ base: "none !important", lg: "block !important" }}
-
         fontSize={{ base: "18px !important", lg: "24px !important" }}
         w={{ base: "85% !important", lg: "100% !important" }}
         h={{ base: "55px !important" }}
@@ -49,7 +64,7 @@ const SocialMediaSignUp = () => {
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         onClick={() => alert("Hello")}
       >
-        <span>Sign Up with facebook</span>
+        <span>Sign Up with Facebook</span>
       </CustomizedFacebookButton>
       {/*  */}
       <CustomizedAppleButton

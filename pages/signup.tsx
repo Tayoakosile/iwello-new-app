@@ -1,27 +1,30 @@
+import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import { Box, Stack, VStack, Heading, Text } from "@chakra-ui/react";
-import IwelloLogo from "../reusables/IwelloLogo";
+import CompleteProfile from "../components/CompleteProfile/CompleteProfile";
+import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 import Menu from "../components/SignUp/Menu";
 import SignUpForm from "../components/SignUp/SignUpForm";
 import SocialMediaSignUp from "../components/SignUp/SocialMediaSignUp";
 import IwelloBack from "../reusables/IwelloBack";
+import IwelloLogo from "../reusables/IwelloLogo";
 import SignUpOrSignIn from "../reusables/SignUpOrSignIn";
-import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 
 const signup = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
 
   return (
     <Stack
+    position='relative'
       direction={{ base: "column", lg: "row" }}
       as="section"
       spacing={{ base: "22px", md: "122px" }}
-      py={{ base: "32px" }}
+      py={{ base: "32px",lg:'100px' }}
       px={{ base: "23px", lg: "100px" }}
-      align={{ base: "center" }}
+      align={{ base: "center", }}
+      
     >
       <VStack
-        align={{ base: "center", md: "", lg: "flex-start" }}
+        align={{ base: "center", md: "center", lg: "flex-start" }}
         spacing={{ base: "22px", lg: "28px" }}
         flex={{ base: "1", lg: "0.6" }}
         w="full"
@@ -37,12 +40,7 @@ const signup = () => {
           Are you signing up as a:
         </Text>
         <Menu />
-        {!toggleNavbar && (
-          <SocialMediaSignUp
-            mobileDisplay="flex !important"
-            desktopDisplay="none !important"
-          />
-        )}
+        {!toggleNavbar && <SocialMediaSignUp />}
         <SignUpForm />
         <SignUpOrSignIn
           text="Already have an account?"
@@ -52,10 +50,10 @@ const signup = () => {
       </VStack>
       {toggleNavbar && (
         <Box as="span" flex={{ base: "1", lg: "0.4" }}>
-          <SocialMediaSignUp
-          />
+          <SocialMediaSignUp />
         </Box>
       )}
+      <CompleteProfile />
     </Stack>
   );
 };

@@ -10,18 +10,48 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
+import Router from "next/router";
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setConfirmPassword] = useState<boolean>(false);
-
+  // console.log(Router);
   return (
     <VStack
-      spacing="32px"
+      spacing="40px"
       as="form"
       align="flex-start"
+      // mx="auto"
       alignSelf="flex-start"
-      w={{ base: "full", lg: "80%" }}
+      w={{ base: "100%", lg: "80%" }}
     >
+      {/* First name */}
+      <FormControl>
+        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
+          First Name
+        </FormLabel>
+        <Input
+          borderRadius="5px"
+          bg="#F7F7F7"
+          size="lg"
+          type="text"
+          placeholder="Enter your first name"
+        />
+      </FormControl>
+      {/* Email Address */}
+
+      {/* Last Name*/}
+      <FormControl>
+        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>Last Name</FormLabel>
+        <Input
+          borderRadius="5px"
+          bg="#F7F7F7"
+          size="lg"
+          type="text"
+          placeholder="Enter your last name"
+        />
+      </FormControl>
+      {/* Last Name */}
+
       {/* Email Address */}
       <FormControl>
         <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
@@ -100,6 +130,7 @@ const SignUpForm = () => {
         size="lg"
         h="50px"
         fontSize={"18px"}
+        onClick={() => Router.push("/confirmemail")}
       >
         Create Account
       </Button>

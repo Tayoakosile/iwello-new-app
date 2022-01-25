@@ -1,16 +1,8 @@
-import React from "react";
 import {
-  Menu as ChakraMenu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  Button,
-  MenuOptionGroup,
-  Box,
-  MenuDivider,
+  Button, Menu as ChakraMenu,
+  MenuButton, MenuItem, MenuList
 } from "@chakra-ui/react";
+import React from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
 
 const Menu = () => {
