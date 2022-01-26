@@ -7,6 +7,7 @@ import SignUpForm from "../components/SignUp/SignUpForm";
 import SocialMediaSignUp from "../components/SignUp/SocialMediaSignUp";
 import IwelloBack from "../reusables/IwelloBack";
 import IwelloLogo from "../reusables/IwelloLogo";
+import MetaTags from "../reusables/MetaTags";
 import SignUpOrSignIn from "../reusables/SignUpOrSignIn";
 
 const signup = () => {
@@ -14,15 +15,20 @@ const signup = () => {
 
   return (
     <Stack
-    position='relative'
+      position="relative"
       direction={{ base: "column", lg: "row" }}
       as="section"
       spacing={{ base: "22px", md: "122px" }}
-      py={{ base: "32px",lg:'100px' }}
+      py={{ base: "32px", lg: "100px" }}
       px={{ base: "23px", lg: "100px" }}
-      align={{ base: "center", }}
-      
+      align={{ base: "center" }}
     >
+      <MetaTags
+        key={20}
+        title="Sign-up ~ Iwello | Talk To a Doctor Today 
+For Less Than a Dollar"
+        description="Sign up to enjoy all the full features of IwelloNg"
+      />
       <VStack
         align={{ base: "center", md: "center", lg: "flex-start" }}
         spacing={{ base: "22px", lg: "28px" }}
