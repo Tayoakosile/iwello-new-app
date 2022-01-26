@@ -48,6 +48,7 @@ const Suscribe = () => {
             size="lg"
             h={{ base: "50px", lg: "70px" }}
             shadow="md"
+            type="text"
             {...register("subscribedEmail", {
               required: "Your Email Address is required",
               pattern: {

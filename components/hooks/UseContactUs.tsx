@@ -32,10 +32,8 @@ const UseContactUs = () => {
         duration: 5000,
         isClosable: true,
       });
-  reset({ name: "", email: "", message: "" });
-
+      reset({ name: "", email: "", message: "" });
     }, 3000);
-
   };
   return {
     register,

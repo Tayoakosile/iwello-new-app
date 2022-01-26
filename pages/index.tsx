@@ -20,7 +20,7 @@ const index = () => {
     <>
       <MetaTags
         title="Home ~ Iwello | Talk To a Doctor Today 
-For Less Than a Dollar "
+For Less Than a Dollar!"
         description="Find trusted
 medical personnel close to your location as fast 
 as lightning for less than a dollar!"
