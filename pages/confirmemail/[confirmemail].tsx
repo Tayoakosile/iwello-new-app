@@ -1,11 +1,15 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+
 import IwelloBack from "../../reusables/IwelloBack";
 
 const confirmEmail = () => {
   const router = useRouter();
   const { confirmemail } = router.query;
+  const user = useSelector((state) => state.user.value);
+
   return (
     <>
       <IwelloBack m={{ base: "6", md: "8" }} />
@@ -26,7 +30,7 @@ const confirmEmail = () => {
             as="span"
             color="brand.500"
           >
-            {confirmemail}
+            {user.email}
           </Heading>
           {/* <Button>Back</Button> */}
         </VStack>

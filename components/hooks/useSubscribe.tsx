@@ -29,6 +29,7 @@ const useSubscribe = () => {
         duration: 5000,
         isClosable: true,
       });
+
     }, 2000);
     console.log(data);
   };

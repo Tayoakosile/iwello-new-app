@@ -18,8 +18,8 @@ const SignUpForm = () => {
   const {
     register,
     handleConfirmPassword,
-    setUserPassword,
     handleSubmit,
+    mockIsLoading,
     userSignUpInfo,
     errors,
   } = useSignUp();
@@ -130,7 +130,7 @@ const SignUpForm = () => {
             type={showPassword ? "text" : "password"}
             bg="#F7F7F7"
             placeholder="**********************"
-            onChange={(e) => setUserPassword(e.target.value)}
+            // onChange={(e) => setUserPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
             <chakra.button
@@ -189,6 +189,8 @@ const SignUpForm = () => {
       <Button
         type="submit"
         alignSelf={{ base: "center", lg: "flex-start" }}
+        isLoading={mockIsLoading}
+        loadingText="Submitting"
         w={{ base: "90%", lg: "100%" }}
         size="lg"
         h="50px"
