@@ -1,15 +1,13 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
+import IwelloBack from "../reusables/IwelloBack";
+import { RootState } from "../stores/reduxstore";
 
-import IwelloBack from "../../reusables/IwelloBack";
-
-const confirmEmail = () => {
-  const router = useRouter();
-  const { confirmemail } = router.query;
-  const user = useSelector((state) => state.user.value);
-
+const ConfirmEmail = () => {
+  const { email } = useSelector(
+    (state: RootState) => state.userSignUpDetails.value
+  );
   return (
     <>
       <IwelloBack m={{ base: "6", md: "8" }} />
@@ -30,7 +28,7 @@ const confirmEmail = () => {
             as="span"
             color="brand.500"
           >
-            {user.email}
+            {email}
           </Heading>
           {/* <Button>Back</Button> */}
         </VStack>
@@ -39,4 +37,4 @@ const confirmEmail = () => {
   );
 };
 
-export default confirmEmail;
+export default ConfirmEmail;

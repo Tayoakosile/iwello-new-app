@@ -53,7 +53,7 @@ const Suscribe = () => {
               required: "Your Email Address is required",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Invalid Email Address, please check again",
+                message: "Invalid Email Address",
               },
               min: {
                 value: 4,

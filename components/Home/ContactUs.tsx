@@ -1,12 +1,9 @@
 import {
-  Box,
-  FormControl,
+  Box, Button, FormControl,
   FormErrorMessage,
-  Heading,
-  Button,
-  Input,
+  Heading, Input,
   Textarea,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import React from "react";
 import UseContactUs from "../hooks/UseContactUs";
@@ -14,7 +11,6 @@ import UseContactUs from "../hooks/UseContactUs";
 const ContactUs = () => {
   const { register, mockisLoadingState, handleSubmit, SubmitForm, errors } =
     UseContactUs();
-  console.log(errors);
   return (
     <Box
       as="section"

@@ -7,7 +7,6 @@ const UseMeasureMediaQuery = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 1000px)");
 
   // make sure it is immediately reflected
-  console.log(toggleNavbar);
   useEffect(() => {
     isLargerThan768
       ? setNavBarsBasedOnDeviceWidth(true)

@@ -2,10 +2,9 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-// import {signup } from "";
+import { signup } from "../../stores/user";
 
 import Router from "next/router";
-import { signup } from "../redux/user";
 
 const useSignUp = () => {
   const toast = useToast();
@@ -27,15 +26,9 @@ const useSignUp = () => {
     }
   };
 
-  const userSignUpInfo = (data: {
-    firstname: string;
-    lastname: string;
-    password: string;
-    email: string;
-  }) => {
+  const userSignUpInfo = (data: any) => {
     const { firstname, password, email, lastname } = data;
     setMockIsLoading(true);
-    dispatch(signup({ firstname, password, email, lastname }));
     setTimeout(() => {
       setMockIsLoading(false);
       reset({});
@@ -47,12 +40,13 @@ const useSignUp = () => {
         duration: 3000,
         isClosable: true,
         onCloseComplete: () => {
-          Router.push(`confirmemail/${getValues("email")}`);
+          Router.push(`/confirmemail`);
         },
         variant: "left-accent",
       });
       console.log(data);
     }, 3000);
+    dispatch(signup({ firstname, password, email, lastname }));
   };
 
   return {

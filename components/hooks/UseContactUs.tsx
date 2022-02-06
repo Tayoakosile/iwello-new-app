@@ -18,7 +18,11 @@ const UseContactUs = () => {
   } = useForm();
 
   // Contains all the details of the user in the contact form
-  const SubmitForm = (data: any) => {
+  const SubmitForm = (data: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
     setMockisLoadingState(true);
 
     // Fake sending data to backend
@@ -34,7 +38,9 @@ const UseContactUs = () => {
       });
       reset({ name: "", email: "", message: "" });
     }, 3000);
+    // React redux
   };
+
   return {
     register,
     handleSubmit,
