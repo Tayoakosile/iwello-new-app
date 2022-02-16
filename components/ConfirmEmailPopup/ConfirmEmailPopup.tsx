@@ -1,18 +1,19 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../stores/reduxstore";
 import {
   AlertDialog,
   AlertDialogBody,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogContent,
+  AlertDialogFooter,
   AlertDialogOverlay,
   Button,
   Heading,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { confirmEmailPopup } from "../../stores/confirmemail";
+import { RootState } from "../../stores/reduxstore";
+import IwelloLogo from "../../reusables/IwelloLogo";
 
 const ConfirmEmailPopup = () => {
   const dispatch = useDispatch();
@@ -39,19 +40,31 @@ const ConfirmEmailPopup = () => {
         onClose={onClose}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent bg="red " h="fit" py="12" w="90%">
-            <AlertDialogBody textAlign="center">
+          <AlertDialogContent h="fit" py="10" w="90%">
+            <IwelloLogo />
+            <AlertDialogBody textAlign="center" pt="33">
               <Heading fontSize="24px">
                 Please confirm your email address
               </Heading>
-              <Text fontSize="16px">A confirmatory mail has been sent to</Text>
-              <Text fontSize="16px">example@gmail.com</Text>
+              <Text pt="4" fontSize="16px" pb='2'>
+                A confirmatory mail has been sent to:
+              </Text>
+              <Text
+                as="span"
+                color="brand.500"
+                fontWeight="bold"
+                fontSize="16px"
+              >
+                example@gmail.com
+              </Text>
             </AlertDialogBody>
 
-            <AlertDialogFooter as="span" align="center">
-              <Button w="149px" h="60px" ref={cancelRef}>
-                Login
-              </Button>
+            <AlertDialogFooter as="div" justifyContent="center" w="full">
+              <Link passHref href="/login">
+                <Button onClick={onClose} w="149px" h="60px">
+                  Login
+                </Button>
+              </Link>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialogOverlay>

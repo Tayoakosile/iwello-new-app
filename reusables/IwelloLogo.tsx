@@ -9,6 +9,7 @@ const IwelloLogo = () => {
         src="/img/logo/logo-mobile.png"
         width={79}
         height={24}
+        objectFit ='contain'
       />
     </>
   );
