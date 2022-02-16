@@ -1,14 +1,12 @@
 import {
   Button,
-  chakra,
-  FormControl,
+  chakra, Divider, FormControl,
   FormLabel,
-  Heading,
-  Input,
+  Heading, HStack, Input,
   InputGroup,
   InputRightElement,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -20,27 +18,46 @@ const LoginForm = () => {
   const [showConfirmPassword, setConfirmPassword] = useState<boolean>(false);
 
   return (
-    <VStack w="full" spacing="45px">
-      <CustomizedButton
-        fontSize={"18px !important"}
-        w={{ base: "85% !important" }}
-        h={{ base: "55px !important" }}
-        align="center"
-        px="31px  !important"
-        mx="auto"
-        whiteSpace={"nowrap"}
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        onClick={() => alert("Hello")}
-      >
-        <Text
-          as="span"
-          color="rgba(0, 0, 0, 0.54) !important"
-          fontWeight="500 !important"
+    <VStack
+      sx={{
+        "input:focus ,input:hover ": {
+          borderColor: "brand.500",
+          boxShadow: "0 0 0 1px #6d40e5",
+          transition: "0.3px all ease-in",
+        },
+      }}
+      w="full"
+      spacing={{ base: "45px", lg: "35px" }}
+    >
+      <VStack as="span" w="full">
+        <CustomizedButton
+          fontSize={"18px !important"}
+          w={{ base: "85% !important", lg: "70% !important" }}
+          h={{ base: "55px !important" }}
+          align="center"
+          px="31px  !important"
+          mx="auto"
+          whiteSpace={"nowrap"}
+          boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+          onClick={() => alert("Hello")}
         >
-          Sign in with Google
-        </Text>
-      </CustomizedButton>
-      {/* Form starts here */}
+          <Text
+            as="span"
+            color="rgba(0, 0, 0, 0.54) !important"
+            fontWeight="bold !important"
+          >
+            Sign in with Google
+          </Text>
+        </CustomizedButton>
+        {/* Form starts here */}
+
+        <HStack as="span" pt="48px" w="full">
+          <Divider color="green" w="full" opacity="1" />
+          <Text px="1">or</Text>
+          <Divider color="green" w="full" opacity="1" />
+        </HStack>
+      </VStack>
+
       <VStack
         spacing="22px"
         as="form"
@@ -106,7 +123,7 @@ const LoginForm = () => {
           h="50px"
           fontSize={"18px"}
         >
-          Login
+          Log in
         </Button>
 
         <Heading size="sm" alignSelf={"center"} pt="26px">

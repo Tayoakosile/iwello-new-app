@@ -1,7 +1,6 @@
-import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import CompleteProfile from "../components/CompleteProfile/CompleteProfile";
-import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 import Menu from "../components/SignUp/Menu";
 import SignUpForm from "../components/SignUp/SignUpForm";
 import SocialMediaSignUp from "../components/SignUp/SocialMediaSignUp";
@@ -9,19 +8,19 @@ import IwelloBack from "../reusables/IwelloBack";
 import IwelloLogo from "../reusables/IwelloLogo";
 import MetaTags from "../reusables/MetaTags";
 import SignUpOrSignIn from "../reusables/SignUpOrSignIn";
+import ConfirmEmailPopup from "../components/ConfirmEmailPopup/ConfirmEmailPopup";
 
 const signup = () => {
-  const { toggleNavbar } = UseMeasureMediaQuery();
-
   return (
     <>
-      <IwelloBack mt="7" mx="4" />
+      <IwelloBack mt="7" mx={{ base: "4", lg: "24" }} />
       <Stack
         position="relative"
-        direction={{ base: "column", lg: "row" }}
         as="section"
+        direction="column"
         spacing={{ base: "22px", md: "122px" }}
-        py={{ base: "32px", lg: "50px" }}
+        boxShadow="none"
+        py={{ base: "32px" }}
         px={{ base: "23px", lg: "100px" }}
         align={{ base: "center" }}
       >
@@ -32,24 +31,27 @@ For Less Than a Dollar"
           description="Sign up to enjoy all the full features of IwelloNg"
         />
         <VStack
-          align={{ base: "center", md: "center", lg: "flex-start" }}
+          align="center"
           spacing={{ base: "22px", lg: "28px" }}
           flex={{ base: "1", lg: "0.6" }}
-          w="full"
+          w={{ base: "full", lg: "60%" }}
         >
           <IwelloLogo />
           <Heading textAlign={{ base: "center" }}>
             Let’s Get You Started
           </Heading>
+
           <Text
-            color="#4E4C4C"
+            fontWeight={"bold"}
+            fontSize="18px"
+            color=" rgba(78, 76, 76, 1)"
             textAlign={{ base: "center" }}
-            fontSize={{ base: "18px" }}
           >
             Are you signing up as a:
           </Text>
+
           <Menu />
-          {!toggleNavbar && <SocialMediaSignUp />}
+          <SocialMediaSignUp />
           <SignUpForm />
           <SignUpOrSignIn
             text="Already have an account?"
@@ -57,13 +59,10 @@ For Less Than a Dollar"
             linkText="Sign In"
           />
         </VStack>
-        {toggleNavbar && (
-          <Box as="span" flex={{ base: "1", lg: "0.4" }}>
-            <SocialMediaSignUp />
-          </Box>
-        )}
+
         <CompleteProfile />
       </Stack>
+      <ConfirmEmailPopup />
     </>
   );
 };

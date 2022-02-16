@@ -29,58 +29,11 @@ const SignUpForm = () => {
       spacing="40px"
       as="form"
       onSubmit={handleSubmit(userSignUpInfo)}
-      align="flex-start"
-      alignSelf="flex-start"
-      w={{ base: "100%", lg: "80%" }}
+      align={{ base: "flex-start", lg: "center" }}
+      alignSelf={{ base: "flex-start", lg: "center" }}
+      w={{ base: "100%", lg: "70%" }}
+
     >
-      {/* First name */}
-      <FormControl isInvalid={errors.firstname}>
-        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
-          First Name
-        </FormLabel>
-        <Input
-          borderRadius="5px"
-          bg="#F7F7F7"
-          size="lg"
-          type="text"
-          placeholder="Enter your first name"
-          {...register("firstname", {
-            required: "Please type in your first Name",
-            minLength: {
-              value: 3,
-              message: "First name too short, please try another",
-            },
-          })}
-        />
-
-        <FormErrorMessage>
-          {errors.firstname && errors.firstname.message}
-        </FormErrorMessage>
-      </FormControl>
-
-      {/* Last Name*/}
-      <FormControl isInvalid={errors.lastname}>
-        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>Last Name</FormLabel>
-        <Input
-          borderRadius="5px"
-          bg="#F7F7F7"
-          size="lg"
-          {...register("lastname", {
-            required: "Please Type in your Last Name",
-            min: {
-              value: 3,
-              message: "Your Last name must be more than 3 character",
-            },
-          })}
-          type="text"
-          placeholder="Enter your last name"
-        />
-        <FormErrorMessage>
-          {errors.lastname && errors.lastname.message}
-        </FormErrorMessage>
-      </FormControl>
-      {/* Last Name */}
-
       {/* Email Address */}
       <FormControl isInvalid={errors.email}>
         <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>

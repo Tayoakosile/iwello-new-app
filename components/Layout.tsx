@@ -1,5 +1,6 @@
 import { ChakraProvider, ScaleFade } from "@chakra-ui/react";
 import "@fontsource/roboto";
+import "@fontsource/rubik";
 import React, { ReactNode } from "react";
 import { Provider } from "react-redux";
 import { customTheme } from "../config/config";

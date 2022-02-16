@@ -35,8 +35,8 @@ const SocialMediaSignUp = () => {
     <VStack w="full" my="24px !important" spacing="-10">
       <CustomizedGoogleButton
         fontSize={{ base: "18px !important", lg: "24px !important" }}
-        w={{ base: "85% !important", lg: "100% !important" }}
-        h={{ base: "55px !important" }}
+        w={{ base: "85% !important", lg: "65% !important" }}
+        h={{ base: "55px !important", lg: "70px !important" }}
         align="center"
         px="31px  !important"
         fontWeight="500 !important"
@@ -48,42 +48,6 @@ const SocialMediaSignUp = () => {
       >
         <span>Continue with Google</span>
       </CustomizedGoogleButton>
-
-      <CustomizedFacebookButton
-        d={{ base: "none !important", lg: "block !important" }}
-        fontSize={{ base: "18px !important", lg: "24px !important" }}
-        w={{ base: "85% !important", lg: "100% !important" }}
-        h={{ base: "55px !important" }}
-        align="center"
-        px="31px  !important"
-        fontWeight="500 !important"
-        mx="auto"
-        color="rgba(255, 255, 255, 1) !important"
-        bg="rgba(24, 119, 242, 1)  !important"
-        whiteSpace={"nowrap"}
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        onClick={() => alert("Hello")}
-      >
-        <span>Sign Up with Facebook</span>
-      </CustomizedFacebookButton>
-      {/*  */}
-      <CustomizedAppleButton
-        d={{ base: "none !important", lg: "block !important" }}
-        fontSize={{ base: "18px !important", lg: "24px !important" }}
-        w={{ base: "85% !important", lg: "100% !important" }}
-        h={{ base: "55px !important" }}
-        align="center"
-        px="31px  !important"
-        fontWeight="500 !important"
-        mx="auto"
-        color="rgba(255, 255, 255, 1) !important"
-        bg="rgba(0, 0, 0, 1)  !important"
-        whiteSpace={"nowrap"}
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        onClick={() => alert("Hello")}
-      >
-        <span>Sign Up with Apple</span>
-      </CustomizedAppleButton>
     </VStack>
   );
 };

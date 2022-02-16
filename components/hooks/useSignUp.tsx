@@ -2,9 +2,10 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { signup } from "../../stores/user";
 
 import Router from "next/router";
+import { signUp } from "../../stores/user";
+import { confirmEmailPopup } from "../../stores/confirmemail";
 
 const useSignUp = () => {
   const toast = useToast();
@@ -32,21 +33,10 @@ const useSignUp = () => {
     setTimeout(() => {
       setMockIsLoading(false);
       reset({});
-      toast({
-        title: "Account Created",
-        description: "Redirecting.....",
-        status: "success",
-        position: "top-right",
-        duration: 3000,
-        isClosable: true,
-        onCloseComplete: () => {
-          Router.push(`/confirmemail`);
-        },
-        variant: "left-accent",
-      });
-      console.log(data);
+      // SHow confirm Email dialog
+      dispatch(confirmEmailPopup({ showDialog: true }));
     }, 3000);
-    dispatch(signup({ firstname, password, email, lastname }));
+    dispatch(signUp({ firstname, password, email, lastname }));
   };
 
   return {

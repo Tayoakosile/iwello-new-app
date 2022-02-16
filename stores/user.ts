@@ -13,11 +13,11 @@ const userSlice = createSlice({
   },
   name: "user",
   reducers: {
-    signup: (state, action) => {
+    signUp: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { signup } = userSlice.actions;
+export const { signUp } = userSlice.actions;
 export default userSlice.reducer;
