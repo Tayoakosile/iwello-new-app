@@ -40,7 +40,7 @@ const ConfirmEmailPopup = () => {
         onClose={onClose}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent h="fit" py="10" w="90%">
+          <AlertDialogContent borderTop='20px solid #6d40e5' h="fit" py="10" w="90%">
             <IwelloLogo />
             <AlertDialogBody textAlign="center" pt="33">
               <Heading fontSize="24px">

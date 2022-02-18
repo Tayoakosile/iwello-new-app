@@ -3,12 +3,14 @@ import contactUsSlice from "./contactus";
 //
 import { configureStore } from "@reduxjs/toolkit";
 import confirmEmailSlice from "./confirmemail";
+import consultationSlice from "./consultationPopup";
 
 const store = configureStore({
   reducer: {
     userSignUpDetails: signUpSlice,
     contactUs: contactUsSlice,
     confirmEmail: confirmEmailSlice,
+    consultation: consultationSlice,
   },
 });
 
