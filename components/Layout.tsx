@@ -6,8 +6,6 @@ import { Provider } from "react-redux";
 import { customTheme } from "../config/config";
 import store from "../stores/reduxstore";
 import usePageFullyLoaded from "./hooks/usePageFullyLoaded";
-import "../config/fontawesome";
-// import the library
 
 const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
   const { pageFullyLoaded } = usePageFullyLoaded();
