@@ -41,6 +41,7 @@ const MenuToTheRight = ({ isOpen, onOpen, onClose }) => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      
     </>
   );
 };

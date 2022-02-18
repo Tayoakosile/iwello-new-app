@@ -18,27 +18,29 @@ const DoctorMenu = () => {
   const btnRef = React.useRef();
 
   return (
-    <Box as={ReactHeadRoom}>
-      <HStack justify="space-between" h="full">
-        {/* Doctor's Avatar and name */}
-        <MenuToTheLeftAndDoctorProfile />
-        {/* Notification Icon */}
-        <HStack pr="3" as="span" flex="0.3" spacing="5" justify="flex-end">
-          <Icon as={IoIosNotificationsOutline} w="8" h="8" />
+    <>
+      <Box as={ReactHeadRoom}>
+        <HStack justify="space-between" h="full">
+          {/* Doctor's Avatar and name */}
+          <MenuToTheLeftAndDoctorProfile />
+          {/* Notification Icon */}
+          <HStack pr="3" as="span" flex="0.3" spacing="5" justify="flex-end">
+            <Icon as={IoIosNotificationsOutline} w="8" h="8" />
 
-          {/* Opens Menu to the right */}
-          <Box as="span" onClick={onOpen}>
-            <Icon as={HiMenuAlt2} w="8" h="8" />
-          </Box>
-          {/*Menu */}
+            {/* Opens Menu to the right */}
+            <Box as="span" onClick={onOpen}>
+              <Icon as={HiMenuAlt2} w="8" h="8" />
+            </Box>
+            {/*Menu */}
+          </HStack>
         </HStack>
-      </HStack>
 
-      {/* Doctors Menu */}
-      <MenuToTheRight isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+        {/* Doctors Menu */}
+        <MenuToTheRight isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
 
-      {/* Menu items */}
-    </Box>
+        {/* Menu items */}
+      </Box>
+    </>
   );
 };
 
