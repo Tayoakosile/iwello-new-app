@@ -1,16 +1,29 @@
-import { Heading, HStack, Icon, VStack } from "@chakra-ui/react";
+import {
+  Heading,
+  IconButton,
+  HStack,
+  Input,
+  Icon,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
-import { BsSearch } from "react-icons/bs";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { BsSearch, BsArrowReturnLeft } from "react-icons/bs";
 import ConsultationPopUp from "../../components/Doctor/Consultations/ConsultationPopUp";
 import Consultations from "../../components/Doctor/Consultations/Consultations";
 import DoctorMenu from "../../components/Doctor/Menu/DoctorMenu";
 import MetaTags from "../../reusables/MetaTags";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const DoctorDashboard = () => {
+  const AnimatedHStack = motion(HStack);
+  const [searchConsultation, setSearchConsultation] = useState<boolean>(false);
+
   return (
     <VStack
       as="section"
-      align="stretch"
+      align="stretch" 
       w="full"
       justify="stretch"
       spacing="43px"
@@ -31,13 +44,61 @@ const DoctorDashboard = () => {
       {/* Doctor's Avatar,Name and Icon */}
       <DoctorMenu />
 
-      {/* Consultation */}
-      <HStack justify="space-between" px="6">
-        <Heading size="md" fontSize="18px">
-          Consultations
-        </Heading>
-        <Icon as={BsSearch} w="6" h="6" />
-      </HStack>
+      {/* Search and back button */}
+      {searchConsultation ? (
+        <AnimatedHStack
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}
+          whileInView={{
+            x: 0,
+          }}
+          transition={{ duration: 0.1, type: "tween" }}
+          as="span"
+          spacing="6"
+          px="4"
+        >
+          <span onClick={() => setSearchConsultation(false)}>
+            <IconButton
+              aria-label="back-button"
+              color="gray.500"
+              variant="outline"
+              rounded="sm"
+            >
+              <IoArrowBackOutline />
+            </IconButton>
+          </span>
+          <Input
+            colorScheme={"brand"}
+            variant="ghost"
+            placeholder="Search for a consultation..."
+            size="lg"
+            w="full"
+          />
+        </AnimatedHStack>
+      ) : (
+        <AnimatedHStack
+          as="span"
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          whileInView={{
+            x: 0,
+          }}
+          transition={{ duration: 0.1 }}
+          justify="space-between"
+          px="6"
+        >
+          <Heading size="md" fontSize="18px">
+            Consultations
+          </Heading>
+          <span
+            onClick={() => {
+              setSearchConsultation(true);
+            }}
+          >
+            <Icon as={BsSearch} w="6" h="6" />
+          </span>
+        </AnimatedHStack>
+      )}
       <Consultations />
       <ConsultationPopUp />
     </VStack>

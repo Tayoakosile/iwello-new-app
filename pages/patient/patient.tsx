@@ -1,7 +1,7 @@
 import React from "react";
 
-const Patient = () => {
-  return <div>Patient</div>;
+const D = () => {
+  return <div>D</div>;
 };
 
-export default Patient;
+export default D;

@@ -22,7 +22,7 @@ import useConsultation from "../../hooks/useConsultation";
 const ConsultationPopUp = () => {
   const { showConsultationPopUp } = useConsultation();
   const dispatch = useDispatch();
-  const cancelRef = useRef();
+  const cancelRef = useRef<HTMLButtonElement>(null);
 
   const { showConsultationDialog } = useSelector(
     (state: RootState) => state.consultation.value
@@ -34,7 +34,7 @@ const ConsultationPopUp = () => {
       <AlertDialog
         isOpen={showConsultationDialog}
         blockScrollOnMount
-        // closeOnOverlayClick={false}
+        closeOnOverlayClick={true}
         isCentered
         size="lg"
         leastDestructiveRef={cancelRef}

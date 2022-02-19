@@ -27,7 +27,8 @@ const ConfirmEmailPopup = () => {
     dispatch(confirmEmailPopup({ showDialog: true }));
   };
 
-  const cancelRef = React.useRef();
+  const cancelRef = React.useRef<HTMLButtonElement>(null);
+
   return (
     <>
       <AlertDialog
@@ -40,13 +41,18 @@ const ConfirmEmailPopup = () => {
         onClose={onClose}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent borderTop='20px solid #6d40e5' h="fit" py="10" w="90%">
+          <AlertDialogContent
+            borderTop="20px solid #6d40e5"
+            h="fit"
+            py="10"
+            w="90%"
+          >
             <IwelloLogo />
             <AlertDialogBody textAlign="center" pt="33">
               <Heading fontSize="24px">
                 Please confirm your email address
               </Heading>
-              <Text pt="4" fontSize="16px" pb='2'>
+              <Text pt="4" fontSize="16px" pb="2">
                 A confirmatory mail has been sent to:
               </Text>
               <Text

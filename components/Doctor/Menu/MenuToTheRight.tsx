@@ -10,9 +10,16 @@ import {
 } from "@chakra-ui/react";
 import { DoctorMenuItems } from "../../../config/config";
 
-const MenuToTheRight = ({ isOpen, onOpen, onClose }) => {
-  const btnRef = React.useRef();
-
+const MenuToTheRight = ({
+  isOpen,
+  onOpen,
+  onClose,
+}: {
+  onOpen: Function;
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  const btnRef = React.useRef<HTMLButtonElement>(null);
   return (
     <>
       <Drawer
@@ -41,7 +48,6 @@ const MenuToTheRight = ({ isOpen, onOpen, onClose }) => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      
     </>
   );
 };

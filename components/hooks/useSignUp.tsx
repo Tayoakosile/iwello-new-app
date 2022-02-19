@@ -17,7 +17,12 @@ const useSignUp = () => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<{
+    firstname: string;
+    password: string;
+    email: string;
+    lastname: string;
+  }>();
 
   /* Confirm password === password check */
   const handleConfirmPassword = (userConfirmPassword: string) => {

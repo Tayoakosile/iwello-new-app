@@ -15,7 +15,6 @@ import MenuToTheLeftAndDoctorProfile from "./MenuToTheLeftAndDoctorProfile";
 
 const DoctorMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
 
   return (
     <>
