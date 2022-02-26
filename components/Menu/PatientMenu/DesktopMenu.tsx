@@ -23,11 +23,14 @@ const SidebarContent = ({ onClose, ...rest }) => {
     <VStack
       spacing="40px"
       borderRight="1px"
-      borderRightColor={'red'}
+      borderRightColor={"red"}
       w={{ base: "full", md: 72 }}
       pos="fixed"
       {...rest}
       p="24px"
+      bg="#fff"
+      h="100vh"
+      overflowY="auto"
     >
       {/*Logo and back icon  */}
       <HStack>
@@ -60,6 +63,15 @@ const SidebarContent = ({ onClose, ...rest }) => {
             key={menuItems.link}
             w="full"
             h="16"
+            cursor="pointer"
+            transition="0.2s all ease-in"
+            _hover={{
+              bg: "brand.500",
+              color: "white",
+            }}
+            _active={{
+              transform: "scale(0.9)",
+            }}
             spacing="12px"
           >
             <Icon as={menuItems.SvgIcon} fontSize="18px" />

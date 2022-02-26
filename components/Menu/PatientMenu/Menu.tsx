@@ -15,17 +15,15 @@ interface LinkItemProps {
 export default function PatientMenu({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" >
+    <Box minH="100vh">
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
       />
-      
+
       {/* mobilenav */}
-      <PatientMobileMenu
-        display={{ base: "flex", md: "none" }}
-      />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <PatientMobileMenu display={{ base: "flex", md: "none" }} />
+      <Box bg="#E5E5E5" ml={{ base: 0, md: 72 }} p="4">
         {children}
       </Box>
     </Box>
