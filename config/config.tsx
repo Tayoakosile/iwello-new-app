@@ -1,19 +1,16 @@
-import { extendTheme, chakra, withDefaultColorScheme } from "@chakra-ui/react";
+import { chakra, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 import {
-  IconStethoscope,
-  IconPhoneCall,
-  IconMessages,
-  IconWallet,
-  IconSettings,
-  IconHistory,
-  IconHelp,
-  TablerIcon,
   IconCheckbox,
+  IconHelp,
+  IconHistory,
+  IconMessages,
+  IconPhoneCall,
+  IconSettings,
+  IconStethoscope,
+  IconWallet,
+  TablerIcon,
 } from "@tabler/icons";
-
 import Image from "next/image";
-import React from "react";
-import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 
 /**
  * Iwello Styling App Configuration,
@@ -38,8 +35,8 @@ export const customTheme = extendTheme(
       },
     },
     fonts: {
-      heading: "Roboto",
-      body: "Roboto",
+      heading: "Rubik",
+      body: "Rubik",
     },
   },
   withDefaultColorScheme({ colorScheme: "brand" })
@@ -152,6 +149,11 @@ export interface PatientMenuItems {
   link: string;
 }
 
+export interface HomeMenuItems {
+  text: string;
+  link: string;
+}
+
 export const DoctorMenuItems: DoctorNavBarItems[] = [
   {
     SvgIcon: IconStethoscope,
@@ -215,7 +217,15 @@ export const PatientMenuItems: PatientMenuItems[] = [
   },
 ];
 
-  // User SIgn up Types 
+export const MenuItems: HomeMenuItems[] = [
+  { text: "Home", link: "home" },
+  { text: "About Us", link: "aboutus" },
+  { text: "Services", link: "services" },
+  { text: "Testimonial", link: "testimonials" },
+  { text: "The Team", link: "theteam" },
+  { text: "Contact Us", link: "contact" },
+];
+// User SIgn up Types
 export interface UserSignUp {
   firstname?: string;
   password?: string;
@@ -225,9 +235,9 @@ export interface UserSignUp {
   confirmPassword?: string;
 }
 
-  // User SIgn up Types 
+// User SIgn up Types
 export interface ContactUs {
   name: string;
-    email: string;
-    message: string;
+  email: string;
+  message: string;
 }

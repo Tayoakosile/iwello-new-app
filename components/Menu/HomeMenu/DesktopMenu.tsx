@@ -1,103 +1,79 @@
 import {
   Box,
-  Flex,
-  Icon,
-  Link,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+  HStack,
+  Link as ChakraLink,
   Stack,
-  Text,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
-import { BiRightArrow } from "react-icons/bi";
-import { NavItem, NAV_ITEMS } from "../../../utils/types";
+import Image from "next/image";
+import Link from "next/link";
+import { MenuItems } from "../../../config/config";
 
-const DesktopNav = () => {
+const DesktopMenu = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Flex display={{ base: "none", md: "flex" }} ml={10}>
-      <Stack direction={"row"} spacing={4}>
-        {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={"hover"} placement={"bottom-start"}>
-              <PopoverTrigger>
-                <Link
-                  p={2}
-                  href={navItem.href ?? "#"}
-                  fontSize={"sm"}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: "none",
-                    color: linkHoverColor,
-                  }}
-                >
-                  {navItem.label}
-                </Link>
-              </PopoverTrigger>
-
-              {navItem.children && (
-                <PopoverContent
-                  border={0}
-                  boxShadow={"xl"}
-                  bg={popoverContentBgColor}
-                  p={4}
-                  rounded={"xl"}
-                  minW={"sm"}
-                >
-                  <Stack>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.label} {...child} />
-                    ))}
-                  </Stack>
-                </PopoverContent>
-              )}
-            </Popover>
-          </Box>
-        ))}
-      </Stack>
-    </Flex>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+    <HStack
+      minH="84px"
+      bg="white"
+      align="center"
+      justify="space-between"
+      sx={{
+        ".image": {
+          objectFit: "contain !important",
+        },
+      }}
+      w="95%"
+      mx="auto"
     >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
+      {/* Company's logo */}
+      <HStack as="span" spacing="30px">
+        <Image
+          className="image"
+          src="/img/logo/Iwello-desktop.svg"
+          alt="Company's logo"
+          width="127px"
+          height="40px"
+        />
+        <HStack
+          as="span"
+          spacing="32px"
+          sx={{
+            ".iwello__link": {},
+          }}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={BiRightArrow} />
-        </Flex>
-      </Stack>
-    </Link>
+          {MenuItems.map((menuItem) => (
+            <Link key={menuItem.link} passHref href={`/#${menuItem.link}`}>
+              <ChakraLink
+                className="iwello__link"
+                p={2}
+                fontSize={"sm"}
+                fontWeight={500}
+                color="brand.500"
+                _hover={{
+                  textDecoration: "none",
+                  color: linkHoverColor,
+                }}
+              >
+                {menuItem.text}
+              </ChakraLink>
+            </Link>
+          ))}
+        </HStack>
+      </HStack>
+
+      {/* Login and get started */}
+      <HStack spacing="30px" as="span">
+        <Link passHref href="/login">
+          <ChakraLink color="brand.500">Login</ChakraLink>
+        </Link>
+        <Button> Get Started</Button>
+      </HStack>
+    </HStack>
   );
 };
-export default DesktopNav;
+
+export default DesktopMenu;

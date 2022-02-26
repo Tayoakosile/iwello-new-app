@@ -16,7 +16,6 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
   const { pageFullyLoaded } = usePageFullyLoaded();
   const route = useRouter().pathname;
 
-
   return (
     <ChakraProvider theme={customTheme}>
       {/* {!pageFullyLoaded ? (
@@ -36,7 +35,7 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
                 as="section"
                 sx={{
                   button: {
-                    boxShadow: "none Important",
+                    boxShadow: "none !important",
                     transition: "0.3s all ease-in",
                     borderRadius: "5px !important",
                   },
@@ -56,7 +55,7 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
                 as="section"
                 sx={{
                   button: {
-                    boxShadow: "none Important",
+                    boxShadow: "none !important",
                     transition: "0.3s all ease-in",
                     borderRadius: "5px !important",
                   },
@@ -73,7 +72,7 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
               as="section"
               sx={{
                 button: {
-                  boxShadow: "none Important",
+                  boxShadow: "none !important",
                   transition: "0.3s all ease-in",
                   borderRadius: "5px !important",
                 },

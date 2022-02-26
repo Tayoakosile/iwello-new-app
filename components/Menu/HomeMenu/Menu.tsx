@@ -1,69 +1,38 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Stack,
-  Text,
-  chakra,
-  useDisclosure,
-} from "@chakra-ui/react";
-import DesktopNav from "./DesktopMenu";
-import MobileNav from "./MobileMenu";
-import Image from "next/image";
+import { Box, useDisclosure } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import Headroom from 'react-headroom';
 
 export default function HomeMenu() {
   const { isOpen, onToggle } = useDisclosure();
-  const CustomizedChakraImage = chakra(Image);
+  const route = useRouter().pathname;
+  const [showMenu, setShowMenu] = useState(true);
+
+  useEffect(() => {
+    {
+      route === "/signup" || route === "/login"
+        ? setShowMenu(false)
+        : setShowMenu(true);
+    }
+  }, [route]);
+
   return (
-    <Box>
-      <Flex
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        align={"center"}
-        bg="yellow"
-      >
-        <Flex
-          bg="yellow"
-          flex={{ base: 1, md: "auto" }}
-          display={{ base: "flex", md: "none" }}
-        >
-          <MobileNav />
-        </Flex>
+    <>
+      {showMenu && (
+        <Headroom>
+          <Box as="header" d={{ base: "none", md: "block" }}>
+            {/* Desktop Nav */}
 
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <CustomizedChakraImage
-            objectFit={"contain"}
-            src="/img/logo/logo-mobile.png"
-            alt="Company's Logo"
-            layout="fill"
-            w="132px !important"
-            h="132px !important"
-          />
-          {/* Desktop Nav */}
-
-          <DesktopNav />
-        </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-        </Stack>
-      </Flex>
-    </Box>
+            <DesktopMenu />
+          </Box>
+          {/* Sign In Button */}
+          <Box as="header" d={{ base: "b    lock", md: "none" }}>
+            <MobileMenu />
+          </Box>
+        </Headroom>
+      )}
+    </>
   );
 }
