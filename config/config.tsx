@@ -1,12 +1,14 @@
 import { extendTheme, chakra, withDefaultColorScheme } from "@chakra-ui/react";
 import {
   IconStethoscope,
+  IconPhoneCall,
   IconMessages,
   IconWallet,
   IconSettings,
   IconHistory,
   IconHelp,
   TablerIcon,
+  IconCheckbox,
 } from "@tabler/icons";
 
 import Image from "next/image";
@@ -145,6 +147,11 @@ export interface DoctorNavBarItems {
   SvgIcon: TablerIcon;
   link: string;
 }
+export interface PatientMenuItems {
+  SvgIcon: TablerIcon;
+  link: string;
+}
+
 export const DoctorMenuItems: DoctorNavBarItems[] = [
   {
     SvgIcon: IconStethoscope,
@@ -173,3 +180,54 @@ export const DoctorMenuItems: DoctorNavBarItems[] = [
     link: "Setting",
   },
 ];
+
+export const PatientMenuItems: PatientMenuItems[] = [
+  {
+    SvgIcon: IconStethoscope,
+    link: "Fitness Task",
+  },
+
+  {
+    SvgIcon: IconMessages,
+    link: "Buy Drugs",
+  },
+  {
+    SvgIcon: IconPhoneCall,
+    link: "Consult",
+  },
+  {
+    SvgIcon: IconHistory,
+    link: "History",
+  },
+
+  {
+    SvgIcon: IconHelp,
+    link: "Support",
+  },
+  {
+    SvgIcon: IconCheckbox,
+    link: "Fake Drug Check",
+  },
+
+  {
+    SvgIcon: IconSettings,
+    link: "Setting",
+  },
+];
+
+  // User SIgn up Types 
+export interface UserSignUp {
+  firstname?: string;
+  password?: string;
+  subscribedEmail?: string;
+  email?: string;
+  lastname?: string;
+  confirmPassword?: string;
+}
+
+  // User SIgn up Types 
+export interface ContactUs {
+  name: string;
+    email: string;
+    message: string;
+}

@@ -27,7 +27,9 @@ const DesktopContactUs = () => {
         id="form"
       >
         {/* User's name Input field */}
-        <FormControl isInvalid={errors && errors.name}>
+        <FormControl
+          isInvalid={errors ? (true && errors.name ? true : false) : false}
+        >
           <Input
             //   Validates the form
             {...register("name", {
@@ -51,7 +53,9 @@ const DesktopContactUs = () => {
         {/* User's name Input field */}
 
         {/* Email Address */}
-        <FormControl isInvalid={errors && errors.email}>
+        <FormControl
+          isInvalid={errors ? (true && errors.email ? true : false) : false}
+        >
           <Input
             h="60px"
             {...register("email", {
@@ -74,7 +78,9 @@ const DesktopContactUs = () => {
         {/* Email Address */}
 
         {/* Text Message Input */}
-        <FormControl isInvalid={errors && errors.message}>
+        <FormControl
+          isInvalid={errors ? (true && errors.message ? true : false) : false}
+        >
           <Textarea
             h="117px"
             {...register("message", {

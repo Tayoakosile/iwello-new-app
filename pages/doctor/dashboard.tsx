@@ -1,20 +1,14 @@
 import {
-  Heading,
-  IconButton,
-  HStack,
-  Input,
-  Icon,
-  VStack,
+  Heading, HStack, Icon, IconButton, Input, VStack
 } from "@chakra-ui/react";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { BsSearch } from "react-icons/bs";
 import { IoArrowBackOutline } from "react-icons/io5";
-import { BsSearch, BsArrowReturnLeft } from "react-icons/bs";
 import ConsultationPopUp from "../../components/Doctor/Consultations/ConsultationPopUp";
 import Consultations from "../../components/Doctor/Consultations/Consultations";
 import DoctorMenu from "../../components/Doctor/Menu/DoctorMenu";
 import MetaTags from "../../reusables/MetaTags";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const DoctorDashboard = () => {
   const AnimatedHStack = motion(HStack);

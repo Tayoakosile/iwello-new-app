@@ -32,10 +32,11 @@ const SignUpForm = () => {
       align={{ base: "flex-start", lg: "center" }}
       alignSelf={{ base: "flex-start", lg: "center" }}
       w={{ base: "100%", lg: "70%" }}
-
     >
       {/* Email Address */}
-      <FormControl isInvalid={errors.email}>
+      <FormControl
+        isInvalid={errors ? (true && errors.email ? true : false) : false}
+      >
         <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
           Email Address
         </FormLabel>
@@ -65,7 +66,9 @@ const SignUpForm = () => {
       {/* Email Address */}
 
       {/* Password */}
-      <FormControl isInvalid={errors.password}>
+      <FormControl
+        isInvalid={errors ? (true && errors.password ? true : false) : false}
+      >
         <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>Password</FormLabel>
 
         {/* Password password */}
@@ -105,7 +108,9 @@ const SignUpForm = () => {
       {/* Password */}
 
       {/* Confirm Password Input  */}
-      <FormControl isInvalid={errors.confirmPassword}>
+      <FormControl
+        isInvalid={errors ? (true && errors.confirmPassword ? true : false) : false}
+      >
         <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
           Confirm Password
         </FormLabel>
@@ -113,7 +118,7 @@ const SignUpForm = () => {
           <Input
             {...register("confirmPassword", {
               required: "Please Confirm your password",
-              validate: (value: string) => handleConfirmPassword(value),
+              validate: (value) => handleConfirmPassword(value),
             })}
             borderRadius="5px"
             bg="#F7F7F7"

@@ -14,9 +14,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { MdOutlineEditNote } from "react-icons/md";
-import DoctorStatus from "../DoctorStatus";
-import WalletBalance from "../WalletBalance";
-const MenuToTheLeftAndDoctorProfile = () => {
+import WalletBalance from "../../Doctor/WalletBalance";
+const PatientLeftMenuAndProfile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
   return (
@@ -46,7 +45,7 @@ const MenuToTheLeftAndDoctorProfile = () => {
           bg="white"
           rounded="sm"
           mt="10"
-          h="70vh"
+          h="25rem"
           w="80% !important"
           pt="6"
         >
@@ -59,7 +58,7 @@ const MenuToTheLeftAndDoctorProfile = () => {
           />
           <DrawerBody h="full" px="2" my="8" w="full">
             <HStack w="full" align="flex-start" spacing="4">
-              <Avatar size="lg" name="Arinola Majekodunmi" />
+              <Avatar size="lg" name="Oredipe Olanrewaju" />
               <VStack
                 align="flex-start"
                 fontFamily="Rubik"
@@ -69,15 +68,9 @@ const MenuToTheLeftAndDoctorProfile = () => {
               >
                 {/* DOctor's Name */}
                 <Heading fontSize="16px" isTruncated w="85%">
-                  Dr. Arinola Majekodunmi
+                  Oredipe Olanrewaju
                 </Heading>
                 {/* Doctors Profession */}
-                <Text as="span" fontSize="12px">
-                  Ob/Gyn at Hope City Hospital
-                </Text>
-                <Text fontSize="10px" as="span">
-                  MBBS/Msc/Bsc
-                </Text>
 
                 {/* Edit profile here */}
                 <HStack pt="5px" as="span" spacing="2" color="brand.500">
@@ -97,7 +90,6 @@ const MenuToTheLeftAndDoctorProfile = () => {
                 {/* Doctor's Status */}
               </VStack>
             </HStack>
-            <DoctorStatus />
             <WalletBalance />
           </DrawerBody>
         </DrawerContent>
@@ -106,4 +98,4 @@ const MenuToTheLeftAndDoctorProfile = () => {
   );
 };
 
-export default MenuToTheLeftAndDoctorProfile;
+export default PatientLeftMenuAndProfile;

@@ -43,7 +43,10 @@ const Suscribe = () => {
         pt={{ base: "", lg: "32px" }}
         onSubmit={handleSubmit(subscribedUser)}
       >
-        <FormControl flex="0.7" isInvalid={errors.subscribedEmail}>
+        <FormControl
+          flex="0.7"
+          isInvalid={errors.subscribedEmail ? true : false}
+        >
           <Input
             size="lg"
             h={{ base: "50px", lg: "70px" }}
