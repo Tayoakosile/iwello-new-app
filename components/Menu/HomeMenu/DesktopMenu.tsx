@@ -26,8 +26,7 @@ const DesktopMenu = () => {
           objectFit: "contain !important",
         },
       }}
-      w="95%"
-      mx="auto"
+      px="30px"
     >
       {/* Company's logo */}
       <HStack as="span" spacing="30px">
@@ -39,25 +38,20 @@ const DesktopMenu = () => {
           height="40px"
         />
         <HStack
-          as="span"
+          as="ol"
           spacing="32px"
           sx={{
-            ".iwello__link": {},
+            ".iwello__link": {
+              p: 2,
+              fontSize: "16px",
+              fontWeight: 500,
+              color: "brand.900",
+            },
           }}
         >
           {MenuItems.map((menuItem) => (
             <Link key={menuItem.link} passHref href={`/#${menuItem.link}`}>
-              <ChakraLink
-                className="iwello__link"
-                p={2}
-                fontSize={"sm"}
-                fontWeight={500}
-                color="brand.500"
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
+              <ChakraLink textStyle={"none"} className="iwello__link">
                 {menuItem.text}
               </ChakraLink>
             </Link>
@@ -68,9 +62,17 @@ const DesktopMenu = () => {
       {/* Login and get started */}
       <HStack spacing="30px" as="span">
         <Link passHref href="/login">
-          <ChakraLink color="brand.500">Login</ChakraLink>
+          <ChakraLink
+            fontWeight={500}
+            color="brand.500"
+            className="iwello__link"
+          >
+            Login
+          </ChakraLink>
         </Link>
-        <Button> Get Started</Button>
+        <Link passHref href="/signup">
+          <Button> Get Started</Button>
+        </Link>
       </HStack>
     </HStack>
   );
