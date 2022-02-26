@@ -1,12 +1,16 @@
 import {
   Button,
-  chakra, Divider, FormControl,
+  chakra,
+  Divider,
+  FormControl,
   FormLabel,
-  Heading, HStack, Input,
+  Heading,
+  HStack,
+  Input,
   InputGroup,
   InputRightElement,
   Text,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -39,7 +43,6 @@ const LoginForm = () => {
           mx="auto"
           whiteSpace={"nowrap"}
           boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-          onClick={() => alert("Hello")}
         >
           <Text
             as="span"

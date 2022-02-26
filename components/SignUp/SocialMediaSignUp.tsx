@@ -44,9 +44,8 @@ const SocialMediaSignUp = () => {
         color="rgba(0, 0, 0, 0.54) !important"
         whiteSpace={"nowrap"}
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        onClick={() => alert("Hello")}
       >
-        <span>Continue with Google</span>
+        <>Continue with Google</>
       </CustomizedGoogleButton>
     </VStack>
   );
