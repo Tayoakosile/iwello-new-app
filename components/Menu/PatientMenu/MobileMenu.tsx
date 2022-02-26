@@ -1,8 +1,6 @@
 import {
-  Flex,
-  FlexProps,
-  useColorModeValue,
-  useDisclosure,
+    Flex,
+    FlexProps, useDisclosure
 } from "@chakra-ui/react";
 import PatientLeftMenu from "./PatientLeftMenu";
 import PatientRightMenu from "./PatientRightMenu";

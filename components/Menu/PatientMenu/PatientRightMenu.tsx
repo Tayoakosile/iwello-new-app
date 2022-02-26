@@ -19,8 +19,12 @@ const PatientRightMenu = () => {
   return (
     <>
       <HStack align="center" fontSize="24px" spacing="23px" fontFamily="Roboto">
-        <Icon as={BsCart3} />
-        <Icon as={BsBell} />
+        <span>
+          <Icon as={BsCart3} />
+        </span>
+        <span>
+          <Icon as={BsBell} />
+        </span>
         <span onClick={onOpen}>
           <Icon as={BiMenu} fontSize="30px" />
         </span>
@@ -32,7 +36,7 @@ const PatientRightMenu = () => {
         onClose={onClose}
         onOverlayClick={onClose}
       >
-        <DrawerContent w="90% !important" pl="50px" mt='10px'>
+        <DrawerContent w="90% !important" pl="50px" mt="10px">
           <DrawerCloseButton />
           <VStack align="flex-start" spacing="24px" pt="60px">
             {PatientMenuItems.map((menuItem) => (

@@ -195,7 +195,7 @@ export const PatientMenuItems: PatientMenuItems[] = [
   },
   {
     SvgIcon: IconPhoneCall,
-    link: "Consult",
+    link: "Consult a Doctor",
   },
   {
     SvgIcon: IconHistory,
