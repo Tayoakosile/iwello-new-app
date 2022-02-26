@@ -19,7 +19,7 @@ const DesktopHeaderText = () => {
         pb="97px"
         alignItems="flex-start"
       >
-        <Heading w="100%" fontSize="64px">
+        <Heading w="100%" fontWeight='800' fontSize="64px">
           Talk To a{" "}
           <Text as="span" color="brand.500">
             {" "}

@@ -12,7 +12,7 @@ const MetaTags = ({
 }) => {
   return (
     <>
-      <Head key={key ? key : 10}>
+      <Head>
         <title>{title}</title>
         <meta name="title" content={title} />
         <link
