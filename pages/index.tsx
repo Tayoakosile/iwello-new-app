@@ -11,7 +11,7 @@ import Services from "../components/Home/Services";
 import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
 import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
-import NavBar from "../components/Navbar/NavBar";
+// import NavBar from "../components/Navbar/NavBar";
 import MetaTags from "../reusables/MetaTags";
 
 const index = () => {
@@ -26,7 +26,7 @@ medical personnel close to your location as fast
 as lightning for less than a dollar!"
       />
 
-      <NavBar />
+      {/* <NavBar /> */}
       {toggleNavbar ? <DesktopHeaderText /> : <HeaderText />}
       {toggleNavbar ? <DesktopAboutUs /> : <AboutUs />}
       <Services />

@@ -1,5 +1,10 @@
 import {
-  Heading, HStack, Icon, IconButton, Input, VStack
+  Heading,
+  HStack,
+  Icon,
+  IconButton,
+  Input,
+  VStack,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -7,7 +12,7 @@ import { BsSearch } from "react-icons/bs";
 import { IoArrowBackOutline } from "react-icons/io5";
 import ConsultationPopUp from "../../components/Doctor/Consultations/ConsultationPopUp";
 import Consultations from "../../components/Doctor/Consultations/Consultations";
-import DoctorMenu from "../../components/Doctor/Menu/DoctorMenu";
+// import DoctorMenu from "../../components/Doctor/Menu/DoctorMenu";
 import MetaTags from "../../reusables/MetaTags";
 
 const DoctorDashboard = () => {
@@ -17,7 +22,7 @@ const DoctorDashboard = () => {
   return (
     <VStack
       as="section"
-      align="stretch" 
+      align="stretch"
       w="full"
       justify="stretch"
       spacing="43px"
@@ -36,7 +41,7 @@ const DoctorDashboard = () => {
     >
       <MetaTags title="Dr Segun Odegbami's Profile ~ Iwello | Quality Healthcare you can trust " />
       {/* Doctor's Avatar,Name and Icon */}
-      <DoctorMenu />
+      {/* <DoctorMenu /> */}
 
       {/* Search and back button */}
       {searchConsultation ? (
