@@ -15,7 +15,7 @@ export default function PatientMenu({ children }: { children: ReactNode }) {
 
       {/* mobilenav */}
       <PatientMobileMenu display={{ base: "flex", md: "none" }} />
-      <Box bg="#E5E5E5" ml={{ base: 0, md: 72 }} p="4">
+      <Box bg={{ base: "#fff", md: "#E5E5E5" }} ml={{ base: 0, md: 72 }} p="4">
         {children}
       </Box>
     </Box>
