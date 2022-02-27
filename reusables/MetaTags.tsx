@@ -15,6 +15,7 @@ const MetaTags = ({
       <Head>
         <title>{title}</title>
         <meta name="title" content={title} />
+        <meta name="theme-color" content="#6d40e5" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

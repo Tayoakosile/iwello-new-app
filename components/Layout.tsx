@@ -31,59 +31,17 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
 
           {route.includes("/doctor") && (
             <DoctorMenu>
-              <Box
-                as="section"
-                sx={{
-                  button: {
-                    boxShadow: "none !important",
-                    transition: "0.3s all ease-in",
-                    borderRadius: "5px !important",
-                  },
-                  "button:active": {
-                    transform: "scale(0.95)",
-                  },
-                }}
-              >
-                {children}
-              </Box>
+              <>{children}</>
             </DoctorMenu>
           )}
 
           {route.includes("/patient") ? (
-            <PatientMenu>
-              <Box
-                as="section"
-                sx={{
-                  button: {
-                    boxShadow: "none !important",
-                    transition: "0.3s all ease-in",
-                    borderRadius: "5px !important",
-                  },
-                  "button:active": {
-                    transform: "scale(0.95)",
-                  },
-                }}
-              >
-                {children}
-              </Box>
-            </PatientMenu>
+            <PatientMenu>{children}</PatientMenu>
           ) : (
-            <Box
-              as="section"
-              sx={{
-                button: {
-                  boxShadow: "none !important",
-                  transition: "0.3s all ease-in",
-                  borderRadius: "5px !important",
-                },
-                "button:active": {
-                  transform: "scale(0.95)",
-                },
-              }}
-            >
+            <>
               <HomeMenu />
               {children}
-            </Box>
+            </>
           )}
 
           {/* If User is a patient SHow the patient menu else show the Main Menu */}

@@ -1,17 +1,9 @@
-import {
-  Box,
-  BoxProps, useDisclosure
-} from "@chakra-ui/react";
+import { Box, BoxProps, useDisclosure } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
-import SidebarContent from './DesktopMenu';
-import PatientMobileMenu from './MobileMenu';
+import SidebarContent from "./DesktopMenu";
+import PatientMobileMenu from "./MobileMenu";
 
-interface LinkItemProps {
-  name: string;
-  icon: IconType;
-}
-  
 export default function PatientMenu({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -29,8 +21,3 @@ export default function PatientMenu({ children }: { children: ReactNode }) {
     </Box>
   );
 }
-
-interface SidebarProps extends BoxProps {
-  onClose: () => void;
-}
-

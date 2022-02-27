@@ -1,55 +1,8 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
+button {
+  box-shadow: none !important;
+  transition: 0.3s all ease-in;
+  border-radius: 5px !important;
 }
-html {
-  scroll-behavior: smooth;
+button:active {
+  transform: scale(0.95);
 }
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-#__next {
-  overflow: hidden;
-}
-
-/* Homepage links */
-ul {
-  list-style: none;
-}
-
-.iwello_link > a {
-  float: left;
-  position: relative;
-  padding-bottom: 5px;
-  text-decoration: none;
-}
-
-.iwello_link > a:after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  height: 2px;
-  width: 0;
-  background: transparent;
-}
-
-.iwello_link > a:after {
-  transition: width 0.5s ease, background-color 0.5s ease, left 0.5s ease;
-}
-
-.iwello_link > a:hover:after {
-  width: 100%;
-  left: 0;
-  background: #6d40e5;
-}
-
-/* Homepage links */

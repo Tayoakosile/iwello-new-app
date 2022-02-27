@@ -147,6 +147,7 @@ export interface DoctorNavBarItems {
 export interface PatientMenuItems {
   SvgIcon: TablerIcon;
   link: string;
+  text: string;
 }
 
 export interface HomeMenuItems {
@@ -187,33 +188,40 @@ export const PatientMenuItems: PatientMenuItems[] = [
   {
     SvgIcon: IconStethoscope,
     link: "Fitness Task",
+    text: "Fitness Task",
   },
 
   {
     SvgIcon: IconMessages,
-    link: "Buy Drugs",
+    link: "/patient/buydrug",
+    text: "Buy Drugs",
   },
   {
     SvgIcon: IconPhoneCall,
-    link: "Consult a Doctor",
+    link: "/patient/dashboard",
+    text: "Consult a Doctor",
   },
   {
     SvgIcon: IconHistory,
     link: "History",
+    text: "History",
   },
 
   {
     SvgIcon: IconHelp,
     link: "Support",
+    text: "Support",
   },
   {
     SvgIcon: IconCheckbox,
     link: "Fake Drug Check",
+    text: "Fake Drug Check",
   },
 
   {
     SvgIcon: IconSettings,
     link: "Setting",
+    text: "Setting",
   },
 ];
 

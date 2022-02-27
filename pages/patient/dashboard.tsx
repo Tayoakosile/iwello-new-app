@@ -1,38 +1,22 @@
-import {
-  Box,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  TabPanels,
-  TabPanelProps,
-} from "@chakra-ui/react";
-import React from "react";
+import { Tab, TabList, TabPanel, TabPanels, Tabs, Box } from "@chakra-ui/react";
 import MetaTags from "../../reusables/MetaTags";
-import PatientMenu from "../../components/Patient/PatientMenu";
-import Doctor from "../../components/Patient/Tabs/DoctorTab/Doctors";
+import ConsultDoctor from "../../components/Patient/Desktop/ConsultDoctor";
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setPatientPageIndex } from "../../stores/patientPageIndex";
 
 const Patient = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setPatientPageIndex({ index: 2 }));
+  }, [dispatch]);
   return (
     <>
-      <PatientMenu />
-      <Tabs isFitted w="95%" mx="auto">
-        <MetaTags
-          key={30}
-          title="Oredipe Olanrewaju's profile ~ Iwello | Quality Healthcare you can trust
-"
-        />
-        <TabList w="full">
-          <Tab>Doctor</Tab>
-          <Tab>Pharmacist</Tab>
-        </TabList>
-        <TabPanels w="full">
-          <TabPanel w="full">
-            <Doctor />
-          </TabPanel>
-          <TabPanel>Pharmacist section here</TabPanel>
-        </TabPanels>
-      </Tabs>
+      <Box as="section" d={{ base: "block", md: "none" }}></Box>
+      <Box as="section" d={{ base: "none", md: "block" }}>
+        <ConsultDoctor />
+      </Box>
     </>
   );
 };

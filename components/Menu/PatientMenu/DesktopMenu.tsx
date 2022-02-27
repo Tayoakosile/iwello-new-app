@@ -1,29 +1,24 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  Link,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Avatar, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { Avatar, Heading, VStack, Icon } from "@chakra-ui/react";
 import { PatientMenuItems } from "../../../config/config";
-
-const LinkItems = [
-  { name: "Home" },
-  { name: "Trending" },
-  { name: "Explore" },
-  { name: "Favourites" },
-  { name: "Settings" },
-];
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../stores/reduxstore";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { setPatientPageIndex } from "../../../stores/patientPageIndex";
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  // This adds background color to current menu page user is in
+  const { index: patientPageIndex } = useSelector(
+    (state: RootState) => state.patientPageIndex.value
+  );
   return (
     <VStack
       spacing="40px"
       borderRight="1px"
-      borderRightColor={"red"}
+      borderRightColor={"brand.500"}
       w={{ base: "full", md: 72 }}
       pos="fixed"
       {...rest}
@@ -53,16 +48,32 @@ const SidebarContent = ({ onClose, ...rest }) => {
       </HStack>
 
       {/* Menu here */}
-      <VStack as="span" w="full" spacing="20px">
-        {PatientMenuItems.map((menuItems) => (
+      <VStack
+        as="span"
+        w="full"
+        spacing="20px"
+        sx={{
+          ".active": {
+            bg: "brand.500",
+            color: "white",
+            "&:hover": { bg: "brand.800" },
+          },
+        }}
+      >
+        {PatientMenuItems.map((menuItems, index) => (
           <HStack
+            key={menuItems.link}
             p="18px"
             as="span"
             borderRadius="10px"
+            className={patientPageIndex === index ? "active" : ""}
             bg="#F5F5F5"
-            key={menuItems.link}
             w="full"
             h="16"
+            onClick={() => {
+              router.push(menuItems.link);
+              dispatch(setPatientPageIndex({ index }));
+            }}
             cursor="pointer"
             transition="0.2s all ease-in"
             _hover={{
@@ -75,7 +86,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             spacing="12px"
           >
             <Icon as={menuItems.SvgIcon} fontSize="18px" />
-            <Text fontSize="18px">{menuItems.link} </Text>
+            <Text fontSize="18px">{menuItems.text}</Text>
           </HStack>
         ))}
       </VStack>
