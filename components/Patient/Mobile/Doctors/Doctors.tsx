@@ -4,7 +4,7 @@ import Doctor from "./Doctor";
 
 const Doctors = () => {
   return (
-    <VStack as="span" w="full" bg="green" h='inherit' spacing='8px'>
+    <VStack as="span" w="full"  h='inherit' spacing='8px'>
       <Doctor />
       <Doctor />
     </VStack>

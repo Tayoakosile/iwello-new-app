@@ -4,7 +4,7 @@ import { BsThreeDots } from "react-icons/bs";
 
 const DocAvailability = ({ available }: { available?: boolean }) => {
   return (
-    <HStack as="span" justify='space-between'>
+    <HStack as="span" justify="space-between">
       <HStack as="span">
         <Box
           as="span"
