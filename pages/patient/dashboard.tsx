@@ -1,8 +1,8 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs, Box } from "@chakra-ui/react";
-import MetaTags from '../../reusables/MetaTags';
+import MetaTags from "../../reusables/MetaTags";
 import ConsultDoctor from "../../components/Patient/Desktop/ConsultDoctor";
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { setPatientPageIndex } from "../../stores/patientPageIndex";
 
 const Patient = () => {
