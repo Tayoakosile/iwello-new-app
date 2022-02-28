@@ -1,5 +1,4 @@
-import { Box, HStack, Text, Icon } from "@chakra-ui/react";
-import React from "react";
+import { Box, HStack, Icon, Text } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 
 const DocAvailability = ({ available }: { available?: boolean }) => {
@@ -18,7 +17,7 @@ const DocAvailability = ({ available }: { available?: boolean }) => {
           {available ? "Available" : "Not Available"}
         </Text>
       </HStack>
-      <Icon as={BsThreeDots} fontSize="24px" />
+      <Icon as={BsThreeDots} fontSize="24px" color="gray.500" />
     </HStack>
   );
 };

@@ -1,7 +1,7 @@
 import { TabPanels, Tabs, TabList, TabPanel, Tab } from "@chakra-ui/react";
 import React from "react";
 import MetaTags from "../../../reusables/MetaTags";
-import Doctors from "../Mobile/Doctors/Doctors";
+import Doctors from "./Doctors/Doctors";
 
 const PatientTabs = () => {
   return (
