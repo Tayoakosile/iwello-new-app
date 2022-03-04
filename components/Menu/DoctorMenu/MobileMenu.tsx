@@ -1,11 +1,12 @@
 import { Flex, FlexProps, useDisclosure } from "@chakra-ui/react";
-import PatientLeftMenu from "./PatientLeftMenu";
-import PatientRightMenu from "./PatientRightMenu";
+import DoctorLeftMenu from "./DoctorLeftMenu";
+import DoctorRightMenu from "./DoctorRightMenu";
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
-const PatientMobileMenu = ({ ...rest }) => {
+//* THis contains Doctor's Mobile Menu (Both right and left menu)
+const DoctorMobileMenu = ({ ...rest }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex
@@ -16,9 +17,9 @@ const PatientMobileMenu = ({ ...rest }) => {
       justifyContent="space-between"
       {...rest}
     >
-      <PatientLeftMenu />
-      <PatientRightMenu />
+      <DoctorLeftMenu />
+      <DoctorRightMenu />
     </Flex>
   );
 };
-export default PatientMobileMenu;
+export default DoctorMobileMenu;

@@ -1,4 +1,4 @@
-import { Box, ChakraProvider, ScaleFade } from "@chakra-ui/react";
+import { ChakraProvider, ScaleFade } from "@chakra-ui/react";
 import "@fontsource/roboto";
 import "@fontsource/rubik";
 import { useRouter } from "next/router";

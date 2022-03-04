@@ -6,6 +6,7 @@ import {
   IconMessages,
   IconPhoneCall,
   IconSettings,
+  IconLogout,
   IconStethoscope,
   IconWallet,
   TablerIcon,
@@ -143,6 +144,7 @@ export interface SignUp {
 export interface DoctorNavBarItems {
   SvgIcon: TablerIcon;
   link: string;
+  text: string;
 }
 export interface PatientMenuItems {
   SvgIcon: TablerIcon;
@@ -158,36 +160,48 @@ export interface HomeMenuItems {
 export const DoctorMenuItems: DoctorNavBarItems[] = [
   {
     SvgIcon: IconStethoscope,
-    link: "Consultation",
+    link: "/doctor/dashboard",
+    text: "Consultation",
   },
 
   {
     SvgIcon: IconMessages,
-    link: "Messages",
+    link: "/doctor/messages",
+    text: "Messages",
   },
   {
     SvgIcon: IconWallet,
-    link: "Top Wallet",
+    link: "/doctor/wallet",
+    text: "Top Wallet",
   },
   {
     SvgIcon: IconHistory,
-    link: "History",
+    link: "/doctor/history",
+    text: "History",
   },
 
   {
     SvgIcon: IconHelp,
-    link: "Support",
+    link: "/doctor/support",
+    text: "Support",
   },
   {
     SvgIcon: IconSettings,
-    link: "Setting",
+    link: "doctor/setting",
+    text: "Settings",
+  },
+
+  {
+    SvgIcon: IconLogout,
+    link: "/",
+    text: "Logout",
   },
 ];
 
 export const PatientMenuItems: PatientMenuItems[] = [
   {
     SvgIcon: IconStethoscope,
-    link: "Fitness Task",
+    link: "/patient/dashboard",
     text: "Fitness Task",
   },
 
@@ -199,29 +213,40 @@ export const PatientMenuItems: PatientMenuItems[] = [
   {
     SvgIcon: IconPhoneCall,
     link: "/patient/dashboard",
-    text: "Consult a Doctor",
+    text: "Speak with a Pharmacist",
+  },
+  {
+    SvgIcon: IconPhoneCall,
+    link: "/patient/dashboard",
+    text: "Speak with a Doctor",
   },
   {
     SvgIcon: IconHistory,
-    link: "History",
+    link: "/patient/history",
     text: "History",
   },
 
   {
     SvgIcon: IconHelp,
-    link: "Support",
+    link: "/patient/dashboard",
     text: "Support",
   },
   {
     SvgIcon: IconCheckbox,
-    link: "Fake Drug Check",
+    link: "/patient/dashboard",
     text: "Fake Drug Check",
   },
 
   {
     SvgIcon: IconSettings,
-    link: "Setting",
-    text: "Setting",
+    link: "/",
+    text: "Settings",
+  },
+
+  {
+    SvgIcon: IconLogout,
+    link: "/",
+    text: "Logout",
   },
 ];
 

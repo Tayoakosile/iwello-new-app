@@ -1,6 +1,6 @@
 import { Avatar, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { PatientMenuItems } from "../../../config/config";
+import { DoctorMenuItems } from "../../../config/config";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../stores/reduxstore";
 import Link from "next/link";
@@ -19,8 +19,7 @@ const SidebarContent = ({ ...rest }) => {
       spacing="40px"
       borderRight="1px"
       borderRightColor={"brand.500"}
-      w={{ base: "full", md: 80 }}
-      // w='full'
+      w={{ base: "full", md: 72 }}
       pos="fixed"
       {...rest}
       p="24px"
@@ -61,7 +60,7 @@ const SidebarContent = ({ ...rest }) => {
           },
         }}
       >
-        {PatientMenuItems.map((menuItems, index) => (
+        {DoctorMenuItems.map((menuItems, index) => (
           <HStack
             key={menuItems.link}
             p="18px"
@@ -87,7 +86,7 @@ const SidebarContent = ({ ...rest }) => {
             spacing="12px"
           >
             <Icon as={menuItems.SvgIcon} fontSize="18px" />
-            <Text fontSize="16px">{menuItems.text}</Text>
+            <Text fontSize="18px">{menuItems.text}</Text>
           </HStack>
         ))}
       </VStack>

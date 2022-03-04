@@ -10,6 +10,7 @@ export default function HomeMenu() {
   const route = useRouter().pathname;
   const [showMenu, setShowMenu] = useState(true);
 
+  // This makes sure no menu is shown in signup or login route
   useEffect(() => {
     {
       route === "/signup" || route === "/login"

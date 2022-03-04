@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Box, useMediaQuery } from "@chakra-ui/react";
 import { setPatientPageIndex } from "../../stores/patientPageIndex";
-import Drugs from "../../components/Patient/Desktop/Drugs/Drugs";
-import BuyDrugs from "../../components/Patient/Desktop/BuyDrugs";
+import Drugs from "../../components/Patient-Section/Desktop/Drugs/Drugs";
+import BuyDrugs from "../../components/Patient-Section/Desktop/BuyDrugs";
 import MetaTags from "../../reusables/MetaTags";
 import UseMeasureMediaQuery from "../../components/hooks/UseMeasureMediaQuery";
 

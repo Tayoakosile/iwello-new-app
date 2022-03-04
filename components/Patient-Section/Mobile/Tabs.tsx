@@ -1,11 +1,11 @@
 import { TabPanels, Tabs, TabList, TabPanel, Tab } from "@chakra-ui/react";
 import React from "react";
 import MetaTags from "../../../reusables/MetaTags";
-import Doctors from "../Mobile/Doctors/Doctors";
+import Doctors from "./Doctors/Doctors";
 
 const PatientTabs = () => {
   return (
-    <Tabs isFitted w="100%" h="100vh" px="0px !important">
+    <Tabs isFitted w="100%" h="100vh" px="0px !important" >
       <MetaTags
         key={30}
         title="Oredipe Olanrewaju's profile ~ Iwello | Quality Healthcare you can trust

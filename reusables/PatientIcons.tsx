@@ -1,7 +1,13 @@
-import { HStack, Icon, Input, Heading } from "@chakra-ui/react";
+import { HStack, Text, Icon, Input, Heading } from "@chakra-ui/react";
 import { BsBell, BsCart3 } from "react-icons/bs";
 
-const PatientIcon = ({ text }: { text: string }) => {
+const PatientIcon = ({
+  text,
+  additionalText,
+}: {
+  text: string;
+  additionalText?: string;
+}) => {
   return (
     <>
       <HStack fontSize="24px" spacing="27px" pt="10px" justify="flex-end">
@@ -26,10 +32,12 @@ const PatientIcon = ({ text }: { text: string }) => {
         color="brand.900"
         fontSize="30px"
         fontFamily={"Roboto"}
-        py="20px"
+        pt="20px"
+        pb={additionalText ? "0" : "20px"}
       >
         {text}
       </Heading>
+      {additionalText && <Text pb="20px">{additionalText}</Text>}
     </>
   );
 };
