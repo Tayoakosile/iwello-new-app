@@ -14,8 +14,7 @@ const Message = () => {
         bg="#F8F5F5"
         mt="20px"
         pt="46px"
-        px="29px"
-        position={"relative"}
+        px="19px"
       >
         {/* Close button */}
         <Box as="span" position={"absolute"} top="17px" right="17px" mb="14px">

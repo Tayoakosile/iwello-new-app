@@ -4,6 +4,8 @@ import contactUsSlice from "./contactus"; //
 import confirmEmailSlice from "./confirmemail";
 import consultationSlice from "./consultationPopup";
 import patientPageIndexSlice from "./patientPageIndex";
+import allChatSlice from "./chats";
+import chatSlice from "./chat";
 
 const store = configureStore({
   reducer: {
@@ -11,7 +13,9 @@ const store = configureStore({
     contactUs: contactUsSlice,
     confirmEmail: confirmEmailSlice,
     consultation: consultationSlice,
-    patientPageIndex: patientPageIndexSlice ,
+    chats: allChatSlice,
+    chat: chatSlice,
+    patientPageIndex: patientPageIndexSlice,
   },
 });
 

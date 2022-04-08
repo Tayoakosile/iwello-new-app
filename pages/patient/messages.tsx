@@ -5,9 +5,10 @@ import Header from "../../components/Patient-Section/Mobile/Message/Header";
 
 const message = () => {
   return (
-    <Box as="section" h="100vh" w="full" px="16px">
+    <Box as="section" h="100vh" w="full">
       <Header />
       <Message />
+      <Box mt="32"></Box>
     </Box>
   );
 };
