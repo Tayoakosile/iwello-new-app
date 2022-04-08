@@ -1,7 +1,15 @@
 import React from "react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
+import Message from "../../components/Patient-Section/Mobile/Message/Message";
+import Header from "../../components/Patient-Section/Mobile/Message/Header";
 
 const message = () => {
-  return <div>Patient Message here</div>;
+  return (
+    <Box as="section" h="100vh" w="full" px="16px">
+      <Header />
+      <Message />
+    </Box>
+  );
 };
 
 export default message;

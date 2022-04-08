@@ -1,7 +1,14 @@
 import React from "react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 
-const message = () => {
-  return <div>Doctor Message here</div>;
+const messages = () => {
+  return (
+    <>
+      <Box as="section" bg="#F8F5F5">
+        hello world
+      </Box>
+    </>
+  );
 };
 
-export default message;
+export default messages;
