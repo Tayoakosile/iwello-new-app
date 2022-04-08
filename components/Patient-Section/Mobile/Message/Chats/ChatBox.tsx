@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, HStack, VStack, Icon } from "@chakra-ui/react";
+import { BiSend } from "react-icons/bi";
 
 const ChatBox = () => {
   return (
-    <Box
+    <HStack
       as="span"
       position="fixed"
       w="full"
@@ -12,17 +13,27 @@ const ChatBox = () => {
       left="0"
       h="fit"
       py="6"
-      bg="red"
+      px="4"
+      justify={'space-between'}
     >
       <Box
         contentEditable={true}
-        bg="yellow"
-        rounded="50px"
-        w="90%"
+        bg="white"
+        fontFamily={"Rubik"}
+        fontSize="14px"
+        rounded="20px"
+        w="70%"
         mx="auto"
         minH={"12"}
+        p="4"
+        maxH="32"
+        overflow="scroll"
+        outline="none"
+        border="0px solid transparent"
       />
-    </Box>
+
+      <Icon as={BiSend} fontSize="32px" />
+    </HStack>
   );
 };
 
