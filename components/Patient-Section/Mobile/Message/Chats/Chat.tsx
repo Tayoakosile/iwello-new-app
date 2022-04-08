@@ -19,7 +19,7 @@ const Chat = ({ chat }: { chat: ChatsProp }) => {
             as="span"
             className="time"
             color={` ${
-              isSentByUser ? "#EEEDFE !important" : "#909090 !important  "
+              isSentByUser ? "#EEEDFE !important" : "#909090 !important"
             }`}
           >
             10:30pm
