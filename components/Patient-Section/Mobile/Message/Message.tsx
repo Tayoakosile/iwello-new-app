@@ -2,11 +2,13 @@ import React from "react";
 import { Box, CloseButton, HStack, VStack } from "@chakra-ui/react";
 import DoctorProfile from "./DoctorProfile";
 import Chats from "./Chats/Chats";
+import ChatBox from "./Chats/ChatBox";
 
 const Message = () => {
   return (
     <>
       <Box
+        position="relative"
         h="full"
         w="full"
         bg="#F8F5F5"
@@ -22,8 +24,9 @@ const Message = () => {
         </Box>
         <DoctorProfile />
         {/* Patient/ Doctor's chat */}
-        <Chats  />
+        <Chats />
         {/* Patient/ Doctor's chat */}
+        <ChatBox />
       </Box>
     </>
   );

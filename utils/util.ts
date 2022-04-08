@@ -57,4 +57,11 @@ export const ChatMessage: Array<ChatsProp> = [
     receiverId: "12345",
     senderId: "5432169",
   },
+  
+  {
+    text: "Thank you for reaching out",
+    receiverId: "12345",
+    senderId: "5432169",
+  },
+
 ];
