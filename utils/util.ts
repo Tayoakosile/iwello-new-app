@@ -1,9 +1,4 @@
-export interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
+import { NavItem, ChatsProp } from "../@types/types";
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
@@ -43,5 +38,23 @@ export const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Hire Designers",
     href: "#",
+  },
+];
+
+export const ChatMessage: Array<ChatsProp> = [
+  {
+    text: "Hello, Dr. Arin.",
+    senderId: "12345",
+    receiverId: "5432169",
+  },
+  {
+    text: "Hi there",
+    receiverId: "12345",
+    senderId: "5432169",
+  },
+  {
+    text: "Thank you for reaching out",
+    receiverId: "12345",
+    senderId: "5432169",
   },
 ];

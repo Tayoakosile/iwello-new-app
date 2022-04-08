@@ -14,9 +14,9 @@ button:active {
 .message {
   color: #000;
   clear: both;
-  line-height: 18px;
+  line-height: 16px;
   font-size: 14px;
-  padding: 8px;
+  padding: 16px;
   position: relative;
   margin: 8px 0;
   max-width: 85%;
@@ -35,20 +35,21 @@ button:active {
 .metadata {
   display: inline-block;
   float: right;
-  padding: 0 0 0 7px;
+  /* padding: 0 0 0 7px; */
   position: relative;
-  bottom: -4px;
+  bottom: -12px;
+  right: -10px;
 }
 
 .metadata .time {
-  color: rgba(0, 0, 0, 0.45);
+  color: #fff;
   font-size: 11px;
   display: inline-block;
 }
 
 .metadata .tick {
   display: inline-block;
-  margin-left: 2px;
+  margin-left: 4px;
   position: relative;
   top: 4px;
   height: 16px;

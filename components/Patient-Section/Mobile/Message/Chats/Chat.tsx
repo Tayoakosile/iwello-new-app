@@ -1,13 +1,29 @@
 import React from "react";
 import { Box, HStack, VStack } from "@chakra-ui/react";
+import { ChatsProp } from "../../../../../@types/types";
 
-const Chat = () => {
+const Chat = ({ chat }: { chat: ChatsProp }) => {
+  const { receiverId, text, senderId } = chat;
+  const userId = "12345";
+  const isSentByUser = userId === senderId;
   return (
     <>
-      <Box as="span" className="message sent" rounded='10px'>
-        What happened last night swaibu?
+      <Box
+        as="span"
+        className={`message ${isSentByUser ? "sent" : "received"}`}
+        rounded="10px"
+      >
+        {text}
         <span className="metadata">
-          <span className="time">10:30pm</span>
+          <Box
+            as="span"
+            className="time"
+            color={` ${
+              isSentByUser ? "#EEEDFE !important" : "#909090 !important  "
+            }`}
+          >
+            10:30pm
+          </Box>
           <span className="tick">
             <svg
               xmlns="http://www.w3.org/2000/svg"

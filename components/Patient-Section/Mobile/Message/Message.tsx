@@ -21,9 +21,9 @@ const Message = () => {
           {/* Close button */}
         </Box>
         <DoctorProfile />
-        {/* Message */}
+        {/* Patient/ Doctor's chat */}
         <Chats  />
-        {/* Message */}
+        {/* Patient/ Doctor's chat */}
       </Box>
     </>
   );
