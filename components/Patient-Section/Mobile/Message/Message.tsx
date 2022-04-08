@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, CloseButton, HStack, VStack } from "@chakra-ui/react";
 import DoctorProfile from "./DoctorProfile";
+import Chats from "./Chats/Chats";
 
 const Message = () => {
   return (
@@ -15,11 +16,14 @@ const Message = () => {
         position={"relative"}
       >
         {/* Close button */}
-        <Box as="span" position={"absolute"} top='17px' right='17px' mb='14px'>
-          <CloseButton size='lg' />
+        <Box as="span" position={"absolute"} top="17px" right="17px" mb="14px">
+          <CloseButton size="lg" />
           {/* Close button */}
         </Box>
         <DoctorProfile />
+        {/* Message */}
+        <Chats  />
+        {/* Message */}
       </Box>
     </>
   );
