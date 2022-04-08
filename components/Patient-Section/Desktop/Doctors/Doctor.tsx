@@ -15,6 +15,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { BsTelephoneFill, BsThreeDots, BsChatLeftFill } from "react-icons/bs";
+import Link from 'next/link';
 
 const Doctor = () => {
   return (
@@ -89,6 +90,7 @@ const Doctor = () => {
                 <BsTelephoneFill />
               </IconButton>
 
+              <Link passHref href ='/patient/messages'>
               <IconButton
                 bg="white"
                 size="lg"
@@ -99,9 +101,12 @@ const Doctor = () => {
                   bg: "brand.100",
                   color: "brand.500",
                 }}
+                
               >
                 <BsChatLeftFill />
               </IconButton>
+              </Link>
+
             </HStack>
           </PopoverBody>
         </PopoverContent>
