@@ -24,8 +24,8 @@ const useChat = () => {
   const sendChat = (): any => {
     const userInfoWithChatMessage: ChatsProp = {
       text: chatMessage.message,
-      receiverId: "12345",
-      senderId: randomatic("0a", 11),
+      receiverId: randomatic("0a", 11),
+      senderId: "12345",
     };
     const newArray = produce(allChatMessages, (draftState) => {
       // "mutate" the draft array

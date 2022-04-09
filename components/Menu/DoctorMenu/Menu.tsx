@@ -7,7 +7,7 @@ import DoctorMobileMenu from "./MobileMenu";
 export default function PatientMenu({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh">
+    <Box minH="100vh" h="full">
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}

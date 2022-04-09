@@ -1,3 +1,10 @@
+html,
+body,
+#__next,
+#__next > div {
+  height: 100% !important;
+  min-height: 100vh;
+}
 html {
   scroll-behavior: smooth;
 }
