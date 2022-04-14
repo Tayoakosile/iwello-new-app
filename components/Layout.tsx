@@ -43,10 +43,6 @@ const Layout = ({ router, children }: { router: any; children: ReactNode }) => {
               {children}
             </>
           )}
-
-          {/* If User is a patient SHow the patient menu else show the Main Menu */}
-
-          {/* <>{children}</> */}
         </ScaleFade>
       </Provider>
     </ChakraProvider>

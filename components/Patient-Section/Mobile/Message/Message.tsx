@@ -14,10 +14,10 @@ const Message = () => {
   return (
     <Box
       position="relative"
-      h={{ base: "90vh", lg: "70vh" }}
+      h={{ base: "90vh", lg: "75vh" }}
       w="full"
       // bg="red"
-      bg="#F8F5F5"
+      bg={{ base: "#F8F5F5", lg: "#fff" }}
       mt="20px"
       pt="46px"
       px="19px"

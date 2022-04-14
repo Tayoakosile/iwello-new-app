@@ -4,6 +4,7 @@ body,
 #__next > div {
   height: 100% !important;
   min-height: 100vh;
+  /* ba */
 }
 html {
   scroll-behavior: smooth;
@@ -128,7 +129,6 @@ button:active {
 }
 /* Message */
 
-
 .chat {
   height: calc(100% - 69px);
 }
@@ -168,7 +168,7 @@ button:active {
 }
 
 .user-bar .actions img {
-  height:28px;
+  height: 28px;
 }
 .user-bar .actions.more {
   margin: 0 12px 0 20px;
@@ -180,7 +180,7 @@ button:active {
 
 .user-bar .actions.attachment i {
   display: block;
-/*   transform: rotate(-45deg); */
+  /*   transform: rotate(-45deg); */
 }
 
 .user-bar .avatar {

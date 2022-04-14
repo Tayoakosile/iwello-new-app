@@ -5,8 +5,14 @@ import { FiSearch } from "react-icons/fi";
 const Header = () => {
   return (
     <>
-      <HStack as="section" pt="46px" justify="space-between" w="90%" mx="auto">
-        <Heading fontSize="18px">Chat</Heading>
+      <HStack
+        as="section"
+        justify="space-between"
+        w="90%"
+        mx="auto"
+        d={{ lg: "none" }}
+      >
+        <Heading fontSize={{ base: "18px", lg: "30px" }}>Message</Heading>
         <Icon as={FiSearch} w="19px" h="19px" />
       </HStack>
     </>

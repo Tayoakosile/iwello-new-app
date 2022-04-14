@@ -4,8 +4,10 @@ import { BsBell, BsCart3 } from "react-icons/bs";
 const PatientIcon = ({
   text,
   additionalText,
+  placeholderText,
 }: {
   text: string;
+  placeholderText: string;
   additionalText?: string;
 }) => {
   return (
@@ -18,7 +20,9 @@ const PatientIcon = ({
         <Input
           borderRadius={"5px"}
           w="50%"
-          placeholder="Search for a doctor"
+          placeholder={
+            placeholderText ? placeholderText : "Search for a doctor"
+          }
           bg="white"
           boxShadow="none !important"
           outline="none !important"
