@@ -6,6 +6,7 @@ import ChatBox from "./Chats/ChatBox";
 import { useRef, useEffect } from "react";
 import { RootState } from "../../../../stores/reduxstore";
 import { useSelector } from "react-redux";
+import DesktopChatBox from "./Chats/DesktopChatBox";
 
 const Message = () => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
@@ -13,15 +14,17 @@ const Message = () => {
   return (
     <Box
       position="relative"
-      h="100%"
+      h={{ base: "90vh", lg: "70vh" }}
       w="full"
+      // bg="red"
       bg="#F8F5F5"
       mt="20px"
       pt="46px"
       px="19px"
+      // overflowY="scroll"
       id="container"
     >
-      <Box bg="red" h="90%" overflowY="scroll" pb="10%">
+      <>
         {/* Close button */}
         <Box as="span" position={"absolute"} top="17px" right="17px" mb="14px">
           <CloseButton size="lg" />
@@ -30,9 +33,14 @@ const Message = () => {
         <DoctorProfile />
         {/* Patient/ Doctor's chat */}
         <Chats />
-        <Box mt='32'/>
+        <Box mt="32" />
+      </>
+      <Box as="span" d={{ base: "block", lg: "none" }}>
+        <ChatBox />
       </Box>
-      <ChatBox />
+      <Box as="span" d={{ base: "none", lg: "block" }}>
+        <DesktopChatBox />
+      </Box>
     </Box>
   );
 };

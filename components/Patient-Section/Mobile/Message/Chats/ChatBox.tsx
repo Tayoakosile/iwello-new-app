@@ -38,6 +38,7 @@ const ChatBox = () => {
     >
       <Box
         contentEditable={true}
+        flex="2"
         w="100%"
         bg="#fff"
         // w='100%'
@@ -73,15 +74,32 @@ const ChatBox = () => {
         }}
       />
 
-      <Box as="span">
+      {/* Send chat  */}
+      <AnimateChatBox
+        d="flex"
+        whileTap={{ scale: showSendButton ? 0.7 : 1 }}
+        whileHover={{ scale: 1.1 }}
+        as="span"
+        // bg="yellow"
+        p="2"
+        animate={{
+          opacity: showSendButton ? 1 : 0.1,
+          cursor: showSendButton ? "not-allowed" : "pointer",
+        }}
+      >
         <Icon
           as={BiSend}
-          fontSize="42px"
+          fontSize="36px"
+          color="gray.700"
           onClick={() => {
-            sendChat();
+            // showSendButton
+            if (showSendButton) {
+              sendChat();
+            }
           }}
         />
-      </Box>
+      </AnimateChatBox>
+      {/* Send chat  */}
     </HStack>
   );
 };

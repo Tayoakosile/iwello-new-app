@@ -20,6 +20,7 @@ export default function PatientMenu({ children }: { children: ReactNode }) {
         ml={{ base: 0, md: 80 }}
         p={{ base: "0", md: "6" }}
         h="100%"
+        overflowY={"hidden"}
       >
         {children}
       </Box>

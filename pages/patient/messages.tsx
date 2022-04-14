@@ -5,7 +5,7 @@ import Header from "../../components/Patient-Section/Mobile/Message/Header";
 
 const message = () => {
   return (
-    <Box as="section" h="full" w="full" >
+    <Box as="section" h="100%" w="full"  >
       <Header />
       <Message />
       {/* <Box mt="32"></Box> */}
