@@ -8,7 +8,7 @@ const Chats = () => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
 
   return (
-    <Box>
+    <Box h="full" w="full">
       {allChatMessages.map((chat, index) => (
         //r
         <Chat key={index} chat={chat} />

@@ -50,7 +50,7 @@ const ChatBox = () => {
         p="4"
         // bg="white"
         maxH="16"
-        overflow="scroll"
+        overflow="auto"
         outline="none"
         border="0px solid transparent"
         onInput={(e) => {
