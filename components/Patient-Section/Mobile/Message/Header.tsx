@@ -10,7 +10,7 @@ const Header = () => {
         justify="space-between"
         w="90%"
         mx="auto"
-        d={{ lg: "none" }}
+        d={{ base: "flex", lg: "none" }}
       >
         <Heading fontSize={{ base: "18px", lg: "30px" }}>Message</Heading>
         <Icon as={FiSearch} w="19px" h="19px" />

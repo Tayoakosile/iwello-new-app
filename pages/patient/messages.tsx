@@ -11,11 +11,17 @@ const message = () => {
       <Box as="span" d={{ base: "none", lg: "block" }}>
         <PatientIcon text={"Messages"} placeholderText="Search Messages" />
       </Box>
-      
+
       <Header />
 
-      <Message />
-      {/* <Box mt="32"></Box> */}
+      <Box as="span" d={{ base: "block", lg: "none" }}>
+        <Message />
+      </Box>
+      
+      <Box as="span" d={{ base: "block", lg: "none" }}>
+        <Message />
+      </Box>
+
     </Box>
   );
 };
