@@ -19,7 +19,7 @@ const SidebarContent = ({ ...rest }) => {
       spacing="40px"
       borderRight="1px"
       borderRightColor={"brand.500"}
-      w={{ base: "full", md: 80 }}
+      w={{ base: "full", md: 72 }}
       // w='full'
       pos="fixed"
       {...rest}

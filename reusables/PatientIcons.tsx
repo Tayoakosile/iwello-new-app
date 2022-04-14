@@ -16,7 +16,12 @@ const PatientIcon = ({
         <Icon as={BsCart3} />
         <Icon as={BsBell} />
       </HStack>
-      <HStack as="span" justify="flex-end" w="full" pt="49px">
+      <HStack
+        as="span"
+        justify="flex-end"
+        w="full"
+        pt={{ base: "49px", lg: "47px" }}
+      >
         <Input
           borderRadius={"5px"}
           w="50%"
@@ -35,8 +40,8 @@ const PatientIcon = ({
       <Heading
         color="brand.900"
         fontSize="30px"
-        fontFamily={"Roboto"}
-        pt="20px"
+        fontFamily={"Rubik"}
+        pt={{ base: "20px", lg: "17px" }}
         pb={additionalText ? "0" : "20px"}
       >
         {text}

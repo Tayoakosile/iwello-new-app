@@ -9,6 +9,7 @@ const Chats = () => {
 
   return (
     <Box h="full" w="full">
+      
       {allChatMessages.map((chat, index) => (
         //r
         <Chat key={index} chat={chat} />
