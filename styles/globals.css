@@ -213,3 +213,7 @@ button:active {
   font-weight: 400;
   letter-spacing: 0;
 }
+/* Message */
+.iwello__desktopMessage > :last-child {
+  margin-bottom: 30px;
+}

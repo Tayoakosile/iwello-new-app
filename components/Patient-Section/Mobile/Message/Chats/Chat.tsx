@@ -12,6 +12,8 @@ const Chat = ({ chat }: { chat: ChatsProp }) => {
         as="span"
         className={`message ${isSentByUser ? "sent" : "received"}`}
         rounded="10px"
+        
+        // bg={{ base: "#fff !important", lg: "#F5F5F5 !important" }}
       >
         {text}
         <span className="metadata">

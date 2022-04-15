@@ -10,16 +10,24 @@ import UseMeasureMediaQuery from "../../components/hooks/UseMeasureMediaQuery";
 const message = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
   return (
-    <Box as="section" h="100%" minHeight={"100%"} w="full">
+    <Box
+      as="section"
+      h="100%"
+      minHeight={"100%"}
+      w="full"
+      sx={{
+        "::-webkit-scrollbar-track": {
+          background: "#f1f1f1",
+        },
+      }}
+    >
       <Box as="span" d={{ base: "none", lg: "block" }}>
         <PatientIcon text={"Messages"} placeholderText="Search Messages" />
       </Box>
       <Header />
       {toggleNavbar ? <DesktopMessage /> : <Message />}
       {/* Divider */}
-      <Box h="4" />
-      {/* <Box as="span" d={{ base: "block", lg: "none" }}></Box> */}
-      {/* <Box as="span" d={{ base: "none", lg: "block" }}></Box> */}
+      <Box h="12" />
     </Box>
   );
 };

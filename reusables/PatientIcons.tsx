@@ -12,7 +12,7 @@ const PatientIcon = ({
 }) => {
   return (
     <>
-      <HStack fontSize="24px" spacing="27px" pt="10px" justify="flex-end">
+      <HStack fontSize="24px" spacing="27px" pt="4px" justify="flex-end">
         <Icon as={BsCart3} />
         <Icon as={BsBell} />
       </HStack>
@@ -20,7 +20,7 @@ const PatientIcon = ({
         as="span"
         justify="flex-end"
         w="full"
-        pt={{ base: "49px", lg: "47px" }}
+        pt={{ base: "49px", lg: "27px" }}
       >
         <Input
           borderRadius={"5px"}
@@ -41,7 +41,7 @@ const PatientIcon = ({
         color="brand.900"
         fontSize="30px"
         fontFamily={"Rubik"}
-        pt={{ base: "20px", lg: "17px" }}
+        pt={{ base: "20px", lg: "0px" }}
         pb={additionalText ? "0" : "20px"}
       >
         {text}

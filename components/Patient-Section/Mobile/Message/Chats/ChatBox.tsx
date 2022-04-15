@@ -10,6 +10,7 @@ import { useState } from "react";
 
 const AnimateButton = motion(Box);
 const AnimateChatBox = motion(Box);
+
 const ChatBox = () => {
   const [showSendButton, setShowButton] = useState(false);
   const dispatch = useDispatch();

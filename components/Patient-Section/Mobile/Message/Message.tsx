@@ -21,13 +21,13 @@ const Message = () => {
       mt="20px"
       pt="46px"
       px="19px"
-      // overflowY="scroll"
+      overflowY={{ base: "scroll", lg: "visible" }}
       id="container"
     >
       <>
         {/* Close button */}
         <Box as="span" position={"absolute"} top="17px" right="17px" mb="14px">
-          <CloseButton size="lg" />
+          <CloseButton size="lg" d={{ base: "block", lg: "none" }} />
           {/* Close button */}
         </Box>
         <DoctorProfile />
@@ -38,9 +38,9 @@ const Message = () => {
       <Box as="span" d={{ base: "block", lg: "none" }}>
         <ChatBox />
       </Box>
-      <Box as="span" d={{ base: "none", lg: "block" }}>
+      {/* <Box as="span" d={{ base: "none", lg: "block" }}>
         <DesktopChatBox />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
