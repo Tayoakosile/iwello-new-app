@@ -1,12 +1,12 @@
-import React from "react";
-import { GiPaperClip } from "react-icons/gi";
-import { Box, HStack, VStack, Icon } from "@chakra-ui/react";
-import { BiSend } from "react-icons/bi";
-import { useState } from "react";
+import { Box, HStack, Icon } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import useChat from "../../../../hooks/useChat";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { BiSend } from "react-icons/bi";
+import { GiPaperClip } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
 import { storeMessage } from "../../../../../stores/chat";
+import useChat from "../../../../hooks/useChat";
+import { RootState } from "../../../../../stores/reduxstore";
 
 const DesktopChatBox = () => {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const DesktopChatBox = () => {
           rounded="50px"
           mx="auto"
           minH={"6"}
-          // bg="white"
+          // color="white"
 
           py="4"
           px="8"
@@ -89,12 +89,13 @@ const DesktopChatBox = () => {
           }}
         />
         <AnimateChatBox
+          bg="red"
           d="flex"
           whileTap={{ scale: showSendButton ? 0.7 : 1 }}
           whileHover={{ scale: 1.1 }}
           as="span"
           // bg="yellow"
-          p="2"
+          p="4"
           animate={{
             opacity: showSendButton ? 1 : 0.1,
             cursor: showSendButton ? "not-allowed" : "pointer",
