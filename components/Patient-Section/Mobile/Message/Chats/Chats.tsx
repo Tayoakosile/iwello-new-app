@@ -17,9 +17,6 @@ const Chats = () => {
         ".received": {
           bg: toggleNavbar ? "#F5F5F5" : "#fff",
         },
-        ".iwello-scroll > div": {
-          // overflow: "hidden",
-        },
       }}
     >
       <Box as={ScrollToBottom} w="full" h="full" className="iwello-scroll">
@@ -29,8 +26,18 @@ const Chats = () => {
         ))}
 
         <Box as="span" className="message sent" opacity="0" />
-        <Box as="span" className="message received" opacity="0" />
-        <Box as="span" className="message received" opacity="0" />
+        <Box
+          as="span"
+          className="message received"
+          opacity="0"
+          d={{ base: "none", lg: "block" }}
+        />
+        <Box
+          as="span"
+          className="message received"
+          opacity="0"
+          d={{ base: "none", lg: "block" }}
+        />
       </Box>
 
       {/* <Chat key={index} chat={chat} /> */}

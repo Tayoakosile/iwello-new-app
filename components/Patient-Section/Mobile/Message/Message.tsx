@@ -26,16 +26,23 @@ const Message = () => {
     >
       <>
         {/* Close button */}
-        <Box as="span" position={"absolute"} top="17px" right="17px" mb="14px">
-          <CloseButton size="lg" d={{ base: "block", lg: "none" }} />
+        <Box
+          as="span"
+          position={"absolute"}
+          top="17px"
+          right="17px"
+          mb="14px "
+          d={{ base: "block", lg: "none" }}
+        >
+          <CloseButton size="lg" />
           {/* Close button */}
         </Box>
         <DoctorProfile />
         {/* Patient/ Doctor's chat */}
         <Chats />
-        <Box mt="32" />
+        <Box mt="20" />
       </>
-      <Box as="span" d={{ base: "block", lg: "none" }}>
+      <Box as="span">
         <ChatBox />
       </Box>
       {/* <Box as="span" d={{ base: "none", lg: "block" }}>

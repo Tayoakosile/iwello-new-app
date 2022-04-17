@@ -26,7 +26,6 @@ const message = () => {
       </Box>
       <Header />
       {toggleNavbar ? <DesktopMessage /> : <Message />}
-      {/* Divider */}
       <Box h="12" />
     </Box>
   );

@@ -36,7 +36,12 @@ const PatientRightMenu = () => {
         onClose={onClose}
         onOverlayClick={onClose}
       >
-        <DrawerContent w="90% !important" pl="50px" mt="10px">
+        <DrawerContent
+          w="90% !important"
+          pl="50px"
+          mt="10px"
+          overflowY="scroll"
+        >
           <DrawerCloseButton />
           <VStack align="flex-start" spacing="10px" pt="60px">
             {PatientMenuItems.map((menuItem) => (

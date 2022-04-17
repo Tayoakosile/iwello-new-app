@@ -7,10 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { storeMessage } from "../../../../../stores/chat";
 import useChat from "../../../../hooks/useChat";
 import { RootState } from "../../../../../stores/reduxstore";
+import Media from "../Media/Media";
 
 const DesktopChatBox = () => {
   const dispatch = useDispatch();
   const [showSendButton, setShowButton] = useState(false);
+  const [patientMessage, setPatientMessage] = useState("yoo");
   const AnimateButton = motion(Box);
   const AnimateChatBox = motion(Box);
   const { sendChat } = useChat();
@@ -40,12 +42,15 @@ const DesktopChatBox = () => {
           },
           svg: {
             cursor: "pointer",
-            w: "6",
-            h: "6",
+            w: "7",
+            h: "7",
           },
         }}
       >
-        <Icon as={GiPaperClip} />
+        {/* Upload file here */}
+        <Media showSendButton={showSendButton} />
+        {/* Upload file here */}
+
         <Box
           contentEditable={true}
           border="1px solid #909090"
@@ -62,16 +67,17 @@ const DesktopChatBox = () => {
           mx="auto"
           minH={"6"}
           // color="white"
-
+          id="patientMessageBox"
           py="4"
           px="8"
           maxH="24"
           overflowY="hidden"
           outline="none"
           // border="0px solid transparent"
+          // dangerouslySetInnerHTML={{ __html: patientMessage }}
+          suppressContentEditableWarning={true}
           onInput={(e) => {
             const userMessage = e.currentTarget.textContent as string;
-            //  Makes sure user types before message is sent
 
             //   Used to animate app
             userMessage.trim().length >= 1
@@ -79,39 +85,36 @@ const DesktopChatBox = () => {
               : setShowButton(false);
 
             if (userMessage.trim().length >= 1) {
+              setPatientMessage(userMessage);
               dispatch(
                 storeMessage({
                   message: userMessage.trim(),
                 })
               );
             }
-            //   storeMessage;
           }}
         />
         <AnimateChatBox
-          bg="red"
           d="flex"
           whileTap={{ scale: showSendButton ? 0.7 : 1 }}
           whileHover={{ scale: 1.1 }}
           as="span"
           // bg="yellow"
-          p="4"
+          p="2"
           animate={{
             opacity: showSendButton ? 1 : 0.1,
             cursor: showSendButton ? "not-allowed" : "pointer",
           }}
+          onClick={() => {
+            // showSendButton
+            if (showSendButton) {
+              sendChat();
+              setPatientMessage("");
+              // userMessage.trim()("");
+            }
+          }}
         >
-          <Icon
-            as={BiSend}
-            fontSize="36px"
-            color="gray.700"
-            onClick={() => {
-              // showSendButton
-              if (showSendButton) {
-                sendChat();
-              }
-            }}
-          />
+          <Icon as={BiSend} w="7" h="7" color="gray.700" />
         </AnimateChatBox>
       </HStack>
     </>

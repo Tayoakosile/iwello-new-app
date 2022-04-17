@@ -87,18 +87,14 @@ const ChatBox = () => {
           opacity: showSendButton ? 1 : 0.1,
           cursor: showSendButton ? "not-allowed" : "pointer",
         }}
+        onClick={() => {
+          // showSendButton
+          if (showSendButton) {
+            sendChat();
+          }
+        }}
       >
-        <Icon
-          as={BiSend}
-          fontSize="36px"
-          color="gray.700"
-          onClick={() => {
-            // showSendButton
-            if (showSendButton) {
-              sendChat();
-            }
-          }}
-        />
+        <Icon as={BiSend} fontSize="36px" color="gray.700" />
       </AnimateChatBox>
       {/* Send chat  */}
     </HStack>

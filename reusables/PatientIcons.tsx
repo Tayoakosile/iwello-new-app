@@ -7,12 +7,18 @@ const PatientIcon = ({
   placeholderText,
 }: {
   text: string;
-  placeholderText: string;
+  placeholderText?: string;
   additionalText?: string;
 }) => {
   return (
     <>
-      <HStack fontSize="24px" spacing="27px" pt="4px" justify="flex-end">
+      <HStack
+        fontSize="24px"
+        spacing="27px"
+        pt="4px"
+        justify="flex-end"
+        d={{ base: "none", lg: "flex" }}
+      >
         <Icon as={BsCart3} />
         <Icon as={BsBell} />
       </HStack>

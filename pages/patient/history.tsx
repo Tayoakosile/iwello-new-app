@@ -21,6 +21,7 @@ const History = () => {
         text="History"
         additionalText="Keep track of previous consultations"
       />
+
       {isTabletWidth ? <PatientHistory /> : <PatientHistory />}
     </>
   );

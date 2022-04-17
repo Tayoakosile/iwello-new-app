@@ -25,7 +25,7 @@ const DesktopMessage = () => {
     <Box
       className="iwello__desktopMessage"
       as="section"
-      h="100%"
+      h="600px"
       w="full"
       bg="#fff"
       px="6"
