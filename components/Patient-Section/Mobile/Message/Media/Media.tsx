@@ -65,6 +65,7 @@ const Media = ({ showSendButton }: { showSendButton: boolean }) => {
                 onChange={(croppedImage) => {
                   setCrop(croppedImage);
                   setCroppedFile(croppedImage);
+                  console.log(croppedImage, crop);
                 }}
               >
                 <Image
@@ -85,8 +86,8 @@ const Media = ({ showSendButton }: { showSendButton: boolean }) => {
               </Button>
               <Button
                 colorScheme="red"
-                ml={3}
                 flex="0.5"
+                size="lg"
                 onClick={() => {
                   UploadImage(crop);
                 }}

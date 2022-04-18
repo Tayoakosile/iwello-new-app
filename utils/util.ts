@@ -46,33 +46,39 @@ export const ChatMessage: Array<ChatsProp> = [
     text: "Hello, Dr. Arin.",
     senderId: "12345",
     receiverId: "5432169",
+    type: "text",
   },
 
   {
     text: "Hello, Dr. Arin.",
     senderId: "12345",
     receiverId: "5432169",
+    type: "text",
   },
   {
     text: "Hello, Dr. Arin.",
     senderId: "12345",
     receiverId: "5432169",
+    type: "text",
   },
   {
     text: "Hello, Dr. Arin.",
     senderId: "12345",
     receiverId: "5432169",
+    type: "text",
   },
 
   {
     text: "Thank you for reaching out",
     receiverId: "12345",
     senderId: "5432169",
+    type: "text",
   },
 
   {
     text: "Thank you for reaching out",
     receiverId: "12345",
     senderId: "5432169",
+    type: "text",
   },
 ];

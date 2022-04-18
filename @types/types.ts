@@ -1,3 +1,5 @@
+import { Crop } from "react-image-crop";
+
 export interface NavItem {
   label: string;
   subLabel?: string;
@@ -6,7 +8,9 @@ export interface NavItem {
 }
 
 export interface ChatsProp {
-  text: string;
-  senderId: string;
-  receiverId: string;
+  text?: string;
+  type?: string;
+  senderId?: string;
+  receiverId?: string;
+  croppedImage?: any;
 }
