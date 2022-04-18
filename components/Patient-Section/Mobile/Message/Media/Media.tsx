@@ -1,26 +1,22 @@
-import React from "react";
-import "style-file-input";
 import {
-  Box,
   AlertDialog,
   AlertDialogBody,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogContent,
+  AlertDialogFooter,
   AlertDialogOverlay,
-  HStack,
-  VStack,
+  Box,
   Icon,
-  Input,
   Image,
 } from "@chakra-ui/react";
+import React from "react";
+import "style-file-input";
 
-import { GiPaperClip } from "react-icons/gi";
+import { Button, useDisclosure } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import ReactCrop, { Crop } from "react-image-crop";
+import { useState } from "react";
+import { GiPaperClip } from "react-icons/gi";
+import ReactCrop, { Crop, ReactCropProps } from "react-image-crop";
 import useUploadImage from "../../../../hooks/useUploadImage";
-import { useState, useRef } from "react";
-import { useDisclosure, Button } from "@chakra-ui/react";
 
 const Media = ({ showSendButton }: { showSendButton: boolean }) => {
   const AnimateChatBox = motion(Box);
@@ -54,7 +50,7 @@ const Media = ({ showSendButton }: { showSendButton: boolean }) => {
         leastDestructiveRef={cancelRef}
         onClose={onClose}
         isCentered
-        size="3xl"
+        size="4xl"
         closeOnOverlayClick={false}
       >
         <AlertDialogOverlay>
@@ -62,10 +58,10 @@ const Media = ({ showSendButton }: { showSendButton: boolean }) => {
             <AlertDialogBody>
               <ReactCrop
                 crop={crop}
-                onChange={(croppedImage) => {
+                onChange={(croppedImage: Crop) => {
                   setCrop(croppedImage);
                   setCroppedFile(croppedImage);
-                  console.log(croppedImage, crop);
+                  //   console.log(croppedImage, crop);
                 }}
               >
                 <Image
@@ -84,12 +80,13 @@ const Media = ({ showSendButton }: { showSendButton: boolean }) => {
               >
                 Cancel
               </Button>
+
               <Button
                 colorScheme="red"
                 flex="0.5"
                 size="lg"
                 onClick={() => {
-                  UploadImage(crop);
+                  UploadImage(croppedfile);
                 }}
               >
                 Upload
