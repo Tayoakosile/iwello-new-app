@@ -71,7 +71,7 @@ const DesktopChatBox = () => {
           overflowY="hidden"
           outline="none"
           // border="0px solid transparent"
-          dangerouslySetInnerHTML={{ __html: patientMessage }}
+          // dangerouslySetInnerHTML={{ __html: patientMessage }}
           suppressContentEditableWarning={true}
           onInput={(e) => {
             const userMessage = e.currentTarget.textContent as string;

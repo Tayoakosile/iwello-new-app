@@ -11,9 +11,9 @@ import { handleImageUpload } from "../../helper/helper";
 
 const useUploadImage = (cropper: any) => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
+  const chat = useSelector((state: RootState) => state.chat.value.message);
 
   const dispatch = useDispatch();
-
   const [image, setImage] = useState();
   const [cropImageDialog, setCropImageDialog] = useState(false);
   const [cropData, setCropData] = useState("#");
@@ -45,7 +45,7 @@ const useUploadImage = (cropper: any) => {
 
       const UserImageUpload: ChatsProp = {
         croppedImage: croppedData,
-        text: message ? message : null,
+        text: message ? message : chat,
         receiverId: randomatic("0a", 11),
         senderId: "12345",
       };
@@ -59,7 +59,6 @@ const useUploadImage = (cropper: any) => {
       //   Sends the image
       dispatch(sendPatientChat(newArray));
       setCropImageDialog(false);
-      //   Sends the image
     }
   };
 

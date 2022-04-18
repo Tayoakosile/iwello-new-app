@@ -1,10 +1,11 @@
-import { Box, HStack, Icon, Textarea } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import React from "react";
+import { Box, HStack, VStack, Icon } from "@chakra-ui/react";
 import { BiSend } from "react-icons/bi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { storeMessage } from "../../../../../stores/chat";
 import useChat from "../../../../hooks/useChat";
+import { motion } from "framer-motion";
+import { useState } from "react";
 // storeMessage;
 
 const AnimateButton = motion(Box);
@@ -14,7 +15,6 @@ const ChatBox = () => {
   const [showSendButton, setShowButton] = useState(false);
   const dispatch = useDispatch();
   const { sendChat } = useChat();
-  
   return (
     <HStack
       as="span"
@@ -37,8 +37,8 @@ const ChatBox = () => {
       }}
       align="flex-end"
     >
-      <Textarea
-        // contentEditable={true}
+      <Box
+        contentEditable={true}
         flex="2"
         w="100%"
         bg="#fff"

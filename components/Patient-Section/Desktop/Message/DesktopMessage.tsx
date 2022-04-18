@@ -9,15 +9,6 @@ import DoctorProfile from "../../Mobile/Message/DoctorProfile";
 import Chats from "../../Mobile/Message/Chats/Chats";
 import DesktopChatBox from "../../Mobile/Message/Chats/DesktopChatBox";
 
-// const AlwaysScrollToBottom = () => {
-//   const chats = useSelector((state: RootState) => state.chats.value);
-//   const elementRef = useRef<HTMLDivElement>(null);
-
-//   useEffect(() => {
-//   elementRef.current.scrollIntoView();[]
-//   }, [chats]);
-// return <div ref={elementRef} />;
-// };
 
 const DesktopMessage = () => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
@@ -25,7 +16,7 @@ const DesktopMessage = () => {
     <Box
       className="iwello__desktopMessage"
       as="section"
-      h="600px"
+      h="1000px"
       w="full"
       bg="#fff"
       px="6"

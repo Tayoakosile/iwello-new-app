@@ -1,29 +1,54 @@
 import React from "react";
-import { Box, HStack, VStack, Image, Text } from "@chakra-ui/react";
+import Image from "next/Image";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import { Box, HStack, VStack, Text } from "@chakra-ui/react";
 import { ChatsProp } from "../../../../../@types/types";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../../stores/reduxstore";
 
 const Chat = ({ chat }: { chat: ChatsProp }) => {
-  const { receiverId, text, senderId, type, croppedImage } = chat;
+  const { receiverId, text, senderId, croppedImage } = chat;
   const userId = "12345";
+  const AnimateImage = motion(Box);
   const isSentByUser = userId === senderId;
-  console.log(croppedImage, "croppedImage");
+  const chat = useSelector((state: RootState) => state.chat.value);
+
   return (
     <>
       <Box
         as="span"
         className={`message ${isSentByUser ? "sent" : "received"}`}
         rounded="10px"
-        maxW={croppedImage ? "50% !important" : "85% !important"}
+        maxW={croppedImage ? "40% !important" : "85% !important"}
         w="fit-content !important"
         // bg={{ base: "#fff !important", lg: "#F5F5F5 !important" }}
         mb="8"
       >
-        {croppedImage && <Image src={croppedImage} alt="Alt Image" w="100%" />}
+        {croppedImage && (
+          <Box as={Zoom} openText="Click to zoom">
+            <Image
+              src={croppedImage}
+              // layout="fill"
+              alt="Alt Image"
+              width={400}
+              objectFit="contain"
+              height={300}
+            />
+          </Box>
+        )}
 
-        <br />
-        <Text as="span" mt={croppedImage ? "4" : "0"}  fontSize={'lg'}>
+        {croppedImage && (
+          <>
+            <br />
+          </>
+        )}
+
+        <Text as="span" fontSize={croppedImage ? "xl" : "lg"}>
           {text}
         </Text>
+
         <span className="metadata">
           <Box
             as="span"

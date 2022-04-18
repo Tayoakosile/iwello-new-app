@@ -22,7 +22,7 @@ import { RootState } from "../../../../../stores/reduxstore";
 
 export const Media: React.FC = () => {
   //   const [] = useState();
-  const chat = useSelector((state: RootState) => state.chat);
+  const chat = useSelector((state: RootState) => state.chat.value.message);
   const [cropper, setCropper] = useState<any>();
   const [message, setMessage] = useState("");
   const AnimateChatBox = motion(Box);
@@ -44,7 +44,6 @@ export const Media: React.FC = () => {
         <Input
           type="file"
           multiple={false}
-          
           onChange={onChange}
           d="none"
           id="iwello-media-upload"
@@ -102,7 +101,7 @@ export const Media: React.FC = () => {
                 w="100%"
                 // bg="#fff"
                 // w='100%'
-                value={chat}
+                dangerouslySetInnerHTML={{ __html: chat }}
                 fontFamily={"Rubik"}
                 placeholder="Type in a message"
                 fontSize="14px"
@@ -115,7 +114,6 @@ export const Media: React.FC = () => {
                 overflow="auto"
                 outline="none"
                 border="1px solid transparent"
-                bg="red"
                 onInput={(e) => {
                   const userMessage = e.currentTarget.textContent as string;
                   setMessage(userMessage.trim());
