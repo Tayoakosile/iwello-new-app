@@ -42,15 +42,12 @@ const DesktopChatBox = () => {
           },
           svg: {
             cursor: "pointer",
-            w: "7",
-            h: "7",
+            w: "6",
+            h: "6",
           },
         }}
       >
-        {/* Upload file here */}
-        <Media showSendButton={showSendButton} />
-        {/* Upload file here */}
-
+        <Media />
         <Box
           contentEditable={true}
           border="1px solid #909090"
@@ -74,7 +71,7 @@ const DesktopChatBox = () => {
           overflowY="hidden"
           outline="none"
           // border="0px solid transparent"
-          // dangerouslySetInnerHTML={{ __html: patientMessage }}
+          dangerouslySetInnerHTML={{ __html: patientMessage }}
           suppressContentEditableWarning={true}
           onInput={(e) => {
             const userMessage = e.currentTarget.textContent as string;
@@ -100,7 +97,7 @@ const DesktopChatBox = () => {
           whileHover={{ scale: 1.1 }}
           as="span"
           // bg="yellow"
-          p="2"
+          p="4"
           animate={{
             opacity: showSendButton ? 1 : 0.1,
             cursor: showSendButton ? "not-allowed" : "pointer",
@@ -114,7 +111,7 @@ const DesktopChatBox = () => {
             }
           }}
         >
-          <Icon as={BiSend} w="7" h="7" color="gray.700" />
+          <Icon as={BiSend} fontSize="36px" color="gray.700" />
         </AnimateChatBox>
       </HStack>
     </>

@@ -24,6 +24,7 @@ const useChat = () => {
   const sendChat = (): any => {
     const userInfoWithChatMessage: ChatsProp = {
       text: chatMessage.message,
+      croppedImage: null,
       receiverId: randomatic("0a", 11),
       senderId: "12345",
     };

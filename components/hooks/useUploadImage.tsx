@@ -1,85 +1,77 @@
-import isImage from "is-image";
-import produce from "immer";
-import { useFileUpload, FileUpload } from "use-file-upload";
-import { useState } from "react";
-import { Crop, ReactCropProps } from "react-image-crop";
+import React from "react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../stores/reduxstore";
 import { sendPatientChat } from "../../stores/chats";
-import { GiConsoleController } from "react-icons/gi";
+import { ChatsProp } from "../../@types/types";
+import produce from "immer";
+import randomatic from "randomatic";
+import { RootState } from "../../stores/reduxstore";
+import { handleImageUpload } from "../../helper/helper";
 
-const useUploadImage = () => {
-  const [file, selectFile] = useFileUpload();
-  const [cropImage, showCroppedImage] = useState(false);
-  const [result, setResult] = useState();
-  const getCroppedImg = async (crop: Crop, userFile: HTMLImageElement) => {
-    const image = userFile.file;
-    try {
-      const canvas = document.createElement("canvas");
-      const scaleX = image.naturalWidth / image.width;
-      const scaleY = image.naturalHeight / image.height;
-      canvas.width = crop.width;
-      canvas.height = crop.height;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(
-        image,
-        crop.x * scaleX,
-        crop.y * scaleY,
-        crop.width * scaleX,
-        crop.height * scaleY,
-        0,
-        0,
-        crop.width,
-        crop.height
-      );
-
-      const base64Image = canvas.toDataURL("image/jpeg", 1);
-
-      console.log(base64Image, "base64Image");
-      setResult(base64Image);
-      return base64Image;
-    } catch (e) {
-      console.log("crop the image", e);
-    }
-  };
-
-  const dispatch = useDispatch();
+const useUploadImage = (cropper: any) => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
 
-  const startImageUpload = () => {
-    selectFile({ accept: "image/*", multiple: false }, (file: any) => {
-      console.log(file, isImage(file.name));
-      if (isImage(file.name) === true) {
-        showCroppedImage(true);
-      }
-    });
-  };
-  //   console.log(file);
-  const cancelUpload = () => showCroppedImage(false);
-  //   Upload new user image
+  const dispatch = useDispatch();
 
-  const UploadImage = async (croppedImage: Crop) => {
-    // console.log(croppedImage, "croppedImage");
-    if (croppedImage) {
-      //   const image = URL.createObjectURL(file);
-      await getCroppedImg(croppedImage, file);
-      await console.log(result, "result");
-      console.log("touched");
+  const [image, setImage] = useState();
+  const [cropImageDialog, setCropImageDialog] = useState(false);
+  const [cropData, setCropData] = useState("#");
+
+  const onChange = async (e: any) => {
+    setCropImageDialog(true);
+    e.preventDefault();
+    let files;
+
+    const compressedImage = await handleImageUpload(e);
+    if (e.dataTransfer) {
+      files = e.dataTransfer.files;
+    } else if (e.target) {
+      files = e.target.files;
     }
-    console.log(croppedImage, file, "untouched");
-    // const newArray = produce(allChatMessages, (draftState) => {
-    //   // "mutate" the draft array
-    //   const newImageArray = { croppedImage, type: "image" };
-    //   draftState.push(newImageArray);
-    //   // "mutate" the nested state
-    //   //   draftState[1].done = true;
-    // });
 
-    // dispatch(sendPatientChat(newArray));
-
-    // showCroppedImage(false);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImage(reader.result as any);
+    };
+    reader.readAsDataURL(compressedImage);
   };
-  return { startImageUpload, UploadImage, cropImage, file, cancelUpload };
+
+  //   Sends message with image
+  const getCropData = (message: string) => {
+    if (typeof cropper !== "undefined" || null) {
+      setCropData(cropper.getCroppedCanvas().toDataURL());
+      const croppedData = cropper.getCroppedCanvas().toDataURL();
+
+      const UserImageUpload: ChatsProp = {
+        croppedImage: croppedData,
+        text: message ? message : null,
+        receiverId: randomatic("0a", 11),
+        senderId: "12345",
+      };
+
+      const newArray = produce(allChatMessages, (draftState) => {
+        // "mutate" the draft array
+        draftState.push(UserImageUpload);
+        // "mutate" the nested state
+        //   draftState[1].done = true;
+      });
+      //   Sends the image
+      dispatch(sendPatientChat(newArray));
+      setCropImageDialog(false);
+      //   Sends the image
+    }
+  };
+
+  const cancelCrop = () => setCropImageDialog(false);
+  return {
+    onChange,
+    getCropData,
+    image,
+    cropData,
+    cropImageDialog,
+    cancelCrop,
+  };
 };
 
 export default useUploadImage;

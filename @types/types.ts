@@ -8,9 +8,8 @@ export interface NavItem {
 }
 
 export interface ChatsProp {
-  text?: string;
-  type?: string;
+  text?: string | null;
   senderId?: string;
   receiverId?: string;
-  croppedImage?: any;
+  croppedImage?: string | null;
 }
