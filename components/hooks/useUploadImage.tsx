@@ -16,7 +16,7 @@ const useUploadImage = (cropper: any) => {
   const toast = useToast();
 
   const dispatch = useDispatch();
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
   const [cropImageDialog, setCropImageDialog] = useState(false);
   const [cropData, setCropData] = useState("#");
 
@@ -35,13 +35,14 @@ const useUploadImage = (cropper: any) => {
       if (e.dataTransfer) {
         files = e.dataTransfer.files;
       } else if (e.target) {
-        files = e.target.files;
+        files = compressedImage;
       }
 
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result as any);
       };
+      // @ts-ignore
       reader.readAsDataURL(compressedImage);
     } else {
       toast({

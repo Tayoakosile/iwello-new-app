@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Image from "next/Image";
+import Image from "next/image";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import { ChatsProp } from "../../../../../@types/types";

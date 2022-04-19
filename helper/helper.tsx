@@ -10,18 +10,14 @@ export async function handleImageUpload(event: any) {
   };
   try {
     const compressedFile = await imageCompression(imageFile, options);
-    console.log(
-      "compressedFile instanceof Blob",
-      compressedFile instanceof Blob
-    ); // true
-    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
     const compressedBlobIntoFile = new File(
       [compressedFile],
       `file_name ${Date.now()}`,
       {
         lastModified: Date.now(),
       }
-    );
+    ) as Blob;
+
     return compressedBlobIntoFile;
 
     // await uploadToServer(compressedFile); // write your own logic

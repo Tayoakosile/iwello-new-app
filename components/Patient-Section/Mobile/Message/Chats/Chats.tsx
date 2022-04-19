@@ -1,4 +1,5 @@
 import { Box, Heading, HStack } from "@chakra-ui/react";
+// @ts-ignore
 import ScrollToBottom from "react-scroll-to-bottom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../../stores/reduxstore";

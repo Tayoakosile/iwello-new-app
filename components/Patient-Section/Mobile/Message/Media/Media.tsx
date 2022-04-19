@@ -14,12 +14,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import { BiSend } from "react-icons/bi";
 import { GiPaperClip } from "react-icons/gi";
-import useUploadImage from "../../../../hooks/useUploadImage";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../../stores/reduxstore";
-import { useRef } from "react";
+import useUploadImage from "../../../../hooks/useUploadImage";
 
 export const Media: React.FC = () => {
   //   const [] = useState();
@@ -81,7 +81,7 @@ export const Media: React.FC = () => {
                   responsive={true}
                   autoCropArea={1}
                   checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
-                  onInitialized={(instance) => {
+                  onInitialized={(instance: any) => {
                     setCropper(instance);
                   }}
                   guides={false}
