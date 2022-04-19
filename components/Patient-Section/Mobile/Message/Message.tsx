@@ -7,16 +7,17 @@ import { useRef, useEffect } from "react";
 import { RootState } from "../../../../stores/reduxstore";
 import { useSelector } from "react-redux";
 import DesktopChatBox from "./Chats/DesktopChatBox";
+import { motion } from "framer-motion";
 
 const Message = () => {
+  const AnimateChatBox = motion(Box);
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
 
   return (
     <Box
       position="relative"
-      h={{ base: "90vh", lg: "75vh" }}
+      h={{ base: "100vh", lg: "75vh" }}
       w="full"
-      // bg="red"
       bg={{ base: "#F8F5F5", lg: "#fff" }}
       mt="20px"
       pt="46px"
@@ -40,7 +41,7 @@ const Message = () => {
         <DoctorProfile />
         {/* Patient/ Doctor's chat */}
         <Chats />
-        <Box mt="20" />
+        <Box mt="32" />
       </>
       <Box as="span">
         <ChatBox />

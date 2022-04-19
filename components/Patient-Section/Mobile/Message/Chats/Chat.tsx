@@ -1,51 +1,54 @@
-import React from "react";
+import { Box, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import Image from "next/Image";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
-import { Box, HStack, VStack, Text } from "@chakra-ui/react";
 import { ChatsProp } from "../../../../../@types/types";
-import { motion } from "framer-motion";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../../../stores/reduxstore";
 
 const Chat = ({ chat }: { chat: ChatsProp }) => {
   const { receiverId, text, senderId, croppedImage } = chat;
   const userId = "12345";
   const AnimateImage = motion(Box);
   const isSentByUser = userId === senderId;
-  const chat = useSelector((state: RootState) => state.chat.value);
+  // const chat = useSelector((state: RootState) => state.chat.value);
 
   return (
     <>
       <Box
         as="span"
         className={`message ${isSentByUser ? "sent" : "received"}`}
+        px={croppedImage ? "10px" : "16px"}
+        py="16px"
         rounded="10px"
-        maxW={croppedImage ? "40% !important" : "85% !important"}
+        maxW={{
+          base: croppedImage ? "70% !important" : "85% !important",
+          lg: croppedImage ? "45% !important" : "85% !important",
+        }}
         w="fit-content !important"
-        // bg={{ base: "#fff !important", lg: "#F5F5F5 !important" }}
-        mb="8"
       >
         {croppedImage && (
-          <Box as={Zoom} openText="Click to zoom">
+          <Box d="flex" as={Zoom} openText="Click to zoom">
             <Image
               src={croppedImage}
               // layout="fill"
-              alt="Alt Image"
-              width={400}
+              alt="User uploaded message"
+              width={500}
               objectFit="contain"
-              height={300}
+              height={400}
             />
           </Box>
         )}
 
         {croppedImage && (
-          <>
+          <Box d={{ base: "block", lg: "none" }}>
             <br />
-          </>
+          </Box>
         )}
 
-        <Text as="span" fontSize={croppedImage ? "xl" : "lg"}>
+        <Text
+          as="span"
+          fontSize={{ base: "lg", lg: croppedImage ? "xl" : "lg" }}
+        >
           {text}
         </Text>
 

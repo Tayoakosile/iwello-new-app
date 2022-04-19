@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../../stores/reduxstore";
@@ -19,7 +19,13 @@ const Chats = () => {
         },
       }}
     >
-      <Box as={ScrollToBottom} w="full" h="full" className="iwello-scroll">
+      <Box
+        as={ScrollToBottom}
+        w="full"
+        h="full"
+        className="iwello-scroll"
+        justify="space-around"
+      >
         {allChatMessages.map((chat, index) => (
           //r
           <Chat key={index} chat={chat} />

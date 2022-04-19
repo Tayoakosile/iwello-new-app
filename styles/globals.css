@@ -24,9 +24,9 @@ button:active {
   clear: both;
   line-height: 16px;
   font-size: 14px;
-  padding: 16px;
+  /* padding: 16px; */
   position: relative;
-  margin: 8px 0;
+  margin: 10px 0;
   max-width: 85%;
   word-wrap: break-word;
   /* z-index: -1; */

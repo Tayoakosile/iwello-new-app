@@ -2,11 +2,9 @@ import { Box, HStack, Icon } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { BiSend } from "react-icons/bi";
-import { GiPaperClip } from "react-icons/gi";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeMessage } from "../../../../../stores/chat";
 import useChat from "../../../../hooks/useChat";
-import { RootState } from "../../../../../stores/reduxstore";
 import Media from "../Media/Media";
 
 const DesktopChatBox = () => {

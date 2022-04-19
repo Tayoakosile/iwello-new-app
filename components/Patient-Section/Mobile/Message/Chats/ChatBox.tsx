@@ -6,6 +6,8 @@ import { storeMessage } from "../../../../../stores/chat";
 import useChat from "../../../../hooks/useChat";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { GiPaperClip } from "react-icons/gi";
+import Media from "../Media/Media";
 // storeMessage;
 
 const AnimateButton = motion(Box);
@@ -37,45 +39,52 @@ const ChatBox = () => {
       }}
       align="flex-end"
     >
-      <Box
-        contentEditable={true}
-        flex="2"
-        w="100%"
-        bg="#fff"
-        // w='100%'
-        fontFamily={"Rubik"}
-        placeholder="Type in a message"
-        fontSize="14px"
-        rounded="20px"
-        mx="auto"
-        minH={"8"}
-        p="4"
-        // bg="white"
-        maxH="16"
-        overflow="auto"
-        outline="none"
-        border="0px solid transparent"
-        onInput={(e) => {
-          const userMessage = e.currentTarget.textContent as string;
-          //  Makes sure user types before message is sent
+      <Box position="relative" as="span" w={"full"}>
+        <Box as="span" position="absolute" right="4" bottom="2">
+          <Media />
+        </Box>
+        <Box
+          contentEditable={true}
+          flex="2"
+          w="100%"
+          maxW="100%"
+          bg="#fff"
+          // w='100%'
+          fontFamily={"Rubik"}
+          placeholder="Type in a message"
+          fontSize="14px"
+          rounded="20px"
+          mx="auto"
+          minH={"8"}
+          py="4"
+          pl="4"
+          pr="10"
+          // bg="white"
+          maxH="16"
+          overflow="auto"
+          outline="none"
+          border="0px solid transparent"
+          onInput={(e) => {
+            const userMessage = e.currentTarget.textContent as string;
+            //  Makes sure user types before message is sent
 
-          //   Used to animate app
-          userMessage.trim().length >= 1
-            ? setShowButton(true)
-            : setShowButton(false);
+            //   Used to animate app
+            userMessage.trim().length >= 1
+              ? setShowButton(true)
+              : setShowButton(false);
 
-          if (userMessage.trim().length >= 1) {
-            dispatch(
-              storeMessage({
-                message: userMessage.trim(),
-              })
-            );
-          }
-          //   storeMessage;
-        }}
-      />
-
-      {/* Send chat  */}
+            if (userMessage.trim().length >= 1) {
+              dispatch(
+                storeMessage({
+                  message: userMessage.trim(),
+                })
+              );
+            }
+            //   storeMessage;
+          }}
+        />
+        {/* Send chat  */}
+      </Box>
       <AnimateChatBox
         d="flex"
         whileTap={{ scale: showSendButton ? 0.7 : 1 }}

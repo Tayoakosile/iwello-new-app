@@ -19,6 +19,7 @@ import { GiPaperClip } from "react-icons/gi";
 import useUploadImage from "../../../../hooks/useUploadImage";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../../stores/reduxstore";
+import { useRef } from "react";
 
 export const Media: React.FC = () => {
   //   const [] = useState();
@@ -26,6 +27,7 @@ export const Media: React.FC = () => {
   const [cropper, setCropper] = useState<any>();
   const [message, setMessage] = useState("");
   const AnimateChatBox = motion(Box);
+  const cancelRef = useRef<HTMLButtonElement>(null);
   const {
     getCropData,
     cancelCrop,
@@ -40,12 +42,17 @@ export const Media: React.FC = () => {
     <Box>
       {/* Used to upload file */}
       <Box as="label" htmlFor="iwello-media-upload" w="full">
-        <Icon as={GiPaperClip} w="8" h="8" />
+        <Icon
+          as={GiPaperClip}
+          width={{ base: "5", lg: "8" }}
+          height={{ base: "5", lg: "8" }}
+        />
         <Input
           type="file"
           multiple={false}
           onChange={onChange}
           d="none"
+          accept="image/*"
           id="iwello-media-upload"
         />
       </Box>
@@ -53,7 +60,7 @@ export const Media: React.FC = () => {
 
       <AlertDialog
         isOpen={cropImageDialog}
-        // leastDestructiveRef={cancelRef}
+        leastDestructiveRef={cancelRef}
         onClose={onClose}
         isCentered
         size="3xl"
@@ -66,13 +73,13 @@ export const Media: React.FC = () => {
                 <Box
                   as={Cropper}
                   //   style={{ height: 400, width: "100%" }}
-                  zoomTo={0.1}
+                  zoomTo={0.2}
                   src={image}
                   viewMode={1}
-                  minCropBoxHeight={50}
-                  minCropBoxWidth={50}
+                  minCropBoxHeight={10}
+                  minCropBoxWidth={10}
                   responsive={true}
-                  autoCropArea={0}
+                  autoCropArea={1}
                   checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
                   onInitialized={(instance) => {
                     setCropper(instance);
@@ -82,19 +89,22 @@ export const Media: React.FC = () => {
               </Box>
               <></>
             </AlertDialogBody>
-            <AlertDialogFooter>
-              {/* <Button size="lg" onClick={cancelCrop} flex="0.5">
-                Cancel
-              </Button> */}
-              {/* <Button
-                size="lg"
-                ml="3"
-                onClick={getCropData}
-                flex="0.5"
-                bg="red"
-              >
-                Crop
-              </Button> */}
+            <AlertDialogFooter
+              sx={{
+                "[contenteditable=true]:empty:before ": {
+                  content: " attr(placeholder)",
+                  pointerEvents: "none",
+                  display: "block" /* For Firefox */,
+                  color: "#909090",
+                  fontFamily: "inherit",
+                },
+                svg: {
+                  cursor: "pointer",
+                  w: "6",
+                  h: "6",
+                },
+              }}
+            >
               <Box
                 contentEditable={true}
                 flex="2"

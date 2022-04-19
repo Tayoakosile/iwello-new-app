@@ -17,12 +17,13 @@ const History = () => {
 
   return (
     <>
-      <PatientIcon
-        text="History"
-        additionalText="Keep track of previous consultations"
-      />
-
-      {isTabletWidth ? <PatientHistory /> : <PatientHistory />}
+      {isTabletWidth && (
+        <PatientIcon
+          text="History"
+          additionalText="Keep track of previous consultations"
+        />
+      )}
+      <PatientHistory />
     </>
   );
 };

@@ -1,17 +1,19 @@
-import React from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { sendPatientChat } from "../../stores/chats";
-import { ChatsProp } from "../../@types/types";
+import { useToast } from "@chakra-ui/react";
+
 import produce from "immer";
+import IsFileAImage from "is-image";
 import randomatic from "randomatic";
-import { RootState } from "../../stores/reduxstore";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ChatsProp } from "../../@types/types";
 import { handleImageUpload } from "../../helper/helper";
+import { sendPatientChat } from "../../stores/chats";
+import { RootState } from "../../stores/reduxstore";
 
 const useUploadImage = (cropper: any) => {
   const allChatMessages = useSelector((state: RootState) => state.chats.value);
   const chat = useSelector((state: RootState) => state.chat.value.message);
+  const toast = useToast();
 
   const dispatch = useDispatch();
   const [image, setImage] = useState();
@@ -19,22 +21,38 @@ const useUploadImage = (cropper: any) => {
   const [cropData, setCropData] = useState("#");
 
   const onChange = async (e: any) => {
-    setCropImageDialog(true);
     e.preventDefault();
     let files;
 
-    const compressedImage = await handleImageUpload(e);
-    if (e.dataTransfer) {
-      files = e.dataTransfer.files;
-    } else if (e.target) {
-      files = e.target.files;
-    }
+    // if(IsFileAImage)
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      setImage(reader.result as any);
-    };
-    reader.readAsDataURL(compressedImage);
+    if (e.target.files && IsFileAImage(e.target.files[0].name)) {
+      const compressedImage = await handleImageUpload(e);
+      // IF image is fully compressed then open dialog
+      if (compressedImage) {
+        setCropImageDialog(true);
+      }
+      if (e.dataTransfer) {
+        files = e.dataTransfer.files;
+      } else if (e.target) {
+        files = e.target.files;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImage(reader.result as any);
+      };
+      reader.readAsDataURL(compressedImage);
+    } else {
+      toast({
+        title: "Image Valid",
+        description: "Please post a valid image file",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+    }
   };
 
   //   Sends message with image
@@ -58,8 +76,10 @@ const useUploadImage = (cropper: any) => {
       });
       //   Sends the image
       dispatch(sendPatientChat(newArray));
-      setCropImageDialog(false);
     }
+    setCropImageDialog(false);
+    setCropData("");
+    setImage(null);
   };
 
   const cancelCrop = () => setCropImageDialog(false);
