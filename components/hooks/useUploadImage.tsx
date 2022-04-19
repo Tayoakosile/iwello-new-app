@@ -16,7 +16,7 @@ const useUploadImage = (cropper: any) => {
   const toast = useToast();
 
   const dispatch = useDispatch();
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
   const [cropImageDialog, setCropImageDialog] = useState(false);
   const [cropData, setCropData] = useState("#");
 
@@ -80,7 +80,7 @@ const useUploadImage = (cropper: any) => {
     }
     setCropImageDialog(false);
     setCropData("");
-    setImage(null);
+    setImage("");
   };
 
   const cancelCrop = () => setCropImageDialog(false);

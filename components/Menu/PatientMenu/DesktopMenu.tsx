@@ -6,6 +6,8 @@ import { RootState } from "../../../stores/reduxstore";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { setPatientPageIndex } from "../../../stores/patientPageIndex";
+import { randomInt } from "crypto";
+import randomatic from "randomatic";
 
 const SidebarContent = ({ ...rest }) => {
   const router = useRouter();
@@ -63,7 +65,7 @@ const SidebarContent = ({ ...rest }) => {
       >
         {PatientMenuItems.map((menuItems, index) => (
           <HStack
-            key={menuItems.link}
+            key={randomatic("0A", 12)}
             p="18px"
             as="span"
             borderRadius="10px"
