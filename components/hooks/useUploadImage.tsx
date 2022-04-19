@@ -28,7 +28,7 @@ const useUploadImage = (cropper: any) => {
 
     if (e.target.files && IsFileAImage(e.target.files[0].name)) {
       const compressedImage = await handleImageUpload(e);
-      // IF image is fully compressed then open dialog
+      // IF image is fully compressed then open Image dialog
       if (compressedImage) {
         setCropImageDialog(true);
       }
