@@ -47,7 +47,7 @@ const Chat = ({ chat }: { chat: ChatsProp }) => {
 
         <Text
           as="span"
-          fontSize={{ base: "lg", lg: croppedImage ? "xl" : "lg" }}
+          fontSize={{ base: "14px !important", lg: croppedImage ? "xl" : "16px !important" }}
         >
           {text}
         </Text>

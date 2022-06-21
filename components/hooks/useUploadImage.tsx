@@ -26,7 +26,7 @@ const useUploadImage = (cropper: any) => {
 
     // if(IsFileAImage)
 
-    if (e.target.files && IsFileAImage(e.target.files[0].name)) {
+    if (e.target.files.length > 1 && IsFileAImage(e.target.files[0].name)) {
       const compressedImage = await handleImageUpload(e);
       // IF image is fully compressed then open Image dialog
       if (compressedImage) {
@@ -46,9 +46,10 @@ const useUploadImage = (cropper: any) => {
       reader.readAsDataURL(compressedImage);
     } else {
       toast({
-        title: "Image Valid",
+        title: "Invalid Image",
         description: "Please post a valid image file",
         status: "error",
+        variant: "left-accent",
         duration: 3000,
         isClosable: true,
         position: "top-right",

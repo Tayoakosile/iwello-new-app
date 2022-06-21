@@ -48,7 +48,7 @@ const Service = ({ text, imageSrc, linkText, heading }: ServiceProps) => {
           {text}
         </Text>
       </Box>
-      <Link href="/signup">
+      <Link passHref href="/signup">
         <Button
           alignSelf={{ base: "flex-end", lg: "flex-start" }}
           rightIcon={<BsArrowRight />}

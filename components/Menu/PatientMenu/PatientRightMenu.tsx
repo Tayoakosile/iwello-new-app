@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
 import { BsBell, BsCart3 } from "react-icons/bs";
 import { PatientMenuItems } from "../../../config/config";
-import randomatic from 'randomatic';
+import randomatic from "randomatic";
 const PatientRightMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();

@@ -36,7 +36,7 @@ const FreeTrial = () => {
           for free
         </Heading>
       </VStack>
-      <Link href="/signup">
+      <Link passHref href="/signup">
         <Button
           fontSize="14px"
           w={{ base: "60%", lg: "20%" }}
