@@ -6,9 +6,10 @@ const IwelloLogo = () => {
     <>
       <Image
         alt="Company's logo"
-        src="/img/logo/logo-mobile.svg"
-        width={108}
-        height={100}
+        src="/img/logo/logo-mobile.png"
+        width={79}
+        height={24}
+        objectFit ='contain'
       />
     </>
   );

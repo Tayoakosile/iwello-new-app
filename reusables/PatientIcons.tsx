@@ -1,0 +1,60 @@
+import { HStack, Text, Icon, Input, Heading } from "@chakra-ui/react";
+import { BsBell, BsCart3 } from "react-icons/bs";
+
+const PatientIcon = ({
+  text,
+  additionalText,
+  placeholderText,
+}: {
+  text: string;
+  placeholderText?: string;
+  additionalText?: string;
+}) => {
+  return (
+    <>
+      <HStack
+        fontSize="24px"
+        spacing="27px"
+        pt="4px"
+        justify="flex-end"
+        d={{ base: "none", lg: "flex" }}
+      >
+        <Icon as={BsCart3} />
+        <Icon as={BsBell} />
+      </HStack>
+      <HStack
+        as="span"
+        justify="flex-end"
+        w="full"
+        pt={{ base: "49px", lg: "27px" }}
+      >
+        <Input
+          borderRadius={"5px"}
+          w="50%"
+          placeholder={
+            placeholderText ? placeholderText : "Search for a doctor"
+          }
+          bg="white"
+          boxShadow="none !important"
+          outline="none !important"
+          border="0"
+          size="lg"
+          fontFamily="Roboto"
+          _placeholder={{ color: "#C4C4C4", fontSize: "16px" }}
+        />
+      </HStack>
+      <Heading
+        color="brand.900"
+        fontSize="30px"
+        fontFamily={"Rubik"}
+        pt={{ base: "20px", lg: "0px" }}
+        pb={additionalText ? "0" : "20px"}
+      >
+        {text}
+      </Heading>
+      {additionalText && <Text pb="20px">{additionalText}</Text>}
+    </>
+  );
+};
+
+export default PatientIcon;

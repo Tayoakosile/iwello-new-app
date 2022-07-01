@@ -1,6 +1,7 @@
 import { useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler, FieldError } from "react-hook-form";
+import { ContactUs } from "../../config/config";
 
 // TO validate user input in contact us form
 const UseContactUs = () => {
@@ -15,10 +16,10 @@ const UseContactUs = () => {
     reset,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm<ContactUs>();
 
   // Contains all the details of the user in the contact form
-  const SubmitForm = (data: any) => {
+  const SubmitForm = (data: ContactUs) => {
     setMockisLoadingState(true);
 
     // Fake sending data to backend
@@ -32,11 +33,11 @@ const UseContactUs = () => {
         duration: 5000,
         isClosable: true,
       });
-  reset({ name: "", email: "", message: "" });
-
+      // reset({ });
     }, 3000);
-
+    // React redux
   };
+
   return {
     register,
     handleSubmit,

@@ -1,6 +1,13 @@
-import { Box, Button, Heading, HStack, Icon, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Link as ChakraLink,
+  Button,
+  Heading,
+  HStack,
+  Icon,
+  VStack,
+} from "@chakra-ui/react";
 import Link from "next/link";
-import React from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -32,41 +39,47 @@ const DesktopFooter = () => {
         >
           <Link href="/">Home</Link>
         </Button>
-        <Button
-          fontWeight="400 !important"
-          size="lg"
-          color="brand.800 !important"
-          variant="link"
-        >
-          <Link href="/">About Us</Link>
-        </Button>
-        <Button
-          fontWeight="400 !important"
-          size="lg"
-          color="brand.800 !important"
-          variant="link"
-        >
-          <Link href="#testimonial">Testimonials</Link>
-        </Button>
+        <Link passHref href="/">
+          <Button
+            fontWeight="400 !important"
+            size="lg"
+            color="brand.800 !important"
+            variant="link"
+          ></Button>
+        </Link>
+        <Link passHref href="#testimonial">
+          <Button
+            fontWeight="400 !important"
+            size="lg"
+            color="brand.800 !important"
+            variant="link"
+          >
+            Testimonials
+          </Button>
+        </Link>
       </VStack>
 
       <VStack as="span" flex="0.2" spacing="11px" alignItems={"flex-start"}>
-        <Button
-          fontWeight="400 !important"
-          size="lg"
-          color="brand.800 !important"
-          variant="link"
-        >
-          <Link href="/">Services</Link>
-        </Button>
-        <Button
-          fontWeight="400 !important"
-          size="lg"
-          color="brand.800 !important"
-          variant="link"
-        >
-          <Link href="/">The Team</Link>
-        </Button>
+        <Link passHref href="/">
+          <Button
+            fontWeight="400 !important"
+            size="lg"
+            color="brand.800 !important"
+            variant="link"
+          >
+            Services
+          </Button>
+        </Link>
+        <Link passHref href="/">
+          <Button
+            fontWeight="400 !important"
+            size="lg"
+            color="brand.800 !important"
+            variant="link"
+          >
+            The Team
+          </Button>
+        </Link>
       </VStack>
 
       {/* Social media Icons */}
@@ -77,17 +90,27 @@ const DesktopFooter = () => {
         </Box>
         {/* Social media links */}
         <HStack spacing="9px" color="brand.800">
-          <Link href="https://api.whatsapp.com/send?phone=2347012188299">
+          <Link
+            passHref
+            href="https://api.whatsapp.com/send?phone=2347012188299"
+          >
             <Icon aria-label="Whatsapp" as={FaWhatsapp} />
           </Link>
-          <Link href="https://www.instagram.com/iwellong/?hl=en">
+          <Link passHref href="https://www.instagram.com/iwellong/?hl=en">
             <Icon aria-label="Instagram" as={FaInstagram} />
           </Link>
-          <Link aria-label="Facebook" href="https://m.facebook.com/iwelloNG/">
+          <Link
+            passHref
+            aria-label="Facebook"
+            href="https://m.facebook.com/iwelloNG/"
+          >
             <Icon as={FaFacebook} />
           </Link>
 
-          <Link href="https://www.linkedin.com/mwlite/company/iwellong">
+          <Link
+            passHref
+            href="https://www.linkedin.com/mwlite/company/iwellong"
+          >
             <Icon aria-label="Linkedin" as={FaLinkedin} />
           </Link>
         </HStack>

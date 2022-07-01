@@ -11,56 +11,22 @@ import Services from "../components/Home/Services";
 import Suscribe from "../components/Home/Suscribe";
 import Testimonials from "../components/Home/Testimonials";
 import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
-import NavBar from "../components/Navbar/NavBar";
+// import NavBar from "../components/Navbar/NavBar";
+import MetaTags from "../reusables/MetaTags";
 
 const index = () => {
   const { toggleNavbar } = UseMeasureMediaQuery();
   return (
     <>
-      <Head key="home">
-        <title>Talk To a Doctor Today For Less Than a Dollar ~ IWELLO</title>
-        <meta
-          name="title"
-          content="Talk To a Doctor Today
-For Less Than a Dollar ~ IWELLO"
-        />
-        <meta
-          name="description"
-          content="Find trusted
+      <MetaTags
+        title="Home ~ Iwello | Talk To a Doctor Today 
+For Less Than a Dollar!"
+        description="Find trusted
 medical personnel close to your location as fast 
-as lighting for less than a dollar! "
-        />
+as lightning for less than a dollar!"
+      />
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://iwello.org" />
-        <meta
-          property="og:title"
-          content="Talk To a Doctor Today 
-For Less Than a Dollar ~ IWELLO"
-        />
-        <meta
-          property="og:description"
-          content="Find trusted
-medical personnel close to your location as fast 
-as lighting for less than a dollar! "
-        />
-        <meta property="og:image" content="" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://iwello.org" />
-        <meta
-          property="twitter:title"
-          content="Talk To a Doctor Today/ 
-For Less Than a Dollar ~ IWELLO"
-        />
-        <meta
-          property="twitter:description"
-          content="Find trusted medical personnel close to your location as fast 
-as lighting for less than a dollar! "
-        />
-        <meta property="twitter:image" content="" />
-      </Head>
-      <NavBar />
+      {/* <NavBar /> */}
       {toggleNavbar ? <DesktopHeaderText /> : <HeaderText />}
       {toggleNavbar ? <DesktopAboutUs /> : <AboutUs />}
       <Services />

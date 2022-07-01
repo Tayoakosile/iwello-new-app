@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Heading, Button, Text, VStack, HStack, Box } from "@chakra-ui/react";
 
 const DesktopHeaderText = () => {
@@ -18,7 +19,7 @@ const DesktopHeaderText = () => {
         pb="97px"
         alignItems="flex-start"
       >
-        <Heading w="100%" fontSize="64px">
+        <Heading w="100%" fontWeight='800' fontSize="64px">
           Talk To a{" "}
           <Text as="span" color="brand.500">
             {" "}
@@ -35,13 +36,18 @@ const DesktopHeaderText = () => {
           than a dollar at your convienence.
         </Text>
         <HStack w="full" as="span" spacing="12px" h="full">
-          <Button fontSize={"18px"} flex="0.3" h="60px">
-            Get started
-          </Button>
+          <Link passHref={true} href="/signup">
+            <Button fontSize={"18px"} flex="0.3" h="60px">
+              Get started
+            </Button>
+          </Link>
 
+<Link passHref={true} href="/login">
           <Button variant="outline" fontSize={"18px"} flex="0.3" h="60px">
             Login
           </Button>
+
+          </Link>
         </HStack>
       </VStack>
 

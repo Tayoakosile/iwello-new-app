@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import UseMeasureMediaQuery from "./UseMeasureMediaQuery";
+import { UserSignUp } from "../../config/config";
 
 const useSubscribe = () => {
   const [mockisLoadingState, setMockisLoadingState] = useState<boolean>(false);
@@ -13,7 +14,7 @@ const useSubscribe = () => {
     reset,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<UserSignUp>();
   //   User,s email address
   console.log(errors);
   const subscribedUser = (data: any) => {

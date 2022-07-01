@@ -43,16 +43,20 @@ const Suscribe = () => {
         pt={{ base: "", lg: "32px" }}
         onSubmit={handleSubmit(subscribedUser)}
       >
-        <FormControl flex="0.7" isInvalid={errors.subscribedEmail}>
+        <FormControl
+          flex="0.7"
+          isInvalid={errors.subscribedEmail ? true : false}
+        >
           <Input
             size="lg"
             h={{ base: "50px", lg: "70px" }}
             shadow="md"
+            type="text"
             {...register("subscribedEmail", {
               required: "Your Email Address is required",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Invalid Email Address, please check again",
+                message: "Invalid Email Address",
               },
               min: {
                 value: 4,

@@ -1,134 +1,162 @@
-import React, { useState } from "react";
 import {
-  Box,
-  Text,
+  Button,
   chakra,
   FormControl,
+  FormErrorMessage,
   FormLabel,
-  Heading,
   Input,
-  VStack,
-  InputRightElement,
   InputGroup,
+  InputRightElement,
+  VStack,
 } from "@chakra-ui/react";
-const CustomizedButton = chakra(GoogleLoginButton);
-import { GoogleLoginButton } from "react-social-login-buttons";
-import { Button } from "@chakra-ui/react";
-import Link from "next/link";
+import React, { useState } from "react";
+import useSignUp from "../hooks/useSignUp";
 
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setConfirmPassword] = useState<boolean>(false);
+  const {
+    register,
+    handleConfirmPassword,
+    handleSubmit,
+    mockIsLoading,
+    userSignUpInfo,
+    errors,
+  } = useSignUp();
 
   return (
-    <VStack w="full" spacing="45px">
-      <CustomizedButton
-        fontSize={"18px !important"}
-        w={{ base: "80% !important" }}
-        h={{ base: "55px !important" }}
-        align="center"
-        px="31px  !important"
-        mx="auto"
-        color ='rgba(0, 0, 0, 0.54);'
-        whiteSpace={'nowrap'}
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        onClick={() => alert("Hello")}
+    <VStack
+      spacing="40px"
+      as="form"
+      onSubmit={handleSubmit(userSignUpInfo)}
+      align={{ base: "flex-start", lg: "center" }}
+      alignSelf={{ base: "flex-start", lg: "center" }}
+      w={{ base: "100%", lg: "70%" }}
+    >
+      {/* Email Address */}
+      <FormControl
+        isInvalid={errors ? (true && errors.email ? true : false) : false}
       >
-        <span>Continue with Google</span>
-      </CustomizedButton>
-      {/* Form starts here */}
-      <VStack
-        spacing="32px"
-        as="form"
-        align="flex-start"
-        alignSelf="flex-start"
-        w="full"
+        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
+          Email Address
+        </FormLabel>
+        <Input
+          borderRadius="5px"
+          bg="#F7F7F7"
+          size="lg"
+          type="email"
+          placeholder="example@gmail.com"
+          {...register("email", {
+            required: "Your Email Address is required",
+            min: {
+              value: 6,
+              message: "Your Email address must be more than 3 character",
+            },
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message:
+                " Please type in a valid email address,e.g iwello@gmail.com ",
+            },
+          })}
+        />
+        <FormErrorMessage>
+          {errors.email && errors.email.message}
+        </FormErrorMessage>
+      </FormControl>
+      {/* Email Address */}
+
+      {/* Password */}
+      <FormControl
+        isInvalid={errors ? (true && errors.password ? true : false) : false}
       >
-        {/* Email Address */}
-        <FormControl>
-          <FormLabel>Email Address</FormLabel>
+        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>Password</FormLabel>
+
+        {/* Password password */}
+        <InputGroup size="lg">
           <Input
+            // Form Validator
+            {...register("password", {
+              required: "Your Password is required",
+              minLength: {
+                value: 6,
+                message: "Your Password must be 6 letters long",
+              },
+            })}
+            borderRadius="5px"
+            type={showPassword ? "text" : "password"}
+            bg="#F7F7F7"
+            placeholder="**********************"
+            // onChange={(e) => setUserPassword(e.target.value)}
+          />
+          <InputRightElement width="4.5rem">
+            <chakra.button
+              color="#4E4C4C80"
+              h="1.75rem"
+              type="button"
+              fontSize={"14px"}
+              size="md"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? "HIDE" : "SHOW"}
+            </chakra.button>
+          </InputRightElement>
+        </InputGroup>
+        <FormErrorMessage>
+          {errors.password && errors.password.message}
+        </FormErrorMessage>
+      </FormControl>
+      {/* Password */}
+
+      {/* Confirm Password Input  */}
+      <FormControl
+        isInvalid={errors ? (true && errors.confirmPassword ? true : false) : false}
+      >
+        <FormLabel fontSize={{ base: "md", lg: "1.2rem" }}>
+          Confirm Password
+        </FormLabel>
+        <InputGroup size="lg">
+          <Input
+            {...register("confirmPassword", {
+              required: "Please Confirm your password",
+              validate: (value) => handleConfirmPassword(value),
+            })}
             borderRadius="5px"
             bg="#F7F7F7"
-            size="lg"
-            h="60px"
-            type="email"
-            placeholder="example@gmail.com"
+            type={showConfirmPassword ? "text" : "password"}
+            placeholder="**********************"
           />
-        </FormControl>
-        {/* Email Address */}
+          <InputRightElement width="4.5rem">
+            <chakra.button
+              h="1.75rem"
+              type="button"
+              size="md"
+              fontSize={"14px"}
+              color="#4E4C4C80"
+              onClick={() => setConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? "HIDE" : "SHOW"}
+            </chakra.button>
+          </InputRightElement>
+        </InputGroup>
+        <FormErrorMessage>
+          {errors.confirmPassword && errors.confirmPassword.message}
+        </FormErrorMessage>
+      </FormControl>
+      {/* Confirm Password Input */}
 
-        {/* Password */}
-        <FormControl>
-          <FormLabel>Password</FormLabel>
-
-          {/* Show password */}
-          <InputGroup size="lg">
-            <Input
-              borderRadius="5px"
-              type={showPassword ? "text" : "password"}
-              bg="#F7F7F7"
-              placeholder="**********************"
-            />
-            <InputRightElement width="4.5rem">
-              <chakra.button
-                color="#4E4C4C80"
-                h="1.75rem"
-                type="button"
-                fontSize={"14px"}
-                size="md"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? "HIDE" : "SHOW"}
-              </chakra.button>
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
-        {/* Password */}
-
-        {/* Password */}
-        <FormControl>
-          <FormLabel>Confirm Password</FormLabel>
-          <InputGroup size="lg">
-            <Input
-              borderRadius="5px"
-              bg="#F7F7F7"
-              type={showConfirmPassword ? "text" : "password"}
-              placeholder="**********************"
-            />
-            <InputRightElement width="4.5rem">
-              <chakra.button
-                h="1.75rem"
-                type="button"
-                size="md"
-                fontSize={"14px"}
-                color="#4E4C4C80"
-                onClick={() => setConfirmPassword(!showConfirmPassword)}
-              >
-                {showConfirmPassword ? "HIDE" : "SHOW"}
-              </chakra.button>
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
-        {/* Password */}
-        <Button
-          type="submit"
-          alignSelf={"center"}
-          w="90%"
-          size="lg"
-          h="50px"
-          fontSize={"18px"}
-        >
-          Create Account
-        </Button>
-        <Heading size="sm" alignSelf={"center"} pt="26px">
-          Already have an account?{" "}
-          <Text as="span" color="brand.500">
-            {" "}
-            <Link href="/login">Sign In</Link>
-          </Text>{" "}
-        </Heading>
-      </VStack>
+      <Button
+        type="submit"
+        alignSelf={{ base: "center", lg: "flex-start" }}
+        isLoading={mockIsLoading}
+        loadingText="Submitting"
+        w={{ base: "90%", lg: "100%" }}
+        size="lg"
+        h="50px"
+        fontSize={"18px"}
+        // onClick={() => Router.push("/confirmemail")}
+      >
+        Create Account
+      </Button>
     </VStack>
   );
 };

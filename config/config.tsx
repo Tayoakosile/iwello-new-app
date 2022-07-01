@@ -1,6 +1,17 @@
-import { extendTheme, chakra, withDefaultColorScheme } from "@chakra-ui/react";
+import { chakra, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import {
+  IconCheckbox,
+  IconHelp,
+  IconHistory,
+  IconMessages,
+  IconPhoneCall,
+  IconSettings,
+  IconLogout,
+  IconStethoscope,
+  IconWallet,
+  TablerIcon,
+} from "@tabler/icons";
 import Image from "next/image";
-import UseMeasureMediaQuery from "../components/hooks/UseMeasureMediaQuery";
 
 /**
  * Iwello Styling App Configuration,
@@ -25,8 +36,8 @@ export const customTheme = extendTheme(
       },
     },
     fonts: {
-      heading: "Roboto",
-      body: "Roboto",
+      heading: "Rubik",
+      body: "Rubik",
     },
   },
   withDefaultColorScheme({ colorScheme: "brand" })
@@ -122,3 +133,144 @@ reaction`,
     avatar: "TOLUWANI OWOEYE",
   },
 ];
+
+//
+export interface SignUp {
+  text: string;
+  linkText: string;
+  link: string;
+}
+
+export interface DoctorNavBarItems {
+  SvgIcon: TablerIcon;
+  link: string;
+  text: string;
+}
+export interface PatientMenuItems {
+  SvgIcon: TablerIcon;
+  link: string;
+  text: string;
+}
+
+export interface HomeMenuItems {
+  text: string;
+  link: string;
+}
+
+export const DoctorMenuItems: DoctorNavBarItems[] = [
+  {
+    SvgIcon: IconStethoscope,
+    link: "/doctor/dashboard",
+    text: "Consultation",
+  },
+
+  {
+    SvgIcon: IconMessages,
+    link: "/doctor/messages",
+    text: "Messages",
+  },
+  {
+    SvgIcon: IconWallet,
+    link: "/doctor/wallet",
+    text: "Top Wallet",
+  },
+  {
+    SvgIcon: IconHistory,
+    link: "/doctor/history",
+    text: "History",
+  },
+
+  {
+    SvgIcon: IconHelp,
+    link: "/doctor/support",
+    text: "Support",
+  },
+  {
+    SvgIcon: IconSettings,
+    link: "doctor/setting",
+    text: "Settings",
+  },
+
+  {
+    SvgIcon: IconLogout,
+    link: "/",
+    text: "Logout",
+  },
+];
+
+export const PatientMenuItems: PatientMenuItems[] = [
+  {
+    SvgIcon: IconStethoscope,
+    link: "/patient/dashboard",
+    text: "Fitness Task",
+  },
+
+  {
+    SvgIcon: IconMessages,
+    link: "/patient/buydrug",
+    text: "Buy Drugs",
+  },
+  {
+    SvgIcon: IconPhoneCall,
+    link: "/patient/dashboard",
+    text: "Speak with a Pharmacist",
+  },
+  {
+    SvgIcon: IconPhoneCall,
+    link: "/patient/dashboard",
+    text: "Speak with a Doctor",
+  },
+  {
+    SvgIcon: IconHistory,
+    link: "/patient/history",
+    text: "History",
+  },
+
+  {
+    SvgIcon: IconHelp,
+    link: "/patient/dashboard",
+    text: "Support",
+  },
+  {
+    SvgIcon: IconCheckbox,
+    link: "/patient/dashboard",
+    text: "Fake Drug Check",
+  },
+
+  {
+    SvgIcon: IconSettings,
+    link: "/",
+    text: "Settings",
+  },
+
+  {
+    SvgIcon: IconLogout,
+    link: "/",
+    text: "Logout",
+  },
+];
+
+export const MenuItems: HomeMenuItems[] = [
+  { text: "Home", link: "home" },
+  { text: "About Us", link: "aboutus" },
+  { text: "Services", link: "services" },
+  { text: "Testimonial", link: "testimonials" },
+  { text: "The Team", link: "theteam" },
+  { text: "Contact Us", link: "contact" },
+];
+// User SIgn up Types
+export interface UserSignUp {
+  firstname?: string;
+  password?: string;
+  subscribedEmail?: string;
+  email?: string;
+  lastname?: string;
+  confirmPassword?: string;
+}
+
+// User SIgn up Types
+export interface ContactUs {
+  name: string;
+  email: string;
+  message: string;
+}

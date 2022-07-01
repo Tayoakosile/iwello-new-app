@@ -1,41 +1,44 @@
-import React from "react";
-import {
-  Menu as ChakraMenu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  Button,
-  MenuOptionGroup,
-  Box,
-  MenuDivider,
-} from "@chakra-ui/react";
-import { AiOutlineCaretDown } from "react-icons/ai";
+import { HStack, SimpleGrid, Box, Tag, Button, Flex } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Menu = () => {
-  const [MenuOption, setMenuOptions] = React.useState<string>("Patient");
+  const [buttonIndex, setButtonIndex] = useState<number>(0);
   return (
-    <ChakraMenu autoSelect={false}>
-      <MenuButton
-        variant="outline"
-        as={Button}
-        aria-label="Options"
-        color="brand.500"
-        w={{ base: "125px" }}
-        borderColor="#C4C4C4"
-        size="md"
-        fontSize={{ base: "18px" }}
-        h={{ base: "40px" }}
-        rightIcon={<AiOutlineCaretDown />}
-      >
-        {MenuOption}
-      </MenuButton>
-      <MenuList>
-        <MenuItem onClick={() => setMenuOptions("Patient")}>Patient</MenuItem>
-        <MenuItem onClick={() => setMenuOptions("Doctor")}>Doctor</MenuItem>
-      </MenuList>
-    </ChakraMenu>
+    <HStack
+      d={{ base: "flex", lg: "none" }}
+      as="section"
+      w="100%"
+      h="full"
+      spacing="2"
+      overflowX={"auto"}
+      sx={{
+        ".iwello__button": {
+          "&:hover, &:focus": {
+            boxShadow: "none !important",
+          },
+        },
+      }}
+    >
+      {["Patient", "Doctor", "Dentist", "Pharmacist"].map(
+        (occupation, index) => (
+          <Box as="span" key={occupation}>
+            <Button
+              w="full"
+              className="iwello__button"
+              onClick={() => setButtonIndex(index)}
+              mr="3"
+              h="12"
+              flex="0.5"
+              fontSize="16px"
+              variant={`${buttonIndex === index ? "solid" : "outline"}`}
+              colorScheme="brand"
+            >
+              {occupation}
+            </Button>
+          </Box>
+        )
+      )}
+    </HStack>
   );
 };
 

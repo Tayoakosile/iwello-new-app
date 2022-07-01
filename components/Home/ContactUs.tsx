@@ -1,9 +1,9 @@
 import {
   Box,
+  Button,
   FormControl,
   FormErrorMessage,
   Heading,
-  Button,
   Input,
   Textarea,
   VStack,
@@ -14,7 +14,6 @@ import UseContactUs from "../hooks/UseContactUs";
 const ContactUs = () => {
   const { register, mockisLoadingState, handleSubmit, SubmitForm, errors } =
     UseContactUs();
-  console.log(errors);
   return (
     <Box
       as="section"
@@ -30,7 +29,7 @@ const ContactUs = () => {
       </Heading>
       <VStack spacing="15px" onSubmit={handleSubmit(SubmitForm)} as="form">
         {/* Name */}
-        <FormControl isInvalid={errors && errors.name}>
+        <FormControl isInvalid={errors ? (errors.name ? true : false) : false}>
           <Input
             //   Validates the form
             {...register("name", {
@@ -53,7 +52,7 @@ const ContactUs = () => {
           </FormErrorMessage>
         </FormControl>
 
-        <FormControl isInvalid={errors && errors.email}>
+        <FormControl isInvalid={errors.email ? true : false}>
           <Input
             h="60px"
             {...register("email", {
@@ -75,7 +74,7 @@ const ContactUs = () => {
           </FormErrorMessage>
         </FormControl>
 
-        <FormControl isInvalid={errors && errors.message}>
+        <FormControl isInvalid={errors.message ? true : false}>
           <Textarea
             {...register("message", {
               required: "Message Required",
