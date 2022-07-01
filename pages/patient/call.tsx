@@ -8,7 +8,7 @@ import {
   IconButton,
   Text,
   useDisclosure,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
